@@ -284,7 +284,7 @@
         }
 
         &-item {
-            color: var(--grey-color);
+            color: var(--blue-color-dark);
 
             &._active {
                 color: var(--text-color);
@@ -491,6 +491,8 @@
 
     &__list {
         @include reset-list;
+
+        margin-bottom: 20px;
     }
     &__item {
         align-items: start;
@@ -536,7 +538,6 @@
         }
     }
     &__link {
-        font-family: var(--font-title);
         font-size: 1.875rem;
         font-weight: 700;
 
@@ -570,6 +571,14 @@
         }
         &-link {
             color: inherit;
+        }
+    }
+    &__phone {
+        font-size: 1.875rem;
+        font-weight: 500;
+
+        @media ($sm) {
+            font-size: 1.25rem;
         }
     }
 }
