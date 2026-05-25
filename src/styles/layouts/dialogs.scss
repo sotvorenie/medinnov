@@ -1,0 +1,231 @@
+.dialog {
+    border-radius: 15px;
+    display: block;
+    max-width: calc(100% - 40px);
+    padding: 24px !important;
+    width: 450px;
+
+    @media ($lg) {
+        width: 526px;
+    }
+    @media ($sm) {
+        width: 348px;
+    }
+
+    &_xl {
+        width: 868px;
+    }
+
+    &__title {
+        font-family: var(--font-title);
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: .6em;
+    }
+    &__desc {
+        color: var(--grey-color);
+        margin-bottom: 22px;
+    }
+
+    .btn,
+    .textfield,
+    .textarea {
+        width: 100%;
+    }
+
+    &#js-modal-video {
+        width: auto;
+    }
+}
+
+// Рассрочка
+.installment-dialog {
+    padding: 24px;
+    border-radius: 15px;
+    background: var(--white-color);
+    max-width: 447px;
+    position: relative;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: relative;
+    }
+
+    .installment-dialog__form-agreement {
+        text-align: left;
+        margin-top: 0;
+    }
+}
+
+// Отзыв
+
+.review-dialog {
+    padding: 59px 20px;
+    border-radius: 15px;
+    background: var(--white-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+    max-width: 449px;
+    width: 100%;
+
+    &__head {
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e9e9e9;
+    }
+
+    &__date {
+        margin-bottom: 0;
+
+        @media ($md) {
+            font-size: 0.875rem;
+        }
+    }
+
+    &__number {
+        color: var(--primary-color);
+        font-size: 0.75rem;
+    }
+
+    &__main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 22px;
+
+        .star-rating__stars {
+            font-size: 35px;
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 16px;
+
+            .icon {
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    color: var(--yellow-color);
+
+                    & ~ .icon {
+                        color: var(--yellow-color);
+                    }
+                }
+            }
+
+            &_fill {
+                display: none;
+            }
+
+            &._picked {
+                pointer-events: none;
+                
+                .icon {
+                    font-size: 23px;
+                }
+            }
+        }
+
+        &._form {
+            .review-dialog__form {
+                display: block;
+            }
+        }
+    }
+
+    &__main-question {
+        color: var(--grey-color);
+        font-family: var(--font-title);
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0;
+
+        &._picked {
+            font-family: var(--font-default);
+            font-weight: 500;
+            font-size: .875rem;
+        }
+    }
+
+    &__form {
+        display: none;
+        margin-top: 34px;
+    }
+
+    &__form-text {
+        align-self: center;
+    }
+
+    .review-dialog__form-agreement {
+        margin-top: 0;
+        text-align: left;
+    }
+}
+
+// Видео
+.video-dialog {
+    @media ($md) {
+        width: 100% !important;
+        max-width: unset !important;
+        padding: 0 !important;
+        background: none;
+    }
+    .is-close-btn {
+        right: -1px !important;
+        top: -1px !important;
+
+        @media ($md) {
+            top: -30px !important;
+            right: 0 !important;
+        }
+    }
+
+    &__video {
+        width: 65vw;
+        max-height: 80vh;
+
+        @media ($md) {
+            width: 100%;
+        }
+    }
+}
+
+// Удаление профиля
+.delete-dialog {
+    h3 {
+        // text-align: center;
+    }
+}
+
+// Смена пароля
+.change-password-dialog {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    h3 {
+        margin-bottom: 0;
+    }
+}
+
+// Уведомление
+.notify-dialog {
+    h3 {
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    .form-agreement {
+        margin: 0;
+    }
+}

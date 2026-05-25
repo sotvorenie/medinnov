@@ -1,0 +1,69 @@
+.product-detail 
+    .product-detail__top
+        .product-detail__rating 
+            include /components/star-rating
+            .product-detail__rating-value 276 оценок
+
+
+        include /components/catalog/product-top
+
+
+    section.section.section_bg.product-detail__content
+        .tabs 
+            .tabs__list
+                .tabs__list-item
+                    a.tabs__list-link(href="#description", title="Описание" data-tab="product") Описание
+                .tabs__list-item
+                    a.tabs__list-link(href="#technical", title="Технические характеристики" data-tab="product") Технические характеристики
+                .tabs__list-item
+                    a.tabs__list-link(href="#reviews", title="Отзывы" data-tab="product") Отзывы
+
+            .tabs__content(id="description")
+                .description 
+                    .description__content(data-description-content)
+                        .row.mb-3
+                            .col-12.col-md-6
+                                h2.h2 Блок врача
+                                p.text-grey Для удобства врача предусмотрен столик для инструментов и пульт управления креслом. Манометр и негатоскоп позволяют контролировать состояние пациента и процесс лечения на каждом этапе. Ножная педаль управления инструментами делает работу более комфортной и безопасной.
+                                ul.mb-3
+                                    li на 5 инструментов с нижним подводом инструментов;
+                                    li пистолет вода\воздух\спрей;
+                                    li 3 тубинга Midwest4;
+                                    li свободное место для установки дополнительного инструмента;
+                                    li столик врача для инструментов;
+                                    li пульт управления креслом и инструментами врача;
+                                    li манометр, негатоскоп (для просмотра Rg снимков);
+                                    li управление инструментами - ножная педаль.
+
+                            .col-12.col-md-6
+                                img.d-block.w-100(src="/src/assets/upload/detail/description.png", alt="")
+                        .row 
+                            .col-12.col-md-6
+                                h2.h2 Блок ассистента
+                                p.text-grey Для удобства врача предусмотрен столик для инструментов и пульт управления креслом. Манометр и негатоскоп позволяют контролировать состояние пациента и процесс лечения на каждом этапе. Ножная педаль управления инструментами делает работу более комфортной и безопасной.
+                                ul
+                                    li на 5 инструментов с нижним подводом инструментов;
+                                    li пистолет вода\воздух\спрей;
+                                    li 3 тубинга Midwest4;
+                                    li свободное место для установки дополнительного инструмента;
+                                    li столик врача для инструментов;
+                                    li пульт управления креслом и инструментами врача;
+                                    li манометр, негатоскоп (для просмотра Rg снимков);
+                                    li управление инструментами - ножная педаль.
+
+                            .col-12.col-md-6
+                                img.d-block.w-100(src="/src/assets/upload/detail/description.png", alt="")
+
+                    button.btn.btn_bordered.btn_sm.description__more(data-description-toggle)
+                        span(data-text-show) Читать полностью
+                        span(data-text-hide) Cкрыть описание
+
+            .tabs__content(id="technical")
+                .technical-list
+                    - for (let i = 0; i < 18; i++)
+                        .technical-list__item
+                            .technical-list__title Технический параметр !{i}
+                            .technical-list__value Технический параметр значение !{i}
+
+            .tabs__content(id="reviews")
+                include /components/catalog/reviews-list

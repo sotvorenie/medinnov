@@ -1,0 +1,14 @@
+extends /layouts/_template
+
+block main
+    section.error-section
+        img.error-section__img(src="/src/assets/404.svg" alt="404")
+        .error-section__cont
+            h1.error-section__title 
+                | Ошибка! 
+                br
+                | Эта страница не найдена
+
+            .error-section__actions
+                a.btn(href="/" title="Перейти на гланую страницу") Перейти на гланую страницу
+   

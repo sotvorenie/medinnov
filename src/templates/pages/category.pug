@@ -1,0 +1,21 @@
+extends /layouts/_template
+
+block variables
+    - var h1Subtittle = "Показано 12 из 78 товаров";
+
+block main
+    .catalog-section
+        .d-block.d-lg-none
+            include /components/catalog/section-head
+
+        .catalog-section__filter 
+            include /components/catalog/filter
+
+        .catalog-section__content 
+            .catalog-section__head.d-none.d-lg-block
+                include /components/catalog/section-head
+
+            .catalog-section__list
+                include /components/catalog/products-list
+
+                include /components/pager

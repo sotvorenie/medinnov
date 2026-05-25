@@ -1,0 +1,95 @@
+.return-of-goods {
+    &__paragraph {
+        font-family: var(--font-title);
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__text {
+        color: rgba(28, 28, 30, 0.73);
+        font-size: 0.875rem;
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+
+    ul {
+        li {
+            padding-left: 0;
+
+            &::marker {
+                color: inherit;
+            }
+        }
+    }
+
+    &__subtitle {
+        font-family: var(--font-title);
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    &__undersection {
+        margin-top: 60px;
+        padding: 60px 0;
+
+        @media ($lg) {
+            padding: 30px 0;
+            margin-top: 30px;
+        }
+    }
+
+    &__accordeon-list {
+        margin-bottom: 36px;
+    }
+
+    &__accordeon-item {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--light-grey-color);
+        cursor: pointer;
+
+        &:first-child {
+            border-top: 1px solid var(--light-grey-color);
+        }
+    }
+    
+    &__accordeon-item-head {
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+
+        &-icon {
+            @include sizeSquare(24px);
+
+            color: var(--black-color);
+            transform: rotate(0);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        &._active {
+            .return-of-goods__accordeon-item-head-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__accordeon-item-content {
+        color: var(--grey-color);
+        font-size: 0.875rem;
+
+        p {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+    }
+}

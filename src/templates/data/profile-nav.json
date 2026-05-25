@@ -1,0 +1,20 @@
+{
+    "profileNavItems": [
+        {
+            "title": "Профиль",
+            "link": "/profile.html"
+        },
+        {
+            "title": "Мои заказы",
+            "link": "/my-orders.html"
+        },
+        {
+            "title": "Избранное",
+            "link": "/favorites.html"
+        },
+        {
+            "title": "Возврат товара",
+            "link": "/return-of-goods.html"
+        }
+    ]
+}

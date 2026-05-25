@@ -1,0 +1,31 @@
+.products-slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    
+    @media ($lg-up) {
+        margin: 0 -32px -24px;
+        padding: 0 32px 24px;
+    }
+}
+
+.products-slider {
+    display: block;
+    position: relative;
+
+    &_horizontal {
+        touch-action: pan-y;
+    }
+
+    &__wrapper {
+        display: flex;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    &__item {
+        @include sizeSquare(100%);
+
+        display: block;
+        flex-shrink: 0;
+    }
+}

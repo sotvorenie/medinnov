@@ -1,0 +1,37 @@
+.profile-nav {
+    border-radius: 15px;
+    padding: 16px 0 24px;
+    background: var(--white-color);
+    width: 259px;
+    flex-shrink: 0;
+
+    @media ($lg) {
+        width: 100%;
+        padding: 8px 0 20px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 32px;
+
+        @media ($lg) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__item {
+        font-size: 0.875rem;
+        padding: 8px 16px;
+
+        &_active {
+            background: var(--secondary-color);
+            border-left: 2px solid var(--primary-color);
+        }
+    }
+
+    &__logout-btn {
+        margin-left: 16px;
+        width: 136px;
+    }
+}

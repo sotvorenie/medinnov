@@ -1,0 +1,5 @@
+{
+    "title": "404",
+    "template": "pages/404.pug",
+    "hideHead": true
+}

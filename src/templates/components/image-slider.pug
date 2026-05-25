@@ -1,0 +1,17 @@
+.image-slider.js-image-slider
+    .image-slider__wrapper 
+        - for (let i = 0; i < 3; i++)
+            .image-slider__item
+                a.image-slider__link(href="#" title="Slide " + i target="_blank" rel="noopener noreferrer")
+                    img.image-slider__img(src="/src/assets/upload/slide-" + i + ".png", alt="slide " + i)
+
+    .slider-action.slider-action_sm._prev.image-slider-action.js-image-slider-prev
+        +svgIcon('arrow-left')
+    .slider-action.slider-action_sm._next.image-slider-action.js-image-slider-next
+        <svg class="icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 18L16 13L11 8V18Z" fill="#295365"/>
+        </svg>
+
+    .d-flex.justify-content-center
+        .pagination.image-slider__pagination.js-image-slider-pagination
+

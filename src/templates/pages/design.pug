@@ -1,0 +1,99 @@
+extends /layouts/_template
+
+block main
+    .design 
+        p.design__subtitle Компания «Дентекс» успешно совмещает этапы создания и открытия объектов, что позволяет сокращать сроки реализации проекта. Собственное архитектурно-строительное бюро "Спецмедпроект" дает уникальную возможность предложить комплексный подход к работе с медицинскими объектами разного уровня сложности.
+        a.design__head-label(href="#" target="_blank") архитектурно-строительное бюро "Спецмедпроект"
+
+        .design__definition 
+            p.design__definition-text 
+                b «Дентекс» обеспечивает полный комплект проектной документации: 
+                | архитектурные решения (АР), конструктивные решения (КР), водопровод и канализация (ВК), отопление, вентиляция и кондиционирование (ОВиК), электроснабжение и электроосвещение (ЭОМ), пожарная сигнализация (ПС), технологические решения на объект и на кабинеты с источниками ионизирующего излучения (ТХ), медицинское газоснабжение (МГ), дизайн интерьера, перепланировка и переустройство и др.
+            .design__definition-grid
+                a(href="")  Свидетельство о квалификации (Шаров А.В.)
+                a Свидетельство о квалификации (Косинов Е.Д.)
+                a Уведомление НОПРИЗ (Шаров А.В.)
+                a(href="https://dentex.ru/upload/medialibrary/cdd/b5opyfx3b57adxkagms3et2hy2r2j9cs/Uvedomlenie-NOPRIZ-_Kosinov-E.D_.pdf")  Уведомление НОПРИЗ (Косинов Е.Д.)
+                a(href="https://dentex.ru/upload/medialibrary/39a/gxpqq1j2unh4yc571jjzowe2bbhfrm0i/Vypiska-SRO-ot-21.09.2023.pdf")  Выписка о членстве в СРО
+                a(href="https://dentex.ru/upload/medialibrary/58f/g9jyybusgt8sdrt5ymk31jk44fpzkqcf/Litsenziya-Rospotrebnadzora.pdf")  Лицензия Роспотребнадзора
+        section.design__objects 
+            h2.design__objects-title Какие виды объектов Вы можете открыть с нами:
+            .design__objects-list 
+                each item in designObjects
+                    a.design__objects-item 
+                        img.design__objects-item-img(src=item.img, alt="")
+                        p.design__objects-item-text #{item.text}
+        section.design__projects.section_white
+            h2.design__projects-title Наши проекты
+            .tabs 
+                .tabs__list
+                    .tabs__list-item
+                        a.tabs__list-link._current(href="#id-1" title="Все", data-tab="blog") Все
+                    .tabs__list-item
+                        a.tabs__list-link(href="#id-2" title="Стоматологические клиники", data-tab="blog") Стоматологические клиники
+                    .tabs__list-item
+                        a.tabs__list-link(href="#id-3" title="Медицинские центры", data-tab="blog") Медицинские центры
+                    .tabs__list-item
+                        a.tabs__list-link(href="#id-4" title="Рентген-кабинеты", data-tab="blog") Рентген-кабинеты
+
+                #id-1.tabs__content()
+                    .design__projects-slider-container
+                        .design-slider.js-design-slider
+                            .design-slider__wrapper(data-design-slider-imgs)
+                                - for (let i = 0; i < 16; i++)
+                                    a.design-slider__item(href="#" title) 
+                                        img(src="/src/assets/upload/design/slider_" + (i % 3 + 1) + ".png", alt="")
+
+                            .slider-action._prev.design-slider-action.js-design-slider-prev
+                                +svgIcon('arrow-left')
+                            .slider-action._next.design-slider-action.js-design-slider-next
+                                +svgIcon('arrow-right')
+                    .d-flex.justify-content-end.mt-3 
+                        a.btn.design__projects-see-all(href="/all-link.html") Смотреть все
+
+                #id-2.tabs__content()
+                    .design__projects-slider-container
+                        .design-slider.js-design-slider
+                            .design-slider__wrapper(data-design-slider-imgs)
+                                - for (let i = 0; i < 4; i++)
+                                    a.design-slider__item(href="#" title) 
+                                        img(src="/src/assets/upload/design/slider_1.png", alt="")
+
+                            .slider-action._prev.design-slider-action.js-design-slider-prev
+                                +svgIcon('arrow-left')
+                            .slider-action._next.design-slider-action.js-design-slider-next
+                                +svgIcon('arrow-right')
+                    .d-flex.justify-content-end.mt-3 
+                        a.btn.design__projects-see-all(href="/all-link-1.html") Смотреть все
+
+                #id-3.tabs__content()
+                    .design__projects-slider-container
+                        .design-slider.js-design-slider
+                            .design-slider__wrapper(data-design-slider-imgs)
+                                - for (let i = 0; i < 4; i++)
+                                    a.design-slider__item(href="#" title) 
+                                        img(src="/src/assets/upload/design/slider_2.png", alt="")
+
+                            .slider-action._prev.design-slider-action.js-design-slider-prev
+                                +svgIcon('arrow-left')
+                            .slider-action._next.design-slider-action.js-design-slider-next
+                                +svgIcon('arrow-right')
+                    .d-flex.justify-content-end.mt-3 
+                        a.btn.design__projects-see-all(href="/all-link-2.html") Смотреть все
+
+                #id-4.tabs__content()
+                    .design__projects-slider-container
+                        .design-slider.js-design-slider
+                            .design-slider__wrapper(data-design-slider-imgs)
+                                - for (let i = 0; i < 4; i++)
+                                    a.design-slider__item(href="#" title) 
+                                        img(src="/src/assets/upload/design/slider_3.png", alt="")
+
+                            .slider-action._prev.design-slider-action.js-design-slider-prev
+                                +svgIcon('arrow-left')
+                            .slider-action._next.design-slider-action.js-design-slider-next
+                                +svgIcon('arrow-right')
+                    .d-flex.justify-content-end.mt-3 
+                        a.btn.design__projects-see-all(href="/all-link-3.html") Смотреть все
+
+        include /components/manager-woman.pug

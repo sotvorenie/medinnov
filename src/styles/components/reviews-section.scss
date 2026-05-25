@@ -1,0 +1,138 @@
+.reviews-section {
+    align-items: start;
+    display: flex;
+    justify-content: start;
+    gap: 24px;
+
+    @media ($lg) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__content {
+        flex: 1;
+    }
+    &__sidebar {
+        max-width: 100%;
+        width: 260px;
+
+        @media ($lg) {
+            order: -1;
+        }
+
+        .star-rating {
+            font-size: 32px;
+        }
+    }
+
+    &__more {
+        min-width: 160px;
+    }
+}
+
+.reviews-list {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.review-item {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+    &__avatar-wrap {
+        @include sizeSquare(39px);
+
+        border-radius: 50%;
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    &__avatar {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    &__content {
+        flex: 1;
+        max-width: 480px;
+    }
+    &__head {
+        margin: 0;
+    }
+    &__name {
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+    &__desc {
+        margin-top: 24px;
+
+        @media ($lg) {
+            margin-top: 20px;
+        }
+        @media ($sm) {
+            margin-top: 16px;
+        }
+
+        &-title {
+            font-weight: bold;
+        }
+        &-text {
+            color: var(--grey-color);
+            margin: 8px 0 0;
+        }
+    }
+    &__bottom {
+        margin-top: 16px;
+        
+    }
+}
+
+.vote-block {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+
+    &__btn {
+        @include sizeSquare(32px);
+
+        align-items: center;
+        background: transparent;
+        border: none;
+        color: var(--text-color);
+        justify-content: center;
+        padding: 0;
+
+        &_up {
+            &._active {
+                color: var(--primary-color);
+            }
+        }
+        &_down {
+            &._active {
+                color: var(--red-color);
+            }
+        }
+
+        &:hover {
+            color: var(--blue-color);
+        }
+    }
+    &__count {
+        border-radius: 30px;
+        color: var(--text-color);
+        padding: 0 6px;
+        
+        &._positive {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        &._negative {
+            background: rgba($color: $red-color, $alpha: 0.1);
+            color: var(--red-color);
+        }
+    }
+}

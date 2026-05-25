@@ -1,0 +1,103 @@
+mixin listLinks(className, ...items)
+    ul(class = className + "__list")
+        each item in items
+            li(class = className + "__item")
+                a(class = className + "__link", href = "#", title = item)= item
+
+mixin select(className, ...items)
+    select(class = className)
+        each item in items
+            option= item
+
+mixin multiselect(className, ...items)
+    select(class = className, multiple='multiple')
+        each item in items
+            option= item
+
+mixin svg(url, width, height, className)
+    - className = className || 'icon'
+    svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 ' + width + ' ' + height, width=width, height=height class=className aria-hidden="true")
+        use(fill='currentColor', xlink:href=url)
+
+mixin svgIcon(url, className)
+    - className = className || 'icon'
+    svg(xmlns='http://www.w3.org/2000/svg' class=className aria-hidden="true")
+        use(xlink:href='/sprite.svg#' + url)
+
+mixin checkbox(labelText = '', className = '', checked = false)
+    label(class=`checkbox ${className || ''}`)
+        input.checkbox__input(type="checkbox" checked=checked)
+        div.checkbox__box
+            +svgIcon('checkmark')
+        if labelText
+            span.checkbox__text= labelText
+
+mixin radio(labelText = '', className = '', checked = false, name = 'radio')
+    label(class=`checkbox checkbox_radio ${className || ''}`)
+        input.checkbox__input(type="radio" checked=checked name=name)
+        div.checkbox__box
+            +svgIcon('checkmark')
+        if labelText
+            span.checkbox__text= labelText
+
+mixin switch(labelText = '', className = '', checked = false)
+    label(class=`switch ${className || ''}`)
+        input.switch__input(type="checkbox" checked=checked)
+        div.switch__box
+        if labelText
+            span.switch__text= labelText
+
+mixin textfield(name, placeholder, required = false, className = '')
+    .form-row
+        label(class=`textfield ${className} ${required ? 'textfield_required' : ''}`)
+            span.textfield__name= name 
+            input.textfield__input(placeholder=placeholder required=required ? true : false data-validate-input=`${required}`)
+
+mixin textphone(name, placeholder, required = false, className = '')
+    .form-row
+        label(class=`textfield ${className} ${required ? 'textfield_required' : ''}`)
+            span.textfield__name= name 
+            input.textfield__input(type='tel' placeholder=placeholder required=required ? true : false  data-maska="+7 (9##) ###-##-##" data-validate-input=`${required}` data-validate-type="phone")
+
+mixin textmail(name, placeholder, required = false, className = '')
+    .form-row
+        label(class=`textfield ${className} ${required ? 'textfield_required' : ''}`)
+            span.textfield__name= name 
+            input.textfield__input(type='email' placeholder=placeholder required=required ? true : false data-validate-input=`${required}` data-validate-type="email")
+
+mixin codefield(name, placeholder, required = false, className = '')
+    .form-row
+        label(class=`textfield ${className} ${required ? 'textfield_required' : ''}`)
+            span.textfield__name= name 
+            input.textfield__input(type='tel' placeholder=placeholder required=required ? true : false  data-maska="#####" data-validate-input=`${required}`)
+
+mixin textarea(name, placeholder, rows = 4, className = '', required = false)
+    .form-row
+        label(class=`textarea ${className} ${required ? 'textarea_required' : ''}`)
+            span.textarea__name= name 
+            textarea.textarea__input(placeholder=placeholder, rows=rows data-validate-input=`${required}`)
+
+mixin formAgreement(className = '')
+    p(class=`form-agreement ${className}`) Нажимая на кнопку, 
+        a.form-agreement__link(href="/privacy.html") вы соглашаетесь с условиями обработки данных и политикой конфиденциальности
+
+mixin radioButton(labelText = 'radio button', name = 'radio', className = '', checked = false, disabled = false)
+    label(class=`radio-btn ${className || ''}`)
+        input.radio-btn__input(type="radio" checked=checked disabled=disabled name=name)
+        div.radio-btn__box= labelText
+
+mixin radioColor(labelColor = '#f00', name = 'radio', className = '', checked = false, disabled = false)
+    label(class=`radio-color ${className || ''}`)
+        input.radio-color__input(type="radio" checked=checked disabled=disabled name=name)
+        div.radio-color__box
+            span.radio-color__box-color(style='background-color:' + labelColor)
+
+mixin file(name, required = false, className = '')
+    .form-row
+        label(class=`input-file ${className} ${required ? 'input-file_required' : ''}` data-input-file)
+            span.input-file__value(data-input-file-value)
+            span.input-file__btn
+                +svgIcon('file')
+                span= name 
+            input.input-file__input(type="file" required=required ? true : false data-validate-input=`${required}`)
+

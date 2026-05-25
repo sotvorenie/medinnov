@@ -1,0 +1,14 @@
+#js-modal-notify.dialog.notify-dialog
+    h3 Оставить заявку на товар
+    p Оставьте заявку на выбранный товар и наш менеджер свяжется с вами, когда он будет в наличии
+
+    .mb-3
+        +textfield('Имя', 'Иван', true)
+    .mb-3
+        +textphone('Телефон', '+7 000 000 00 00', true)
+
+    .mt-4
+        button.btn Оставить заявку
+    .mt-1
+        +formAgreement()
+    

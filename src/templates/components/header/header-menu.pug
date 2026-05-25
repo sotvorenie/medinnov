@@ -1,0 +1,22 @@
+nav.header-menu
+    ul.header-menu__list
+        each item in headerMenu
+            li.header-menu__item(
+                class={
+                    '_active': item.active, 
+                    '_pin': item.pin, 
+                    '_dropdown': item.items
+                }
+            )
+                a.header-menu__link(href=item.href title=item.name)= item.name
+
+                if item.items 
+                    .header-menu__submenu-wrap
+                        ul.header-menu__submenu
+                            each subItem in item.items
+                                li.header-menu__submenu-item(
+                                    class={
+                                        '_active': subItem.active
+                                    }
+                                )
+                                    a.header-menu__submenu-link(href=subItem.href title=subItem.name)= subItem.name

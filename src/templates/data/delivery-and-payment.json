@@ -1,0 +1,24 @@
+{
+    "deliveryAccordeonItems": [
+        {
+            "title": "Доставка по Москве в пределах МКАД",
+            "content": "При заказе от 30 000 руб. — бесплатно. При заказе до 30 000 руб.: вес груза до 3 кг — 600 руб. доставка курьером компании (минимальный объем груза). Доставка транспортом компании: вес груза от 3 кг — 1 500 руб. Груз весом от 2.5 т сопровождается сотрудником склада. Доставка груза на охраняемую территорию с пропускной системой сопровождается сотрудником склада."
+        },
+        {
+            "title": "Доставка за МКАД (в пределах МО)",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure autem impedit maiores, saepe error maxime amet fuga rem aliquid!"
+        },
+        {
+            "title": "Доставка в регионы",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure autem impedit maiores, saepe error maxime amet fuga rem aliquid!"
+        },
+        {
+            "title": "Для оптовых клиентов",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure autem impedit maiores, saepe error maxime amet fuga rem aliquid!"
+        },
+        {
+            "title": "Информация о транспортных компаниях",
+            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iure autem impedit maiores, saepe error maxime amet fuga rem aliquid!"
+        }
+    ]
+}

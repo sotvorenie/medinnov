@@ -1,0 +1,20 @@
+{
+    "orderGoods": [
+        {
+            "img": "/src/assets/upload/goods/1.png",
+            "title": "KLT-6210 N1 Lower - стоматологическая установка с нижней подачей",
+            "color": "#84B4E0",
+            "price": "169 500 ₽",
+            "quantity": 1,
+            "total": "169 500 ₽"
+        },
+        {
+            "img": "/src/assets/upload/goods/2.png",
+            "title": "KLT-6210 N1 Lower - стоматологическая установка с нижней подачей",
+            "color": "#FBB700",
+            "price": "110 500 ₽",
+            "quantity": 2,
+            "total": "221 000 ₽"
+        }
+    ]
+}

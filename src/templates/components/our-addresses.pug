@@ -1,0 +1,95 @@
+section.our-addresses
+    h2.our-addresses__title Наши адреса
+    .our-addresses__block
+        p.h2.our-addresses__block-title Москва
+        .our-addresses__block-main
+            .our-addresses__block-info
+                p.h5 Название и адрес
+                p Офис в Москве с демозалом
+                p Центральный офис Дентекс
+                p Адрес: 125284, Москва, Хорошевское шоссе, 12к1, эт. 3
+            .our-addresses__block-info
+                p.h5 Режим работы
+                p 
+                    span Пн - Пт: 9:30-18:00
+                    span Сб - Вс: выходные
+            .our-addresses__block-info
+                p.h5 Контакты
+                p 
+                    span Телефон: 
+                        a(href="tel:88007008058") 8 (800) 700-80-58
+                        | , 
+                        a(href="tel:+74959743030") +7 (495) 974-30-30
+                    span Написать в 
+                        a(href="") Telegram
+                    span Электронная почта: 
+                        a(href="mailto:info@dentex.ru") info@dentex.ru
+                p
+                    span Отдел по работе с торгующими компаниями
+                    span Телефон: 
+                        a(href="tel:+74959743030") +7 (495) 974-30-30
+                        | (доб. 990)
+                    span Электронная почта: 
+                        a(href="mailto:opt@dentex.ru") opt@dentex.ru
+                button.btn(data-fancybox data-src="#js-modal-feedback") Обратная связь
+            .our-addresses__block-map(data-map data-zoom="12" data-center="55.76, 37.64" data-title="Москва" data-desc="Какое-то описание")
+                
+    .our-addresses__block
+        p.h2.our-addresses__block-title Санкт-Петербург
+        .our-addresses__block-main
+            .our-addresses__block-info
+                p.h5 Название и адрес
+                p Офис в Санкт-Петербурге с демозалом
+                p Филиал Дентекс в Санкт-Петербурге
+                p Адрес: 191123, Санкт-Петербург, ул. Радищева, 39Д, оф. 306
+            .our-addresses__block-info
+                p.h5 Режим работы
+                p 
+                    span Пн - Пт: 9:00-18:00
+                    span Сб - Вс: выходные
+            .our-addresses__block-info
+                p.h5 Контакты
+                p 
+                    span Телефон:
+                        a(href="tel:+78123180378")  +7 (812) 318-03-79
+                    span Написать в 
+                        a(href="") Telegram
+                    span Электронная почта: 
+                        a(href="mailto:spb@dentex.ru") spb@dentex.ru
+                    span Электронная почта: 
+                        a(href="mailto:info@dentex.ru") info@dentex.ru
+                button.btn(data-fancybox data-src="#js-modal-feedback") Обратная связь
+
+    script.
+        const mapsList = document.querySelectorAll('[data-map]')
+        mapsList.forEach((mapItem, index) => {
+            console.log('mapItem', mapItem)
+            const id = 'map-block-' + index
+            mapItem.id = id
+            const coords = (mapItem.dataset.center) ? mapItem.dataset.center.split(',') : [55.76, 37.64];
+            const zoom = (mapItem.dataset.zoom) ? mapItem.dataset.zoom : 11;
+            const title = (mapItem.dataset.title) ? mapItem.dataset.title : '';
+            const desc = (mapItem.dataset.desc) ? mapItem.dataset.desc : '';
+
+
+            function init() {
+                const map = new ymaps.Map(id, {
+                        center: coords,
+                        controls: [],
+                        zoom: zoom
+                    }, {});
+
+                map.geoObjects
+                    .add(new ymaps.Placemark(coords, {
+                        balloonContentHeader: title,
+                        balloonContentBody: desc,
+                        balloonContentFooter: '',
+                        hintContent: title
+                    }, {
+                        preset: 'islands#icon',
+                        iconColor: '#3EBEC4'
+                    }))
+            }
+
+            ymaps.ready(init);
+        });

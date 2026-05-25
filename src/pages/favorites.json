@@ -1,0 +1,4 @@
+{
+    "title": "Избранное",
+    "template": "pages/favorites.pug"
+}

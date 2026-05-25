@@ -1,0 +1,19 @@
+extends /layouts/_template
+
+block variables
+    - var hideTitle = true;
+
+block main
+    .contacts
+        .contacts__feedback 
+            h1.contacts__feedback-title Обратная связь
+            .contacts__feedback-form
+                +textfield('Имя', 'Иван', true, 'contacts__feedback-form-textfield')
+                +textphone('Телефон', '+7 (000) 000-00-00', true, 'contacts__feedback-form-textfield')
+                +textfield('Город', 'Иван', true, 'contacts__feedback-form-textfield')
+                +textarea('Комментарий', 'Иван', 4, 'contacts__feedback-form-textarea')
+                button.btn.contacts__feedback-form-btn Оставить заявку
+            .contacts__feedback-form-video
+                button.play(data-src="#js-modal-video", data-fancybox, data-video-src="/src/assets/upload/main.mp4")
+            +formAgreement('contacts__feedback-agreement')
+        include /components/our-addresses.pug

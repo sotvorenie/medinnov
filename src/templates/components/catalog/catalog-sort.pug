@@ -1,0 +1,23 @@
+.catalog-sort
+    .catalog-sort__label Сортировка:
+    .catalog-sort__select
+        .catalog-sort-select
+            .catalog-sort-select__head
+                span(data-sort-type) сперва новые
+                .catalog-sort-select__icon
+                    +svgIcon("arrow-down")
+                    
+            .catalog-sort-select__dropdown
+                .catalog-sort-select__dropdown-list
+                    .catalog-sort-select__dropdown-item._current
+                        a.catalog-sort-select__dropdown-link(href title)
+                            | сперва новые
+                    .catalog-sort-select__dropdown-item
+                        a.catalog-sort-select__dropdown-link(href title)
+                            | сперва старые
+                    .catalog-sort-select__dropdown-item
+                        a.catalog-sort-select__dropdown-link(href title)
+                            | сперва дороже
+                    .catalog-sort-select__dropdown-item
+                        a.catalog-sort-select__dropdown-link(href title)
+                            | сперва дешевле

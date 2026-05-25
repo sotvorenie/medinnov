@@ -1,0 +1,99 @@
+.profile {
+    &__form {
+        padding: 32px;
+        border-radius: 15px;
+        background: var(--white-color);
+        flex: 1;
+
+        @media ($lg) {
+            padding: 20px;
+        }
+    }
+
+    &__form-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    &__form-head-actions {
+        align-items: center;
+        display: none;
+        gap: 8px;
+        justify-content: center;
+
+
+        &._active {
+            display: flex;
+        }
+    }
+    &__form-btn-icon {
+        @include sizeSquare(20px);
+    }
+
+    &__form-title {
+        margin-bottom: 0;
+    }
+
+    &__form-edit {
+        color: var(--primary-color);
+        font-size: .75rem;
+        font-weight: 500;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        @media ($md) {
+            span {
+                display: none;
+            }
+        }
+
+        &._active {
+            display: none;
+        }
+
+        .icon {
+            @include sizeSquare(28px);
+        }
+    }
+
+    &__form-textfields {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+
+        @media ($md) {
+            grid-template-columns: auto;
+        }
+    }
+
+    &__form-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        @media ($md) {
+            gap: 10px;
+        }
+    }
+
+    &__form-save-btn {
+        margin-right: auto;
+    }
+
+    &__form-change-password-btn {
+        width: 164px;
+    }
+    &__form-delete-profile-btn {
+        color: var(--red-color);
+        font-size: .75rem;
+        font-weight: 500;
+        border: none;
+        background: none;
+    }
+}

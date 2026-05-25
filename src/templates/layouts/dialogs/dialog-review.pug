@@ -1,0 +1,21 @@
+#js-modal-review.review-dialog.dialog
+    .review-dialog__head 
+        .review-dialog__initial-info
+            h4.review-dialog__date Заказ от 10.08.2024
+            span.review-dialog__number №699087
+    .review-dialog__main(data-order-review)
+        include /components/star-rating
+        p.review-dialog__main-question(data-order-review-text) Вам понравился заказ?
+        .review-dialog__form 
+            h4.review-dialog__form-text Что вам понравилось?
+            .mb-3
+                +textarea('Достоинства', '', 4, '', true)
+            .mb-3
+                +textarea('Недостатки', '', 4, '', true)
+            .mb-3
+                +textarea('Комментарий', '', 4, '', true)
+
+            .mt-4
+                button.btn(data-fancybox data-src="#js-modal-success") Отправить
+            .mt-1
+                +formAgreement('review-dialog__form-agreement')

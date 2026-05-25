@@ -1,0 +1,23 @@
+.blog-slider-wrapper
+    .blog-slider.js-blog-slider
+        .blog-slider__wrapper
+            - for (let i = 0; i < 4; i++)
+                .blog-slider__item
+                    .blog-slider-item
+                        a.blog-slider-item__image-wrap(href="#" title="")
+                            img.blog-slider-item__image(src="/src/assets/upload/blog.png" alt="alt")
+                        .blog-slider-item__content
+                            .blog-slider-item__title 
+                                a(href="#" title) Какую стоматологическую установку Swident выбрать – PARTNER или PARTNER EVO?
+                            .blog-slider-item__actions
+                                a.btn.btn_sm.btn_bordered.blog-slider-item__btn(href="#" title="Смотреть подробнее") Смотреть подробнее
+
+        .d-flex.justify-content-center
+            .pagination.blog-slider__pagination.js-blog-slider-pagination
+    
+    .slider-action._prev.blog-slider-action.js-blog-slider-prev
+        +svgIcon('arrow-left')
+    .slider-action._next.blog-slider-action.js-blog-slider-next
+        <svg class="icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 18L16 13L11 8V18Z" fill="#295365"/>
+        </svg>

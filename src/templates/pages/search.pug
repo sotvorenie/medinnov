@@ -1,0 +1,15 @@
+extends /layouts/_template
+
+block main
+    section.search-section
+        img.search-section__img(src="/src/assets/search-img.svg" alt="search")
+        .search-section__cont
+            h1.search-section__title По вашему запросу ничего #[br] не найдено
+
+            p.search-section__description 
+                | Попробуйте изменить формулировку 
+                br
+                | или воспользуйтесь нашим каталогом
+
+            .search-section__actions
+                a.btn(href="/catalog.html" title="В каталог") В каталог

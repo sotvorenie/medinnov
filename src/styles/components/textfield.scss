@@ -1,0 +1,48 @@
+.textfield {
+    font-size: .875rem;
+    position: relative;
+    display: block;
+
+    &__name {
+        color: var(--grey-color);
+        position: absolute;
+        top: -9px;
+        left: 16px;
+        display: flex;
+        text-shadow: 
+        1px 1px 0 white,
+        -1px 1px 0 white,
+        1px -1px 0 white,
+        -1px -1px 0 white; 
+    }
+
+    &__input {
+        border: none;
+        padding: 15px 10px;
+        border-radius: 7px;
+        border: 1px solid var(--light-grey-color);
+        width: 100%;
+        background: var(--white-color);
+
+        &::placeholder {
+            color: var(--grey-line);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &_required {
+        .textfield {
+
+            &__name {
+                &::after {
+                    content: '*';
+                    color: var(--red-color);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

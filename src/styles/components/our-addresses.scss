@@ -1,0 +1,109 @@
+.our-addresses {
+    &__title {
+        margin: 0;
+        margin-bottom: 26px;
+    }
+
+    &__block {
+        padding: 30px;
+        background: var(--white-color);
+        border-radius: 15px;
+
+        @media ($lg) {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        @media ($md) {
+            padding: 12px;
+        }
+    }
+
+    &__block-main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+        @media ($lg) {
+            gap: 20px;
+        }
+
+        @media ($sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__block-info {
+        width: 100%;
+
+        a {
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        &:nth-child(1) {
+            max-width: 35%;
+    
+            p:nth-child(2) {
+                text-decoration: underline;
+            }
+    
+            @media ($lg) {
+                max-width: unset;
+            }
+        }
+
+        &:nth-child(2) {
+            max-width: 25%;
+
+            @media ($lg) {
+                max-width: unset;
+            }
+        }
+    
+        &:nth-child(3) {
+            max-width: 30%;
+    
+            @media ($lg) {
+                max-width: unset;
+            }
+        }
+    
+        p {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        button {
+            width: 252px;
+        }
+    
+        @media ($lg) {
+            flex: 1 1 calc(50% - 10px);
+        }
+    }
+
+    &__block-title {
+        color: var(--primary-color);
+    }
+
+    &__block-map {
+        margin-top: 26px;
+        min-height: 336px;
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+    
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        @media ($lg) {
+            margin-top: 0;
+            flex: 1 1 calc(50% - 10px);
+        }
+    }
+}

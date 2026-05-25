@@ -1,0 +1,57 @@
+block footer
+    footer.footer
+        .container 
+            .footer__top
+                .footer__mobile-tabs
+                    .footer__mobile-tabs-item._active(title="Компания" data-footer-tab="footer-tab-0") Компания
+                    .footer__mobile-tabs-item(title="Покупателям" data-footer-tab="footer-tab-1") Покупателям
+
+                .row
+                    .col-12.col-sm-3.col-md-3.col-lg-4
+                        h3.footer__title.d-none.d-sm-block Компания
+                        nav.footer-menu._active#footer-tab-0
+                            each item in footerNavigationCompany
+                                .footer-menu__item(class=(item.name==="Каталог") ? "_active" : "")
+                                    a.footer-menu__link(href=item.href title=item.name)= item.name
+                            
+                        
+                    .col-12.col-sm-3.col-md-4.col-lg-4
+                        h3.footer__title.d-none.d-sm-block Покупателям
+                        nav.footer-menu#footer-tab-1
+                            each item in footerNavigationBuyers
+                                .footer-menu__item
+                                    a.footer-menu__link(href=item.href title=item.name)= item.name
+
+                    .col-12.col-sm-6.col-md-5.col-lg-4.mt-4.mt-sm-0
+                        h3.footer__title ОСТАЛИСЬ ВОПРОСЫ? ЗВОНИТЕ!
+                        div
+                            a(href="tel:8(800)7008058" title="8 (800) 700-80-58") #[b 8 (800) 700-80-58]
+                        .mt-1 пн-пт 9.30-18.00
+                        .mt-1.mt-sm-2
+                            a(href="mailto:info@dentex.ru" title="info@dentex.ru") 
+                                b info@dentex.ru
+
+                        .mt-3.mt-sm-4.d-flex
+                            a.btn.footer__contacts-btn(href="#js-modal-feedback" title="Обратный звонок" data-fancybox) Обратный звонок
+
+                        .mt-3.mt-sm-4
+                            include /components/socials
+
+                        .mt-3.mt-sm-4
+                            a.footer-developer(href="/" title="Доктор маркетинг")
+                                img.footer-developer__img(src="/src/assets/developer.svg", alt="")
+
+
+            .footer__bottom
+                .row
+                    .col-12.col-sm-4
+                        .footer__copyright 
+                            | 1993-2024 © ООО "Дентекс". 
+                            br
+                            | Все права защищены.
+                    .col-12.col-sm-4.mt-3.mt-sm-0
+                        .footer__privacy
+                            a(href="/privacy.html" title="Политика конфиденциальности") Политика конфиденциальности
+                    .col-12.col-sm-4.mt-3.mt-sm-0
+                        .footer__agreement
+                            a(href="/privacy.html" title="Пользовательское соглашение ") Пользовательское соглашение 

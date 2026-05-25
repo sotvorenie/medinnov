@@ -1,0 +1,97 @@
+
+{
+    "headerMenu": [
+        {
+            "href": "/catalog.html",
+            "name": "Каталог",
+            "active": true
+        },
+        {
+            "href": "/about.html",
+            "name": "О компании",
+            "items": [
+                {
+                    "href": "#",
+                    "name": "О компании",
+                    "active": true
+                },
+                {
+                    "href": "#",
+                    "name": "Портфолио"
+                },
+                {
+                    "href": "#",
+                    "name": "Производители"
+                },
+                {
+                    "href": "#",
+                    "name": "Партнеры"
+                },
+                {
+                    "href": "#",
+                    "name": "Вакансии"
+                },
+                {
+                    "href": "#",
+                    "name": "Новости"
+                },
+                {
+                    "href": "#",
+                    "name": "Видеообзоры"
+                }
+            ]
+        },
+        {
+            "href": "/actions.html",
+            "name": "Акции",
+            "pin": true
+        },
+        {
+            "href": "#",
+            "name": "Услуги",
+            "items": [
+                {
+                    "href": "#",
+                    "name": "Протезирование"
+                },
+                {
+                    "href": "#",
+                    "name": "Сервис",
+                    "active": true
+                },
+                {
+                    "href": "#",
+                    "name": "Подбор персонала"
+                },
+                {
+                    "href": "#",
+                    "name": "Доставка и оплата"
+                },
+                {
+                    "href": "#",
+                    "name": "Гарантийная поддержка"
+                },
+                {
+                    "href": "#",
+                    "name": "Рассрочка"
+                },
+                {
+                    "href": "#",
+                    "name": "Лизинг"
+                }
+            ]
+        },
+        {
+            "href": "/blog.html",
+            "name": "Блог"
+        },
+        {
+            "href": "/contacts.html",
+            "name": "Контакты"
+        },
+        {
+            "href": "/help.html",
+            "name": "Помощь"
+        }
+    ]
+}

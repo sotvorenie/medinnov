@@ -1,0 +1,78 @@
+extends /layouts/_template
+
+block variables
+    - var hideBreadcrumbs = true;
+    - var currentNav = "/my-orders.html";
+    - var h1 = "Заказы";
+
+block main
+    .my-orders
+        .profile-main-container
+            include /components/profile-nav
+            .my-orders__main 
+                h3.my-orders__main-title История заказов
+                .my-orders__list
+                    - for (let i = 0; i < 3; i++)    
+                        .my-orders__item(id=`item-${i}`)
+                            a.my-orders__item-head(data-accordeon-toggle, href=`#item-${i}`)
+                                .my-orders__item-initial-info
+                                    h4.my-orders__item-date Заказ от 10.08.2024
+                                    span.my-orders__item-number №699087
+                                .my-orders__item-status-info 
+                                    if (i % 3 === 0)
+                                        .my-orders__item-status.my-orders__item-status_placed Оформлен
+                                    else if (i % 3 === 1)
+                                        .my-orders__item-status.my-orders__item-status_received Получен
+                                    else if (i % 3 === 2)
+                                        .my-orders__item-status.my-orders__item-status_on-the-way В пути
+                                    
+                                    .my-orders__item-total-price Сумма: 358 000 ₽
+                                .my-orders__item-arrow-down-icon
+                                    +svgIcon('arrow-down')
+                            .my-orders__item-main-info 
+                                .my-orders__item-main-info-block
+                                    p Доставка по адресу:
+                                    p г. Санкт-Петербург, ул. Новая 121к2, 159000
+                                .my-orders__item-main-info-block
+                                    p Получатель
+                                    p Петров Иван Андреевич 
+                                        a(href="tel:+79168888888") +7 (916) 888 88-88
+                                .my-orders__item-main-info-block
+                                    p Оплата
+                                    p Безналичный расчет
+                                .my-orders__item-main-info-block
+                                    p Доставка
+                                    p Транспортная компания
+                            .my-orders__item-footer-btns
+                                a.btn.btn_transparent(href="#js-modal-review", data-fancybox) Оценить заказ
+                                button.btn Повторить
+                            .my-orders__item-content(data-accordeon-content)
+                                .my-orders__goods-list
+                                    - for (let i = 0; i < 3; i++)
+                                        .my-orders__goods-item
+                                            .my-orders__goods-item-img-container 
+                                                img.my-orders__goods-item-img(src="/src/assets/upload/section.png" alt="Стоматологическое оборудование")
+                                            .my-orders__goods-item-info
+                                                h3.my-orders__goods-item-title KLT-6210 N1 Lower - стоматологическая установка с нижней подачей
+                                                .my-orders__goods-item-prices
+                                                    span.my-orders__goods-item-actual-price.h3 169 500 ₽
+                                                    span.my-orders__goods-item-old-price 210 500 ₽
+
+                                                .my-orders__goods-item-settings
+                                                    .my-orders__goods-item-setting
+                                                        span.my-orders__goods-item-setting-name Цвет:
+                                                        span.my-orders__goods-item-setting-value 
+                                                            div.radio-color
+                                                                div.radio-color__box
+                                                                    span.radio-color__box-color(style='background-color: #f00')
+                                                    .my-orders__goods-item-setting
+                                                        span.my-orders__goods-item-setting-name Тип подачи инструментов:
+                                                        span.my-orders__goods-item-setting-value Нижняя
+                                                    .my-orders__goods-item-setting
+                                                        span.my-orders__goods-item-setting-name Вариант обивки:
+                                                        span.my-orders__goods-item-setting-value Бесшовная
+
+                                                .my-orders__goods-item-footer
+                                                    a.btn.btn_transparent(href="#js-modal-review", data-fancybox) Оценить товар
+                                                    span 1 шт
+                    

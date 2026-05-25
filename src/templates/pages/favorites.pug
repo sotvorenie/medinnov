@@ -1,0 +1,69 @@
+extends /layouts/_template
+
+block variables
+    - var hideBreadcrumbs = true;
+    - var currentNav = "/favorites.html";
+    - var h1 = "Избранные товары";
+
+block main
+    .favorites
+        .profile-main-container
+            include /components/profile-nav
+            .favorites__main
+                .favorites__main-head
+                    +checkbox('Выбрать все', 'favorites__main-select-all-checkbox js-favorites-select-all-checkbox', false)
+                    .favorites__main-sort
+                        include /components/catalog/catalog-sort
+                    button.favorites__remove-selected-btn(data-fancybox, data-src="#js-modal-delete") Удалить выбранные
+
+                .favorites__empty
+                    h2.text-center Ваш список избранного пуст
+                    img.d-block.mx-auto(src="/src/assets/empty-favorites.svg", alt="")
+                    .mt-4 
+                        a.btn.btn_full.m-auto(href="/catalog.html" title="Каталог") Перейти в каталог
+
+                .favorites__list
+
+                    - for (let i = 0; i < 3; i++)
+                        .favorites__item(data-favorites-goods data-delete-item)
+                            .favorites__item-img-container 
+                                img.favorites__item-img(src="/src/assets/upload/section.png" alt="Стоматологическое оборудование")
+                                +checkbox('', 'favorites__item-checkbox js-favorites-single-checkbox')
+                            .favorites__item-info
+                                h3.favorites__item-title 
+                                    a(href="/product.html") KLT-6210 N1 Lower - стоматологическая установка с нижней подачей
+                                .favorites__item-prices
+                                    span.favorites__item-actual-price.h3 169 500 ₽
+                                    span.favorites__item-old-price 210 500 ₽
+                                .favorites__item-footer
+                                    .favorites__item-heart-icon(data-toggle-action data-delete-trigger)
+                                        +svgIcon('heart')
+                                    div.flex-1
+                                        button.btn.favorites__item-btn(data-toggle-action data-add-to-basket)
+                                            .favorites__item-btn-icon.btn__icon
+                                                +svgIcon('cart')
+                                            .favorites__item-btn-text.btn__text В корзину
+
+                                        a.btn.btn_bordered.favorites__item-btn(href="/basket.html")
+                                            .favorites__item-btn-icon.btn__icon
+                                                +svgIcon('cart')
+                                            .favorites__item-btn-text.btn__text Перейти в корзину
+                    
+                    .favorites__item(data-favorites-goods data-delete-item)
+                        .favorites__item-img-container 
+                            img.favorites__item-img(src="/src/assets/upload/section.png" alt="Стоматологическое оборудование")
+                            +checkbox('', 'favorites__item-checkbox js-favorites-single-checkbox')
+                        .favorites__item-info
+                            h3.favorites__item-title KLT-6210 N1 Lower - стоматологическая установка с нижней подачей
+                            .favorites__item-prices
+                                span.favorites__item-actual-price.h3 169 500 ₽
+                                span.favorites__item-old-price 210 500 ₽
+                            .favorites__item-footer
+                                span.favorites__item-availability-text Нет в наличии
+                                .favorites__item-heart-icon(data-toggle-action data-delete-trigger)
+                                    +svgIcon('heart')
+                                div.flex-1
+                                    .favorites__item-btn.btn.btn_secondary(data-fancybox, data-src="#js-modal-notify")
+                                        .favorites__item-btn-icon.btn__icon
+                                            +svgIcon('bell')
+                                        .favorites__item-btn-text.btn__text Уведомить

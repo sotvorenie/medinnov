@@ -1,0 +1,199 @@
+.reviews-slider-wrapper {
+    position: relative;
+}
+.reviews-slider {
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    &_horizontal {
+        touch-action: pan-y;
+    }
+
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    &__item {
+        align-items: stretch;
+        display: flex;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        padding: 18px 10px 16px;
+        width: 58%;
+
+        @media ($lg) {
+            padding: 18px 10px 16px;
+            width: 80%;
+        }
+        @media ($sm-up) {
+            height: 100%;
+        }
+        @media ($sm) {
+            padding: 18px 4px 16px;
+            width: 100%;
+        }
+    }
+}
+
+.reviews-slider-item {
+    align-items: stretch;
+    background: var(--white-color);
+    border-radius: 15px;
+    box-shadow: 1px 4px 10px rgba(#2D2E38, 0.07);
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0;
+    width: 100%;
+
+    @media ($sm) {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    &__head {
+        margin-right: -92px;
+        position: relative;
+
+        @media ($sm) {
+            align-items: center;
+            display: flex;
+            justify-content: start;
+            margin-right: 0;
+            margin-top: 8px;
+            order: 2;
+        }
+    }
+    &__avatar-wrapper {
+        border-radius: 15px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        padding-top: 100%;
+        width: 250px;
+        z-index: 0;
+
+        @media ($sm) {
+            @include sizeSquare(48px);
+
+            border-radius: 10px;
+            overflow: hidden;
+            padding-top: 0;
+            z-index: 3;
+        }
+    }
+    &__avatar {
+        @include sizeSquare(100%);
+
+        display: block;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+    }
+    &__cont {
+        background: var(--white-color);
+        border-radius: 15px;
+        box-sizing: border-box;
+        min-height: 250px;
+        padding: 40px 24px 40px 32px;
+        position: relative;
+        z-index: 2;
+
+        @media ($lg) {
+            padding: 20px 16px 20px 20px;
+        }
+        @media ($sm) {
+            background: transparent;
+            border-radius: 0;
+            font-size: .75rem;
+            min-height: initial;
+            padding: 0;
+        }
+    }
+    &__text {
+        color: var(--grey-color);
+
+        > * {
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__quote {
+        @include size(63px, 46px);
+
+        left: 32px;
+        object-fit: contain;
+        object-position: center;
+        position: absolute;
+        top: -18px;
+        z-index: 3;
+
+        @media ($lg) {
+            @include size(50px, 38px);
+
+            left: 24px;
+        }
+        @media ($sm) {
+            @include size(44px, 32px);
+
+            left: 0;
+            top: -32px;
+        }
+    }
+    &__head-cont {
+        align-items: start;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        left: 0;
+        position: absolute;
+        z-index: 3;
+
+        @media ($sm) {
+            margin-left: -10px;
+            position: relative;
+            z-index: 0;
+        }
+    }
+    &__date {
+        background: var(--yellow-color);
+        border-radius: 0 20px 20px 0;
+        color: var(--text-color);
+        font-size: .875rem;
+        font-weight: bold;
+        line-height: 1.2;
+        padding: 6px 12px 5px;
+        
+        @media ($sm) {
+            font-size: .75rem;
+            padding: 5px 12px 4px;
+        }
+    }
+    &__name {
+        background: var(--text-color);
+        border-radius: 0 20px 20px 20px;
+        color: var(--white-color);
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 1.2;
+        padding: 6px 12px 5px;
+
+        @media ($sm) {
+            border-radius: 0 20px 20px 0;
+            font-size: .75rem;
+            padding: 5px 12px 4px;
+        }
+    }
+}

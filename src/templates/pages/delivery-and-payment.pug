@@ -1,0 +1,60 @@
+extends /layouts/_template
+
+block variables
+    - var hideTitle = true;
+
+block main
+    .delivery-and-payment
+        .delivery-and-payment__head._delivery
+            h1.delivery-and-payment__head-title Доставка
+            p.delivery-and-payment__head-text Живёте далеко от Москвы? Мы без проблем доставим ваш заказ в любую точку России любым удобным для вас способом. Строгий контроль качества на всех этапах поставки гарантирует целостность и сохранность даже самого сложного стоматологического оборудования. <br><br> У нас есть собственный склад в Москве, на нём всегда находится стоматологическая мебель и запасные части, более 100 стоматологических установок различных моделей, большое количество рентгенологического, стерилизационного и другого стоматологического оборудования. Это позволяет отгружать многие позиции в день заказа, не ожидая поставок со склада производителя.
+        .delivery-and-payment__info-block
+            +svgIcon('info')
+            p.h3.delivery-and-payment__info-block-text По вопросам доставки заказов обращайтесь по телефону: 
+                a(href="tel:+74951111111") +7 (495) 111-11-11
+                |  или на почту 
+                a(href="mailto:info@dentex.ru") info@dentex.ru
+        .delivery-and-payment__delivery-list.section_white
+            each item in deliveryAccordeonItems
+                .delivery-and-payment__delivery-item
+                    .delivery-and-payment__delivery-item-head.h5(data-accordeon-toggle)
+                        | #{item.title}
+                        .delivery-and-payment__delivery-item-head-icon
+                            +svgIcon('arrow-down')
+                    .delivery-and-payment__delivery-item-content(data-accordeon-content)
+                        p #{item.content}
+        .delivery-and-payment__head._payment(id="payment")
+            h1.delivery-and-payment__head-title Оплата
+            p.delivery-and-payment__head-text Оплату заказа можно произвести безналичным расчётом, а также с применением платежных карт и наличных денежных средств.
+            .delivery-and-payment__head-img 
+                img(src="/src/assets/upload/delivery-and-payment/visa.png", alt="")
+                img(src="/src/assets/upload/delivery-and-payment/mastercard.png", alt="")
+                img(src="/src/assets/upload/delivery-and-payment/mir.png", alt="")
+                img(src="/src/assets/upload/delivery-and-payment/maestro.png", alt="")
+        .delivery-and-payment__payment-options
+            .delivery-and-payment__payment-options-item
+                h4 Безналичный расчет
+                p Отгрузка производится при поступлении денежных средств на счет компании, сроки прохождения платежа между банками могут составлять до 3-х рабочих дней.
+            .delivery-and-payment__payment-options-item
+                h4 Наличный расчет
+                p Оплата заказов клиентами - юридическими лицами наличными возможна в пределах 100 000 руб.
+                p Оплата картами производится только в пункте самовывоза. К оплате принимаются карты платежных систем: Visa, MasterCard, МИР, Maestro.
+            .delivery-and-payment__payment-options-item
+                h4 Рассрочка оплаты
+                p Для покупки оборудования в рассрочку предлагаем использовать услугу 
+                    a(href="#") финансовый аренды - лизинга оборудования.
+            .delivery-and-payment__payment-options-item
+                h4 Оплата онлайн платежными картами
+                p Частные лица могут произвести оплату онлайн платежными картами Банковские карты.
+                p Внимание: При оплате картами или через платежные системы уточняйте лимиты операций и банка, обслуживающего ваши платежные карты.
+            .delivery-and-payment__payment-options-item
+                h4 Оплата с помощью смартфона
+                p Частные лица могут произвести оплату с помощью смартфона через платежные системы:
+                    br
+                    a(href="#") - СБП
+                    br
+                    a(href="#") - Yandex Pay
+            .delivery-and-payment__payment-options-item
+                a.btn(href="#js-modal-feedback", data-fancybox) Связаться с нами
+
+

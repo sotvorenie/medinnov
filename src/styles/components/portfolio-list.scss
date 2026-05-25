@@ -1,0 +1,92 @@
+.portfolio-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+
+    @media ($lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media ($sm) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.portfolio-list-item {
+    background: transparent;
+    border-radius: 15px;
+    box-shadow: 0 0 0 rgba($color: #0C0C0D, $alpha: 0);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    transition: all var(--transition-speed);
+    width: 100%;
+
+    &:hover {
+        background: var(--white-color);
+        box-shadow: 0 6px 15.2px 6px rgba($color: #0C0C0D, $alpha: 10%);
+        text-decoration: underline;
+
+        .portfolio-list-item__img {
+            transform: scale(1.05);
+        }
+    }
+
+    &__img {
+        @include sizeSquare(100%);
+
+        display: block;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        transform: scale(1);
+        transition: transform var(--transition-speed);
+        z-index: 1;
+    }
+    &__img-wrap {
+        border-radius: 15px;
+        display: block;
+        margin-bottom: 6px;
+        overflow: hidden;
+        padding-top: 69.4444444%;
+        position: relative;
+    }
+    &__location {
+        background: var(--primary-color);
+        border-radius: 9px;
+        color: var(--white-color);
+        font-size: 16px;
+        font-weight: 700;
+        left: 16px;
+        line-height: 1.2;
+        max-width: calc(100% - 50px);
+        padding: 5px 10px;
+        position: absolute;
+        top: 16px;
+        z-index: 3;
+
+        @media ($sm) {
+            font-size: 14px;
+            max-width: calc(100% - 40px);
+            padding: 5px 8px;
+        }
+    }
+    &__name {
+        align-items: center;
+        background: #f5f5f5;
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: var(--text-color);
+        display: flex;
+        flex: 1;
+        font-size: 1rem;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 1.2;
+        padding: 6px;
+        text-align: center;
+        width: 100%;
+    }
+}

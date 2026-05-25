@@ -1,0 +1,28 @@
+{
+    "designObjects": [
+        {
+            "img": "/src/assets/upload/design/1.png",
+            "text": "Кабинеты рентген-диагностики"
+        },
+        {
+            "img": "/src/assets/upload/design/2.png",
+            "text": "Косметология, СПА, реабилитационные и санаторны-курортные центры"
+        },
+        {
+            "img": "/src/assets/upload/design/3.png",
+            "text": "Многопрофильные медицинские центры"
+        },
+        {
+            "img": "/src/assets/upload/design/4.png",
+            "text": "Многопрофильные медицинские центры"
+        },
+        {
+            "img": "/src/assets/upload/design/5.png",
+            "text": "ЦСО и дизинфекционные отделения"
+        },
+        {
+            "img": "/src/assets/upload/design/6.png",
+            "text": "Чистые помещения"
+        }
+    ]
+}

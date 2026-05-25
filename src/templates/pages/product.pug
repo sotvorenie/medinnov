@@ -1,0 +1,10 @@
+extends /layouts/_template
+
+block main
+    include /components/catalog/product-detail
+
+    section.section.py-0
+        h2.section__title.h1 Рекомендуем
+
+        .section__content
+            include /components/catalog/products-slider

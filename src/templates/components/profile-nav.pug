@@ -1,0 +1,5 @@
+aside.profile-nav
+    .profile-nav__list
+        each item in profileNavItems
+            a.profile-nav__item(href=item.link, class=(item.link === currentNav) && 'profile-nav__item_active') #{item.title}
+    button.profile-nav__logout-btn.btn Выйти

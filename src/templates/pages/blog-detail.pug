@@ -1,0 +1,55 @@
+extends /layouts/_template
+
+block main
+    .blog-detail
+        .blog-detail__info
+            .blog-detail__info-data
+                img(src="/src/assets/upload/blog-detail/date.svg", alt="Иконка", style="padding-bottom: 4px")
+                span 9 сентября 2024
+            .blog-detail__info-data
+                img(src="/src/assets/upload/blog-detail/effective.svg", alt="Иконка")
+                span 15 минут
+        .blog-detail__content-nav
+            h3 Содержание
+            ol
+                li
+                    a(href="#clinical-case") Клинический случай:
+                li
+                    a(href="#treatment-plan") План лечения:
+                li
+                    a(href="#procedure") Процедура лазерного отбеливания зубов:
+        .blog-detail__main-media
+            .blog-detail__main-media-img
+                img(src="/src/assets/upload/blog-detail/img.png", alt="")
+            .blog-detail__main-media-video
+                video(src="/src/assets/upload/video.mp4")
+                button.play
+        .blog-detail__clinical-case(id="clinical-case")
+            h2.blog-detail__clinical-case-title Клинический случай:
+            p.blog-detail__clinical-case-text Пациент 25 лет обратился в стоматологическую клинику с жалобами на желтовато-коричневый оттенок зубов на верхней и нижней челюстях. Пациент курит.
+        .blog-detail__treatment-plan(id="treatment-plan")
+            .blog-detail__treatment-plan-text
+                h4.blog-detail__treatment-plan-title План лечения:
+                p Было решено провести отбеливание зубов с помощью стоматологического диодного лазера Medency. <br><br>Преимущества использования стоматологического диодного лазера Medency Primo при отбеливании зубов:
+                ul 
+                    li Ускоренный процесс отбеливания: лазерное излучение  активирует отбеливающий гель, сокращая время отбеливания.
+                    li Повышенная эффективность: лазер усиливает действие отбеливающего геля, обеспечивая более заметные результаты.
+                    li Безопасность: диодный лазер излучает свет на определённой длине волны, которая безопасна для зубов и дёсен.
+                    li Комфорт: лазерное отбеливание безболезненно и не вызывает чувствительности зубов.
+                    li Долговременные результаты: лазерное отбеливание обеспечивает длительные результаты, сохраняющиеся до нескольких лет.
+            img.blog-detail__treatment-plan-img(src="/src/assets/upload/blog-detail/treatment-plan.png", alt="")
+        .blog-detail__procedure(id="procedure")
+            h5.blog-detail__procedure-title Процедура лазерного отбеливания зубов:
+            ol 
+                li Диагностика: стоматолог проводит осмотр, чтобы оценить состояние зубов и исключить  противопоказания к отбеливанию.
+                li Профессиональная чистка: зубы очищаются от зубного налёта и камня, чтобы обеспечить лучшее проникновение отбеливающего геля.
+                li На десну было нанесена паста Аксил для защиты.
+                li Нанесение отбеливающего геля: на зубы наносится 35% перекись водорода в виде геля.
+            img(src="/src/assets/upload/blog-detail/procedure.png", alt="Изображение процедуры")
+        .blog-detail__form
+            h4 Заказ эффективного расчета компрессионного оборудования для клиники
+            +textfield('Имя', 'Иван')
+            +textphone('Телефон', '+7 000 000 00')
+            +textarea('Комментарий', '')
+            button.btn Оставить заявку
+            +formAgreement()

@@ -1,0 +1,44 @@
+extends /layouts/_template
+
+block variables
+    - var title = "Главная";
+
+block main
+    section.section.mt-4.py-0 
+        include /components/index/top-section
+
+    section.section.py-0
+        include /components/index/categories-slider
+
+    section.section.section_white 
+        - var indexNumber = 1
+        include /components/index/products
+
+    section.section.py-0
+        include /components/index/top-section
+
+    section.section.section_white.mb-0
+        - var indexNumber = 2
+        include /components/index/products
+
+
+    include /components/index/about
+
+    section.section.py-0
+        h2.section__title.h1 Отзывы 
+
+        div
+            include /components/index/reviews-slider
+
+    include /components/index/blog-section
+    
+    
+    section.section.py-0
+        .d-flex.align-items-lg-center.flex-column.flex-lg-row.mb-3.mb-lg-5
+            h2.h1.section__title.my-0 Производители и поставщики
+            ul.my-0.mt-2.ms-4
+                li.ps-1 Более 50 мировых производителей #[br] медицинского оборудования
+
+        .section__content
+            include /components/producers-slider
+            

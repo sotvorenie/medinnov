@@ -1,0 +1,33 @@
+@import 'node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
+
+.fancybox {
+    &__backdrop {
+        background: rgba(41, 83, 101, 0.22);
+    }
+
+    &__content {
+        & > .f-button.is-close-btn {
+            color: var(--black-color);
+            top: 14px;
+            right: 14px;
+        }
+    }
+    &__slide.has-image>.fancybox__content {
+        background: #fff;
+        border-radius: 15px;
+        box-sizing: content-box;
+        max-height: 100%;
+        max-width: 100%;
+        padding: 36px 60px;
+
+        @media ($lg) {
+            padding: 30px;
+        }
+    }
+}
+
+.is-compact .fancybox__content>.f-button.is-close-btn {
+    background: none;
+    top: 0;
+    right: 0;
+}

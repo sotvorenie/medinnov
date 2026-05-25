@@ -1,0 +1,8 @@
+#js-modal-auth.dialog
+    .dialog__title Личный кабинет
+    .dialog__cont
+        form(data-validate-form)
+            .mb-3
+                +textfield('Введите номер телефона или логин', '+7 000 000 00', true)
+            .mt-4
+                button.btn.w-100(data-fancybox data-src="#js-modal-confirm") Получить код

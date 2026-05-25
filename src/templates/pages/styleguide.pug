@@ -1,0 +1,126 @@
+extends /layouts/_template
+
+//- block variables
+    //- - var title = "Style guide";
+//-     - var indexPage = false;
+
+block main
+    h1 Заголовок H1
+    h2 Заголовок H2
+    h3 Заголовок H3
+    h4 Заголовок H4
+    h5 Заголовок H5
+    h6 Заголовок H6
+
+    hr
+
+    p Параграф: Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aut magni error repellendus ducimus tempora dicta veritatis labore pariatur provident corrupti natus officiis ullam ratione repellat, amet, quidem, dolor quaerat?
+    hr
+    p Параграф: Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aut magni error repellendus ducimus tempora dicta veritatis labore pariatur provident corrupti natus officiis ullam ratione repellat, amet, quidem, dolor quaerat?
+    p Параграф: Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aut magni error repellendus ducimus tempora dicta veritatis labore pariatur provident corrupti natus officiis ullam ratione repellat, amet, quidem, dolor quaerat?
+
+    ul 
+        li Диагностика: стоматолог проводит осмотр, чтобы оценить состояние зубов и исключить противопоказания к отбеливанию.
+        li Профессиональная чистка: зубы очищаются от зубного налёта и камня, чтобы обеспечить лучшее проникновение отбеливающего геля.
+
+    ol
+        li Комфорт: лазерное отбеливание безболезненно и не вызывает чувствительности зубов.
+        li Долговременные результаты: лазерное отбеливание обеспечивает длительные результаты, сохраняющиеся до нескольких лет.
+
+    table
+        tbody
+            tr.thead
+                th Название
+                td Бюгельные протезы
+                td Импланты
+            tr
+                th Повреждение 
+                td Противоположная точка зрения подразумевает, что реплицированные с зарубежных источников, современные исследования формируют глобальную экономическую сеть и при этом —  превращены в посмешище, хотя само  их существование приносит несомненную пользу обществу.
+                td Учитывая ключевые сценарии поведения
+
+            tr
+                th Повреждение 
+                td 
+                    | Есть над чем задуматься: некоторые особенности внутренней политики, инициированные исключительно синтетически, объективно рассмотрены соответствующими инстанциями. 
+                    br
+                    br
+                    | В частности, повышение уровня гражданского сознания способствует повышению качества новых предложений. 
+                td Наше дело не так однозначно, как может показаться: современная методология разработки в значительной степени обусловливает важность позиций, занимаемых участниками в отношении поставленных задач.
+
+            tr
+                th Повреждение
+                td Следует отметить, что консультация с широким активом обеспечивает актуальность распределения внутренних резервов и ресурсов.
+                td С другой стороны, разбавленное изрядной долей эмпатии, рациональное мышление однозначно определяет каждого участника как способного принимать собственные решения касаемо поставленных обществом задач.
+
+    section.section.section_white
+        h2.h1.section_title Элементы форм
+        
+        .row 
+            .col-12.col-sm-6.col-lg-4.mb-4
+                +textfield('Имя', 'Иван')
+
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                +textphone('Телефон', '+7 000 000 00')
+                
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                +textmail('Email', 'example@mail.ru', false)
+                
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                +codefield('Введите код из смс', '_____', true)
+                
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                +switch('Товары со скидкой')
+                
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                +formAgreement()
+                
+            .col-12.mb-4 
+                +textarea('Комментарий ', '')
+                
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                .checkbox-list
+                    - for (let i = 0; i < 6; i++)
+                        +checkbox('Бренд ' + i, '', (i === 0))
+                
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                .checkbox-list
+                    - for (let i = 0; i < 6; i++)
+                        +radio('Бренд ' + i, '', (i === 0))
+
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                .radio-list
+                    +radioButton('Бесшовная', 'radio-2', '', true)
+                    +radioButton('Шовная', 'radio-2', '', false)
+                    +radioButton('Другая', 'radio-2', '', false, true)
+
+                .mt-3
+                    .h5 Цвет
+                    .radio-list
+                        div(data-more-item="false")
+                            +radioColor('#69A2AC', 'radio-3', '', true)
+                        div(data-more-item="false")
+                            +radioColor('#f00', 'radio-3', '')
+                        div(data-more-item="false")
+                            +radioColor('#0f0', 'radio-3', '')
+                        div(data-more-item="false")
+                            +radioColor('#00f', 'radio-3', '')
+                        div(data-more-item="true")
+                            +radioColor('#ff0', 'radio-3', '')
+                        div(data-more-item="true")
+                            +radioColor('#fff', 'radio-3', '')
+                        div(data-more-item="true")
+                            +radioColor('#000', 'radio-3', '', false, true)
+
+                        div.radio-list__more(data-show-more)
+                            span(data-text-show) Еще
+                            span(data-text-hide) Скрыть
+
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                .upload-btn-wrapper
+                    .upload-btn__img-wrap
+                    label.upload-btn
+                        img.icon(src="/src/assets/upload.svg" alt)
+                        input.upload-btn__inputfile(type='file' multiple data-max_length='5' accept='image/*')
+
+            .col-12.col-sm-6.col-lg-4.mb-4 
+                +file('Выберите файл')

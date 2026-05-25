@@ -1,0 +1,31 @@
+.breadcrumbs {
+    display: block;
+    font-size: 0.75rem;
+    margin: 0 0 36px;
+
+    @media ($lg) {
+        margin: 0 0 24px;
+    }
+
+    &__item {
+        color: var(--grey-color);
+        display: inline;
+
+        &:not(:last-child) {
+            &::after {
+                content: '/';
+                margin-inline: 0.5em;
+            }
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+        }
+    }
+}

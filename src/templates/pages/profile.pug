@@ -1,0 +1,48 @@
+extends /layouts/_template
+
+block variables
+    - var hideBreadcrumbs = true;
+    - var currentNav = "/profile.html";
+
+block main
+    .profile
+        .profile-main-container
+            include /components/profile-nav
+
+            form.profile__form(data-validate-form)
+                .profile__form-head
+                    h3.profile__form-title Мои данные
+
+                    a.profile__form-edit(data-toggle-profile-edit)
+                        +svgIcon('edit')
+                        span Редактировать профиль
+
+                    .profile__form-head-actions(data-toggle-profile-panel)
+                        button.btn.btn_bordered(type="button" data-cancel-profile-edit) 
+                            span.d-block.d-sm-none.profile__form-btn-icon
+                                +svgIcon('cross')
+                            span.d-none.d-sm-block Отмена
+                        button.profile__form-save-btn.btn(data-fancybox, data-src="#js-modal-success" type="submit") Сохранить
+                    
+
+                .profile__form-textfields(data-profile-edit)
+                    .form-row
+                        label(class='textfield textfield_required')
+                            span.textfield__name Имя 
+                            input.textfield__input(placeholder='Иван' value='Василий' disabled)
+                    .form-row
+                        label(class='textfield textfield_required')
+                            span.textfield__name Фамилия
+                            input.textfield__input(placeholder='Иванов' disabled)
+                    .form-row
+                        label(class='textfield textfield_required')
+                            span.textfield__name Отчество
+                            input.textfield__input(placeholder='Иванович' value="Алибабаевич" disabled)
+                    .form-row
+                        label(class='textfield')
+                            span.textfield__name Email
+                            input.textfield__input(type='email' placeholder='example@mail.ru' value="O7oEY@example.com" data-validate-type="email" disabled)
+
+                .profile__form-footer 
+                    button.profile__form-change-password-btn.btn.btn_bordered(data-fancybox, data-src="#js-modal-change-password" type="button") Сменить пароль
+                    button.profile__form-delete-profile-btn(data-fancybox, data-src="#js-modal-delete" type="button") Удалить профиль

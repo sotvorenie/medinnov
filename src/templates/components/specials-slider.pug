@@ -1,0 +1,45 @@
+.image-slider.js-image-slider
+    .image-slider__wrapper 
+        - for (let i = 0; i < 4; i++)
+            .image-slider__item
+                .specials-item
+                    .specials-item__head
+                        .specials-item__title Специальное предложение
+                    .specials-item__middle
+                        a.specials-item__img-wrap(href="#" title="slide " + i target="_blank" rel="noopener noreferrer")
+                            img.specials-item__img(src="/src/assets/upload/product-item.png", alt="slide " + i)
+
+                        .specials-item__cont
+                            .specials-item__discount
+                                | Скидка
+                                .specials-item__discount-value 15%
+                            .specials-item__price
+                                .specials-item__price-value 15 000 ₽
+                                .specials-item__price-old 20 000 ₽
+
+                            .specials-item__name
+                                a(href="#" title="Slide " + i target="_blank" rel="noopener noreferrer") KLT-6220 S6 Lower #{i} 
+                                | - стоматологическая установка с нижней подачей
+
+                            .specials-item__actions
+                                button.btn.specials-item__btn(data-toggle-action data-add-to-basket)
+                                    .specials-item__btn-icon.btn__icon
+                                        +svgIcon('cart')
+                                    .specials-item__btn-text.btn__text В корзину
+
+                                a.btn.btn_bordered.specials-item__btn(href="/basket.html")
+                                    .specials-item__btn-icon.btn__icon
+                                        +svgIcon('cart')
+                                    .specials-item__btn-text.btn__text Перейти в корзину
+
+
+    .slider-action.slider-action_sm._prev.image-slider-action.js-image-slider-prev
+        +svgIcon('arrow-left')
+    .slider-action.slider-action_sm._next.image-slider-action.js-image-slider-next
+        <svg class="icon" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 18L16 13L11 8V18Z" fill="currentColor"/>
+        </svg>
+
+    .d-flex.justify-content-center
+        .pagination.image-slider__pagination.js-image-slider-pagination
+

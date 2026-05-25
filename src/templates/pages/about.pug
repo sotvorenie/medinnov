@@ -1,0 +1,40 @@
+extends /layouts/_template
+
+block main
+    .about
+        section.about__head
+            .about__head-text-container
+                p.about__head-text Группа компаний «Дентекс» работает на медицинском рынке России с 1993 года и является крупнейшим поставщиком медицинского, стоматологического оборудования и расходных материалов.
+            .about__head-logo 
+                img(src="/src/assets/logo.svg", alt="Логотип dentex")
+        section.about__cards
+            .about__cards-item
+                h2.about__cards-item-title Комплексное открытие клиник
+                img.about__cards-item-img(src="/src/assets/upload/about/scissors.png", alt="")
+            .about__cards-item
+                h2.about__cards-item-title Проектирование
+                img.about__cards-item-img(src="/src/assets/upload/about/project.png", alt="")
+            .about__cards-item
+                h2.about__cards-item-title Монтаж и сервис
+                img.about__cards-item-img(src="/src/assets/upload/about/service.png", alt="")
+        section.about__company-info
+            .about__company-info-text 
+                p.about__company-info-text-main «Дентекс» – группа компаний, включающая в себя крупную партнерскую сеть, архитектурно-строительное бюро, сервисный центр и профессионально-учебную базу. <br><br> За 30 лет работы компания зарекомендовала себя как надежный поставщик медицинского и стоматологического оборудования, предлагающий комплексный подход к оснащению медицинских учреждений – от проектирования до обучения и обслуживания.
+                p.about__company-info-text-additional При участии компании регулярно открываются медицинские центры, стоматологические клиники, обновляются медицинские научные и учебные заведения. <br><br>Сегодня «Дентекс» – по праву один из ведущих комплексных поставщиков в медицинской и стоматологической индустрии.
+            img.about__company-info-img(src="/src/assets/upload/about/about-company.png", alt="")
+        section.about__video-block
+            h2.about__video-block-title Группа компаний дентекс
+            p.about__video-block-text Поставка медицинского и стоматологического оборудования, инструментов, расходных материалов, сервисное обслуживание, ведение обучающей деятельности, проектирование, строительство, лицензирование лечебных учреждений, ввод в эксплуатацию медицинских объектов, лечебная деятельность – мы работаем «под ключ».
+            .about__video-block-video
+                video(src="/src/assets/upload/video.mp4")
+                button.play
+        section.about__experts-work
+            h2.about__experts-work-title Работаете с экспертами
+            .about__experts-work-cards
+                each item in aboutExpertsInfo
+                    .about__experts-work-card
+                        .about__experts-work-card-text
+                            h4 #{item.title}
+                            p!= item.text
+        include /components/question-man.pug
+        include /components/our-addresses.pug

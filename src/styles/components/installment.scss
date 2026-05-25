@@ -1,0 +1,151 @@
+.installment {
+    &__subtitle {
+        color: var(--grey-color);
+        margin-bottom: 24px;
+    }
+
+    &__consult-btn {
+        width: 288px;
+        margin-bottom: 60px;
+
+        @media ($sm) {
+            width: 100%;
+        }
+    }
+
+    &__features {
+        background: var(--secondary-color);
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 100px;
+        gap: 58px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+
+        @media ($lg) {
+            padding: 30px;
+            gap: 24px;
+            margin-bottom: 100px;
+        }
+
+        @media ($md) {
+            padding: 20px 23px;
+            flex-direction: column;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__features-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    &__features-item-title {
+        margin-bottom: 0;
+    }
+
+    &__features-item-text {
+        color: var(--grey-color);
+        margin: 0;
+    }
+
+    &__additional-info {
+        margin-bottom: 158px;
+
+        @media ($md) {
+            margin-bottom: 85px;
+        }
+    }
+
+    &__additional-info-title {
+        font-size: 1.875rem;
+        font-weight: bold;
+        margin-bottom: 32px;
+    }
+
+    &__additional-info-content {
+        position: relative;
+        overflow: hidden;
+        padding: 50px;
+        border-radius: 15px;
+        background: 
+            var(--body-bg) url('/src/assets/installment-bg.png') repeat left center / auto 100%;
+            
+
+            @media ($lg) {
+                background: 
+                    var(--white-color) url('/src/assets/installment-bg-lg.png') repeat right center/ auto 100%;
+                padding: 30px;
+            }
+
+            @media ($sm) {
+                background-image: url('/src/assets/installment-bg-sm.png');
+                padding: 20px;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+                font-family: var(--font-title);
+            }
+
+            // &::before {
+            //     content: '';
+            //     position: absolute;
+            //     opacity: .1;
+            //     width: 100%;
+            //     height: 100%;
+            //     background: url('/src/assets/block-bg.jpg');
+            //     background-size: 300px;
+            //     bottom: 0;
+            //     left: 0;
+            //     z-index: 1;
+            // }
+    }
+
+    &__additional-info-labels {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 26px;
+        position: relative;
+        z-index: 2;
+
+        div {
+            color: var(--white-color);
+            font-family: var(--font-title);
+            font-size: 1rem;
+            padding: 8px;
+            background: var(--primary-color);
+            border-radius: 7px;
+            margin: 0;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font-size: 1.25rem;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+
+        @media ($md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__additional-info-text {
+        background: var(--white-color);
+        padding: 16px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+    }
+}

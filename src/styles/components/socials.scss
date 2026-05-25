@@ -1,0 +1,29 @@
+.socials {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: start;
+
+    &__item {
+        @include sizeSquare(36px);
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        
+        &:not(:hover) {
+            .icon {
+                > path {
+                    fill: var(--grey-color);
+                }
+            }
+        }
+
+        .icon {
+            path {
+                transition: fill .3s;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.producers-slider-wrapper
+    .producers-slider.js-producers-slider
+        .producers-slider__wrapper
+            - for (let i = 0; i < 8; i++)
+                .producers-slider__item
+                    a.producers-slider__item-wrapper(href="#" title="Производитель " + i target="_blank" rel="noopener noreferrer")
+                        img.producers-slider__item-img(src="/src/assets/upload/producers/" + (i % 3) + ".png", alt="")
+
+    .slider-action._prev.producers-slider-action.js-producers-slider-prev
+        +svgIcon('arrow-left')
+    .slider-action._next.producers-slider-action.js-producers-slider-next
+        <svg class="icon" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 18L16 13L11 8V18Z" fill="currentColor"/>
+        </svg>
+
+    .d-flex.justify-content-center
+        .pagination.producers-slider__pagination.js-producers-slider-pagination

@@ -1,0 +1,163 @@
+block header
+    header.header
+        .header__top
+            .container
+                .header__bottom-inner
+                    .header__logo
+                        if (indexPage)
+                            .header-logo
+                                img(src="/src/assets/logo.svg" alt="logo")
+                        else
+                            a.header-logo(href="/" title="Главная")
+                                img(src="/src/assets/logo.svg" alt="logo")
+
+                    .header__search
+                        a.btn.header__catalog-btn(href="/catalog.html" title="Каталог")
+                            +svgIcon('search-btn', "header__catalog-btn-icon d-block d-lg-none")
+                            span.d-none.d-lg-block Каталог
+
+                        include /components/header/header-search
+
+                    .header__actions
+                        .header__contacts
+                            a.header__phone(href="tel:+79050868992" title="+7 (905) 086-89-92") +7 (905) 086-89-92
+
+                        if !indexPage
+                            a.btn.header__user-btn(href="/profile.html" title="Кабинет")
+                                .icon-wrapper
+                                    +svgIcon('user')
+                                | Кабинет
+                        else
+                            a.btn.header__user-btn(href="#js-modal-auth" title="Войти" data-fancybox)
+                                .icon-wrapper
+                                    +svgIcon('user')
+                                | Войти
+
+                        div.header__action-wrap
+                            a.header__action._favorite(href="/favorites.html" title="Избранное")
+                                +svgIcon('heart')
+
+                            .header__action-content
+                                .header-action-dropdown.header-action-dropdown_right
+                                    .header-empty-action
+                                        .h3.mb-3 В списке нет избранного товара
+                                        img.d-block.mx-auto(src="/src/assets/empty-favorites.svg", alt="")
+                                        .mt-3
+                                            a.btn(href="/catalog.html" title="Перейти в каталог") Перейти в каталог
+
+                                    .header-filled-action
+                                        .header-filled-action__cont
+                                            .header-filled-action__list
+                                                - for (let i = 0; i < 4; i++)
+                                                .header-filled-action__item(data-delete-item)
+                                                    a.header-filled-action__item-img-wrap(href="#" title)
+                                                        img.header-filled-action__item-img(src="/src/assets/upload/product-item.png", alt="")
+                                                    .header-filled-action__item-cont
+                                                        .header-filled-action__item-title
+                                                            a(href="#" title) KLT-6210 N1 Lower - стоматологическая установка с нижней подачей
+
+                                                        .header-filled-action__item-actions
+                                                            button.header-filled-action__item-action._active(data-toggle-action data-delete-trigger)
+                                                                <svg class="icon" width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M18.1804 17.18C16.1589 19.1097 14.0977 20.5144 13.5045 20.9049C12.9079 20.511 10.847 19.1068 8.82584 17.1785C7.67549 16.081 6.55125 14.8262 5.7174 13.5036C4.88148 12.1778 4.35938 10.8187 4.35938 9.50279C4.35938 7.05799 6.43034 5.03711 9.01604 5.03711C10.7005 5.03711 12.2557 5.92664 13.0714 7.31175L13.5027 8.04426L13.9333 7.31131C14.7489 5.92311 16.3001 5.03711 17.9847 5.03711C20.5744 5.03711 22.6451 7.05822 22.6451 9.50279C22.6451 10.8188 22.1232 12.1781 21.2876 13.5043C20.4541 14.8271 19.3303 16.0823 18.1804 17.18Z" stroke="currentColor"/>
+                                                                </svg>
+
+                                                        .header-filled-action__item-bottom
+                                                            .header-filled-action__item-price 169 500 ₽
+                                        .mt-3
+                                            a.btn(href="/favorites.html" title="К списку избранного") К списку избранного
+
+                        div.header__action-wrap
+                            a.header__action._cart(href="/basket.html" title="Корзина")
+                                +svgIcon('cart')
+
+                            .header__action-content
+                                .header-action-dropdown.header-action-dropdown_right
+                                    .header-empty-action
+                                        .h3.mb-3 Ваша корзина пуста
+                                        img.d-block.mx-auto(src="/src/assets/empty-basket.svg", alt="")
+                                        .mt-3
+                                            a.btn(href="/catalog.html" title="Перейти в каталог") Перейти в каталог
+
+                                    .header-filled-action
+                                        .header-filled-action__cont
+                                            .header-filled-action__list
+                                                - for (let i = 0; i < 4; i++)
+                                                .header-filled-action__item(data-delete-item)
+                                                    a.header-filled-action__item-img-wrap(href="#" title)
+                                                        img.header-filled-action__item-img(src="/src/assets/upload/product-item.png", alt="")
+                                                    .header-filled-action__item-cont
+                                                        .header-filled-action__item-title
+                                                            a(href="#" title) KLT-6210 N1 Lower - стоматологическая установка с нижней подачей
+
+                                                        .header-filled-action__item-actions
+                                                            button.header-filled-action__item-action.header-filled-action__item-action_trash(data-delete-trigger)
+                                                                +svgIcon('trash')
+
+                                                        .header-filled-action__item-bottom
+                                                            .header-filled-action__item-counter
+                                                                .counter-spinner
+                                                                    .counter-spinner__minus(data-buy-minus)
+                                                                    input.counter-spinner__input(type="number" min="1" max="100" value="1" step="1" readonly  inputmode="numeric" pattern="\d*" data-buy-count)
+                                                                    .counter-spinner__plus(data-buy-plus)
+
+                                                            .header-filled-action__item-price 169 500 ₽
+
+                                        .mt-3
+                                            a.btn(href="/basket.html" title="В корзину") В корзину
+
+
+                    .header__mobile-actions
+                        button.mobile-menu-btn(title="Меню" data-menu-btn)
+                            <svg class="icon" width="46" height="36" viewBox="0 0 46 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.5195 9.5L39.5195 9.5" stroke="#1C1C1E" stroke-width="2.90323" stroke-linecap="round"/>
+                            <path d="M16.5195 26.5L39.5195 26.5" stroke="#1C1C1E" stroke-width="2.90323" stroke-linecap="round"/>
+                            <path d="M6.51953 17.5H39.5195" stroke="#1C1C1E" stroke-width="2.90323" stroke-linecap="round"/>
+                            </svg>
+
+                        .mobile-menu(data-menu)
+                            .mobile-menu__header
+                                button.mobile-menu__back(data-hide-menu)
+                                    +svgIcon('arrow-left')
+
+                                include /components/header/header-location
+
+                            .mobile-menu__content
+                                nav.header-menu-mobile
+                                    ul.header-menu-mobile__list
+                                        each item in headerMenu
+                                            li.header-menu-mobile__item(
+                                                class={
+                                                    '_active': item.active,
+                                                    '_pin': item.pin,
+                                                    '_dropdown': item.items
+                                                }
+                                            )
+                                                a.header-menu-mobile__link(href=item.href title=item.name)= item.name
+
+                                                if item.items
+                                                    .header-menu-mobile__arrow(data-accordeon-toggle)
+                                                        +svgIcon('arrow-down')
+
+                                                if item.items
+                                                    div(data-accordeon-content)
+                                                        ul.header-menu-mobile__submenu
+                                                            each subItem in item.items
+                                                                li.header-menu-mobile__submenu-item(
+                                                                    class={
+                                                                        '_active': subItem.active
+                                                                    }
+                                                                )
+                                                                    a.header-menu-mobile__submenu-link(href=subItem.href title=subItem.name)= subItem.name
+
+                            .mobile-menu__footer
+                                a.mobile-menu__footer-contacts(href="tel:+79050868992" title="+7 (905) 086-89-92") +7 (905) 086-89-92
+
+        .header__bottom
+            .container
+                .header__top-inner
+                    .header__menu
+                        include /components/header/header-menu
+
+                    .header__location
+                        include /components/header/header-location

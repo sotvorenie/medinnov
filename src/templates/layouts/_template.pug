@@ -1,0 +1,46 @@
+include _mixin
+
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+        meta(name='viewport', content='width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no')
+        title= (title || "Page title should be here")
+        meta(name="description", content="")
+        meta(name="keywords", content="")
+
+        link(rel='dns-prefetch' href='//fonts.googleapis.com')
+        link(href='/src/styles/styles.scss' rel='stylesheet')
+
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=01b11a81-4b43-4e7e-83cf-eb1336429e58&lang=ru_RU" type="text/javascript"></script>
+
+    body
+        #page-wrapper.page-wrapper
+            include /layouts/blocks/header
+
+
+            .page-container(class=(whitePage && "page-container--white"))
+                main.page-content
+                    .container
+                        if (!indexPage && !hideHead)
+                            if (!hideBreadcrumbs)
+                                include /components/breadcrumbs
+
+                            if (!hideTitle)
+                                h1.h1.main-title
+                                    | !{(h1) ? h1 :title}
+                                    if (h1Subtittle)
+                                        | &nbsp; 
+                                        span.main-title__subtext= h1Subtittle
+
+                        block main
+
+            include /layouts/blocks/footer
+            
+            include /layouts/blocks/bottom-panel
+
+        include /layouts/dialogs/dialogs
+
+        script(src='/src/scripts/main.js' type='module' defer)

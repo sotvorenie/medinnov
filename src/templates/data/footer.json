@@ -1,0 +1,50 @@
+{
+    "footerNavigationCompany": [
+        {
+            "href": "/catalog.html",
+            "name": "Каталог"
+        },
+        {
+            "href": "/about.html",
+            "name": "О компании"
+        },
+        {
+            "href": "/actions.html",
+            "name": "Акции"
+        },
+        {
+            "href": "#",
+            "name": "Производители"
+        },
+        {
+            "href": "/blog.html",
+            "name": "Блог и видеообзоры"
+        },
+        {
+            "href": "/contacts.html",
+            "name": "Контакты"
+        }
+    ],
+    "footerNavigationBuyers": [
+        {
+            "href": "#",
+            "name": "Как оформить заказ"
+        },
+        {
+            "href": "/delivery-and-payment.html",
+            "name": "Доставка"
+        },
+        {
+            "href": "/delivery-and-payment.html#payment",
+            "name": "Оплата"
+        },
+        {
+            "href": "#",
+            "name": "Обмен, возврат, гарантия"
+        },
+        {
+            "href": "/help.html",
+            "name": "Помощь"
+        }
+    ]
+}

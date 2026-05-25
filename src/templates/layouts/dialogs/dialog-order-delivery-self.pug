@@ -1,0 +1,134 @@
+#js-modal-delivery-self.dialog.dialog_xl
+    .dialog__cont
+        form(data-validate-form)
+            .row
+                .col-12.mb-3.col-lg-6.mb-lg-0
+                    .map-delievery(data-map-delivery-self data-zoom="12" data-center="55.76, 37.64")
+
+                    script.
+                        const mapsListDeliverySelf = document.querySelectorAll('[data-map-delivery-self]')
+                        mapsListDeliverySelf.forEach((mapItem, index) => {
+
+                            const id = 'map-block-delivery-self-' + index
+                            mapItem.id = id
+                            const coords = (mapItem.dataset.center) ? mapItem.dataset.center.split(',') : [55.76, 37.64];
+                            const zoom = (mapItem.dataset.zoom) ? mapItem.dataset.zoom : 11;
+
+                            function init() {
+                                const map = new ymaps.Map(id, {
+                                        center: coords,
+                                        controls: [],
+                                        zoom: zoom,
+                                        duration: 1000
+                                    }, {});
+
+                                //- map.geoObjects
+                                //-     .add(new ymaps.Placemark(coords, {
+                                //-         balloonContentHeader: title,
+                                //-         balloonContentBody: desc,
+                                //-         balloonContentFooter: '',
+                                //-         hintContent: title
+                                //-     }, {
+                                //-         preset: 'islands#icon',
+                                //-         iconColor: '#3EBEC4'
+                                //-     }))
+
+                                const mapSelfItems = document.querySelectorAll('[data-map-self-item]');
+                                mapSelfItems.forEach((item) => {
+                                    item.addEventListener('click', (e) => {
+                                        console.log('item', item)
+                                        const coords = (item.dataset.center) ? item.dataset.center.split(',') : [55.76, 37.64];
+                                        const zoom = (item.dataset.zoom) ? item.dataset.zoom : 11;
+                                        const title = (item.dataset.title) ? item.dataset.title : '';
+                                        const desc = (item.dataset.desc) ? item.dataset.desc : '';
+
+                                        map.geoObjects.removeAll()
+
+                                        map.geoObjects
+                                            .add(new ymaps.Placemark(coords, {
+                                                balloonContentHeader: title,
+                                                balloonContentBody: desc,
+                                                balloonContentFooter: '',
+                                                hintContent: title
+                                            }, {
+                                                preset: 'islands#icon',
+                                                iconColor: '#3EBEC4'
+                                            }))
+
+                                        map.setCenter(coords, zoom);
+                                    });
+                                });
+                            }
+
+                            ymaps.ready(init);
+
+                        });
+
+
+                .col-12.mb-3.col-lg-6.mb-lg-0.d-flex.flex-column
+                        .mb-3.pe-0.pe-lg-5
+                            .header-search.mb-4
+                                input.header-search__input(type="text" placeholder="Поиск")
+                                .header-search__actions
+                                    .header-search__reset-wrap
+                                        button.header-search__btn.header-search__reset(type="reset")
+                                            <svg class="icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 6L15 15M15 6L6 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    .header-search__submit-wrap
+                                        button.header-search__btn(type="submit")
+                                            <svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0346 12.8572C5.3718 12.8572 3.21317 10.6986 3.21317 8.03582C3.21317 5.37302 5.3718 3.21439 8.0346 3.21439C10.6974 3.21439 12.856 5.37302 12.856 8.03582C12.856 10.6986 10.6974 12.8572 8.0346 12.8572ZM2.57031 8.03582C2.57031 5.01798 5.01676 2.57153 8.0346 2.57153C11.0524 2.57153 13.4989 5.01798 13.4989 8.03582C13.4989 9.42908 12.9774 10.7005 12.1191 11.6657L15.3333 14.88C15.4588 15.0055 15.4588 15.209 15.3333 15.3345C15.2078 15.4601 15.0043 15.4601 14.8787 15.3345L11.6645 12.1203C10.6993 12.9787 9.42786 13.5001 8.0346 13.5001C5.01676 13.5001 2.57031 11.0537 2.57031 8.03582Z" fill="currentColor"/>
+                                            </svg>
+
+                            div
+                                .order-office.mt-4(data-map-self-item data-zoom="12" data-center="55.76, 37.64" data-title="Москва" data-desc="Какое-то описание")
+                                    .d-flex.align-items-center
+                                        .me-3
+                                            .order-office__title
+                                                .order-office__title-icon.me-1
+                                                    +svgIcon('marker')
+
+                                                | Офис в Москве с демозалом
+                                            .order-office__address 125284, Москва, Хорошевское шоссе, 12к1, эт. 3
+
+                                        .ms-auto.d-none.d-sm-block
+                                            .order-office__arrow
+                                                +svgIcon('arrow-right')
+
+                                    .d-flex.align-items-center.justify-content-spacebetween.mt-4
+                                        .order-office__schedule.me-3
+                                            | Пн - Пт: 9:30-18:00,
+                                            br
+                                            | Сб - Вс: выходные
+
+                                        time.order-office__date.ms-auto Сегодня
+                                        
+                                .order-office.mt-4(data-map-self-item data-zoom="12" data-center="50.595415, 36.587272" data-title="Белгород" data-desc="Какое-то описание")
+                                    .d-flex.align-items-center
+                                        .me-3
+                                            .order-office__title
+                                                .order-office__title-icon.me-1
+                                                    +svgIcon('marker')
+
+                                                | Офис в Белгороде
+                                            .order-office__address 125284, Белгород
+
+                                        .ms-auto.d-none.d-sm-block
+                                            .order-office__arrow
+                                                +svgIcon('arrow-right')
+
+                                    .d-flex.align-items-center.justify-content-spacebetween.mt-4
+                                        .order-office__schedule.me-3
+                                            | Пн - Пт: 9:30-18:00,
+                                            br
+                                            | Сб - Вс: выходные
+
+                                        time.order-office__date.ms-auto Сегодня
+
+
+                        .mt-auto.d-sm-flex.align-items-end.justify-content-spacebetween
+                            //- .mb-3.mb-sm-0.me-sm-3
+                            //-     include /components/product-super-short
+                            .flex-1
+                                button.btn.w-100(data-fancybox data-src="#js-modal-success") Забрать отсюда

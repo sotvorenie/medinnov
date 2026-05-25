@@ -1,0 +1,14 @@
+.pager 
+    .pager__more 
+        button.btn.btn_bordered.btn_sm(type="button") Показать ещё
+
+    .pager__list
+        - for (let i = 1; i < 5; i++)
+            .pager__list-item(class=(i === 1) && '_active')
+                a.pager__list-link(href="#" title) !{i}
+
+        .pager__list-item
+            span.pager__list-more ...
+
+        .pager__list-item
+            a.pager__list-link(href="#" title) 7

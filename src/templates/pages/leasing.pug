@@ -1,0 +1,52 @@
+extends /layouts/_template
+
+block main
+    .leasing
+        p.leasing__subtitle Стоматологический магазин «Дентекс» предлагает своим клиентам НОВЫЙ ИНСТРУМЕНТ СНИЖЕНИЯ ФИНАНСОВОЙ НАГРУЗКИ – ЛИЗИНГ стоматологического оборудования.
+        button.leasing__consult-btn.btn Получить консультацию
+        .leasing__definition
+            h3 Что такое лизинг?
+            p Это договор финансовый аренды, по которому арендатор (лизингополучатель) может использовать предварительно оговоренное имущество, приобретенное арендодателем (лизингодателем). Иными словами, лизинговая компания по просьбе арендатора приобретает оборудование и отдает в пользование с условием обязательного постепенного выкупа в течение срока договора.
+            ul
+                li По сути, лизингодатель финансирует приобретение арендатора: покупает оборудование, обеспечивает доставку, установку, наладку и т.п.
+                li Оборудование переходит в собственность арендатора после полного расчета по договору. 
+                li Гибкий механизм этой системы позволяет лизингополучателю получить право пользования оборудованием на определенный срок за посильную арендную плату.
+            p В отличие от классической аренды, в которой участвуют две стороны – арендатор и арендодатель, – лизинг оборудования происходит при участии трех сторон: лизингодатель, лизингополучатель и продавец (поставщик). Состав субъектов лизинга сокращается до двух, если продавец и лизингодатель являются одним и тем же лицом.
+        .leasing__conditions
+            h3 Условия лизинга <br> стоматологического оборудования
+            .leasing__conditions-list
+                .leasing__conditions-item 
+                    img.leasing__conditions-item-icon(src="/src/assets/upload/leasing/1.svg", alt="Иконка условия лизинга")
+                    .leasing__conditions-item-title от 
+                        span.leasing__conditions-item-text-big 10% 
+                        br
+                        span.leasing__conditions-item-text-mini аванс
+                .leasing__conditions-item 
+                    img.leasing__conditions-item-icon(src="/src/assets/upload/leasing/2.svg", alt="Иконка условия лизинга")
+                    .leasing__conditions-item-title от 
+                        span.leasing__conditions-item-text-big 1 
+                        | до 
+                        span.leasing__conditions-item-text-big 5 лет 
+                        br
+                        span.leasing__conditions-item-text-mini срок лизинга
+                .leasing__conditions-item 
+                    img.leasing__conditions-item-icon(src="/src/assets/upload/leasing/3.svg", alt="Иконка условия лизинга")
+                    .leasing__conditions-item-title не дольше 
+                        span.leasing__conditions-item-text-big 10 минут 
+                        br
+                        span.leasing__conditions-item-text-mini сбор документов
+            .leasing__condition-footer
+                button.leasing__conditions-btn.btn Получить консультацию
+                .leasing__condition-label
+                    .leasing__condition-label-icon 
+                        img.icon(src="/src/assets/leasing/info-label.svg", alt="")
+                    p Рассмотрение сделки до трех дней с учетом разрешения возможных вопросов службы управления рисками, а также дистанционного осмотра бизнеса клиента.
+        .leasing__features
+            h2.leasing__features-title В чем преимущества покупки в лизинг?
+            .leasing__features-list
+                each item, index in leasingFeaturesItems
+                    .leasing__features-item 
+                        img.leasing__features-item-icon(src=`/src/assets/leasing/${index + 1}.svg`, alt="Иконка преимущества")
+                        h4.leasing__features-item-title #{item.title}
+                        p.leasing__features-item-text #{item.text}
+        include /components/question-man.pug

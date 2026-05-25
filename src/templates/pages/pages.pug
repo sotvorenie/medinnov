@@ -1,0 +1,11 @@
+extends /layouts/_template
+
+//- block variables
+    //- - var title = "Style guide";
+//-     - var indexPage = false;
+
+block main
+    ol
+        each item in navigation
+            li
+                a(href="/" + item + ".html")=item

@@ -1,0 +1,49 @@
+extends /layouts/_template
+
+block variables
+    - var hideTitle = true;
+
+block main
+    .row
+        .col-12.col-lg-6.mb-4.mb-lg-0
+            h1.main-title.h1= title
+            p.text-grey Foshan Roson Medical Instruments с 2005 года занимается научно-исследовательской и производственной деятельностью на рынке стоматологического оборудования, которая подтверждена международными сертификатами SGS ISO, CE, ISO 13485 и GUANGDONG TOP BRAND PRODUCT.
+            p.text-grey
+                | Компания расположена на территории всемирно известной производственной площадок округа Фошань, китайской провинции Гуандун, являющейся крупнейшей производственной площадкой стоматологического оборудования в мире.
+                br
+                | Оборудование компании поставляется и пользуется популярностью более чем в 130 странах. 
+                br
+                | Девиз компании: «Отличное качество по лучшей цене!».
+                br
+                | Цель компании: Производить качественную продукцию и предоставлять хорошее сервисное обслуживание.
+                br
+                | Сотрудники компании направляют все свои усилия на доказательство того, что "сделано в Китае" - это признак отличного качества.
+
+        .col-12.col-lg-6
+            .manufacturer-label 
+                .manufacturer-label__text Группа компаний «Дентекс» является эксклюзивным дистрибьютором компании Foshan Roson Medical Instruments Co.
+                img.manufacturer-label__img(src="/src/assets/upload/producers/0.png", alt="")
+
+    section.section.section_white
+        section.section.mt-0.py-0
+            h2.section__title.h1 Акции бренда, проводимые компанией Дентекс
+
+            include /components/catalog/products-slider
+
+        section.section.mb-0.py-0
+            h2.section__title.h1 Продукция бренда, предлагаемая компанией Дентекс
+            .catalog-section
+                .d-block.d-lg-none
+                    include /components/catalog/section-head
+
+                .catalog-section__filter 
+                    include /components/catalog/filter
+
+                .catalog-section__content 
+                    .catalog-section__head.d-none.d-lg-block
+                        include /components/catalog/section-head
+
+                    .catalog-section__list
+                        include /components/catalog/products-list
+
+                        include /components/pager

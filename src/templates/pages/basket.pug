@@ -1,0 +1,76 @@
+extends /layouts/_template
+
+block main
+    .basket
+        .basket__empty
+            h2.text-center Ваша корзина пуста
+            img.d-block.mx-auto(src="/src/assets/empty-basket.svg", alt="")
+            .mt-4 
+                a.btn.btn_full.m-auto(href="/catalog.html" title="Каталог") Перейти в каталог
+
+        .basket__main
+            .basket__list
+                .basket__list-head
+                    +checkbox('Выбрать все', 'js-basket-select-all-checkbox')
+                    button.basket__remove-selected-btn(data-fancybox, data-src="#js-modal-delete") Удалить выбранные
+
+                - for (let i = 0; i < 3; i++)
+                    .basket__item(data-basket-goods)
+                        .basket__item-img-container 
+                            img.basket__item-img(src="/src/assets/upload/section.png" alt="Стоматологическое оборудование")
+                            +checkbox('', 'basket__item-checkbox js-basket-single-checkbox')
+                        .basket__item-info
+                            .basket__item-cont
+                                h3.basket__item-title KLT-6210 N1 Lower - стоматологическая установка с нижней подачей
+                                .basket__item-settings
+                                    span.basket__item-settings-name Цвет:
+                                    span.basket__item-settings-value 
+                                        div.radio-color
+                                            div.radio-color__box
+                                                span.radio-color__box-color(style="background-color: #84B4E0")
+                                .basket__item-settings
+                                    span.basket__item-settings-name Тип подачи инструментов:
+                                    span.basket__item-settings-value Нижняя
+                                .basket__item-settings
+                                    span.basket__item-settings-name Вариант обивки:
+                                    span.basket__item-settings-value Бесшовная
+
+                            .basket__item-actions
+                                .counter-spinner
+                                    .counter-spinner__minus(data-buy-minus)
+                                    input.counter-spinner__input(type="number" min="1" max="100" value="1" step="1" readonly  inputmode="numeric" pattern="\d*" data-buy-count)
+                                    .counter-spinner__plus(data-buy-plus)
+                                button.basket__item-delete-btn(data-basket-remove-item, data-fancybox, data-src="#js-modal-basket-item-delete")
+                                    +svgIcon('trash')
+                                    span Удалить
+                            .basket__item-prices
+                                span.basket__item-actual-price.h3 169 500 ₽
+                                span.basket__item-old-price 210 500 ₽
+
+                a.basket__return-btn.mt-3(href="/catalog.html")
+                    +svgIcon('arrow-left')
+                    span Вернуться к покупкам     
+
+            .basket__order-info.order-info
+                h3.order-info__title Ваш заказ
+                .order-info__data
+                    span 3 товара
+                    span
+                    span 370 000 ₽
+                .order-info__data
+                    span Скидка
+                    span
+                    span 90 000 ₽
+                .order-info__total.h4
+                    span Итого
+                    span 280 000 ₽
+                button.order-info__btn1.btn Перейти к оформлению
+                a.order-info__btn2.btn.btn_bordered(href="#js-modal-installment", data-fancybox) Оформить в рассрочку
+                p.order-info__bottom-text Заполните анкету и получите одобрение в течение нескольких минут
+            
+
+    section.section.section_white.my-0.section_padding
+        h2.section__title.h1 Рекомендуем
+
+        .section__content
+            include /components/catalog/products-slider

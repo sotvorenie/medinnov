@@ -1,0 +1,15 @@
+#js-modal-feedback.dialog
+    .dialog__title Остались вопросы?
+    .dialog__desc Подробно расскажем о продукции и услугах, подберем оптимальный вариант и предложим лучшие цены!
+    .dialog__cont
+        form(data-validate-form)
+            .mb-3
+                +textfield('Имя', 'Иван', true)
+            .mb-3
+                +textphone('Телефон', '+7 000 000 00', true)
+            .mb-3
+                +textarea('Комментарий ', '')
+            .mt-4
+                button.btn.w-100(type="submit") Оставить заявку
+
+            +formAgreement('installment-dialog__form-agreement')

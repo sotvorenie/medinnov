@@ -1,0 +1,8 @@
+.portfolio-list
+    - for (let i = 0; i < 12; i++)
+        a.portfolio-list-item(href="/portfolio-detail.html" title)
+            .portfolio-list-item__img-wrap
+                img.portfolio-list-item__img(src="/src/assets/upload/design/" + (i % 6 + 1) + ".png", alt="")
+                .portfolio-list-item__location Москва
+
+            .portfolio-list-item__name Стоматологическая клиника «Здоровые зубы»

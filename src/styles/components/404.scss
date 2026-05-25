@@ -1,0 +1,40 @@
+.error-section {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 60px auto;
+
+    @media ($lg) {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 48px auto;
+        text-align: center;
+    }
+    @media ($md) {
+        margin: 32px auto;
+    }
+    @media ($sm) {
+        margin: 24px auto;
+    }
+
+    &__img {
+        display: block;
+        flex: 1;
+        margin: auto;
+    }
+    &__cont {
+        display: block;
+    }
+    &__actions {
+        margin-top: 1rem;
+
+        .btn {
+            width: 342px;
+
+            @media ($lg) {
+                margin-inline: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+#js-modal-return-of-goods.dialog
+    .dialog__title Оставить заявку на возврат
+    .dialog__desc Наш специалист свяжется с Вами в ближайшее время
+    .dialog__cont
+        form(data-validate-form)
+            .mb-3
+                +textfield('Имя', 'Иван', true)
+            .mb-3
+                +textphone('Телефон', '+7 000 000 00', true)
+            .mb-3
+                +textarea('Комментарий ', '')
+            .mt-3
+                .upload-btn-wrapper
+                    .upload-btn__img-wrap
+                    label.upload-btn
+                        img.icon(src="/src/assets/upload.svg" alt)
+                        input.upload-btn__inputfile(type='file' multiple data-max_length='5' accept='image/*')
+            .mt-4
+                button.btn.w-100(data-fancybox data-src="#js-modal-success") Оставить заявку
+            +formAgreement('installment-dialog__form-agreement')

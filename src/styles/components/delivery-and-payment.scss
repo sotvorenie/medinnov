@@ -1,0 +1,186 @@
+.delivery-and-payment {
+    &__head {
+        padding: 30px;
+        background: var(--white-color) url('/src/assets/upload/delivery-and-payment/head-bg.png') no-repeat right bottom/ auto 100%;
+        border-radius: 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        &._delivery {
+            &::after {
+                content: url('/src/assets/upload/delivery-and-payment/truck.png');
+            }
+        }
+
+        &._payment {
+            &::after {
+                content: url('/src/assets/upload/delivery-and-payment/payment.png');
+            }
+        }
+
+        @media ($lg) {
+            background-size: 100%;
+            padding: 20px 12px;
+
+            &::after {
+                position: static;
+                align-self: flex-end;
+                margin-right: -12px;
+                margin-bottom: -20px;
+            }
+        }
+    }
+
+    &__head-text {
+        color: var(--blue-color);
+        font-size: 0.875rem;
+        margin: 0;
+        max-width: 600px;
+    }
+
+    &__head-img {
+        display: flex;
+        margin-top: 16px;
+    }
+
+    &__info-block {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 16px;
+        margin-bottom: 54px;
+
+        .icon {
+            @include sizeSquare(33px);
+            color: transparent;
+            flex-shrink: 0;
+
+            @media ($md) {
+                @include sizeSquare(24px);
+            }
+        }
+    }
+
+    &__info-block-text {
+        margin-bottom: 0;
+
+        a {
+            white-space: nowrap;
+        }
+
+        @media ($md) {
+            font-size: .875rem;
+        }
+    }
+
+    &__delivery-list {
+        padding: 60px 0;
+        background: var(--white-color);
+        margin-bottom: 60px;
+
+        @media ($lg) {
+            padding: 50px 0;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__delivery-item {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--light-grey-color);
+        cursor: pointer;
+
+        &:first-child {
+            border-top: 1px solid var(--light-grey-color);
+        }
+    }
+
+    &__delivery-item-head {
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+
+        &-icon {
+            @include sizeSquare(24px);
+
+            color: var(--black-color);
+            transform: rotate(0);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        &._active {
+            .delivery-and-payment__delivery-item-head-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__delivery-item-content {
+        color: var(--grey-color);
+        font-size: 0.875rem;
+        margin: 0;
+    }
+
+    &__payment-options {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 500px;
+        gap: 20px 39px;
+        margin-top: 28px;
+
+        @media ($lg) {
+            flex-wrap: nowrap;
+            height: auto;
+        }
+    }
+
+    &__payment-options-item {
+        background-color: var(--white-color);
+        border-radius: 15px;
+        padding: 24px;
+        max-width: calc(50% - 20px);
+        flex: 1 1 auto;
+
+        h4 {
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--grey-color);
+            margin: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        a:not(.btn) {
+             color: var(--primary-color);
+        }
+
+        &:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .btn {
+                width: 70%;
+            }
+        }
+
+        @media ($lg) {
+            padding: 20px;
+            max-width: unset;
+        }
+    }
+}

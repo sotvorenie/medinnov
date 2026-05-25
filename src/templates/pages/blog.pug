@@ -1,0 +1,37 @@
+extends /layouts/_template
+
+block variables
+    - var hideTitle = true;
+
+block main
+    .blog
+        .tabs 
+            .tabs__list
+                .tabs__list-item
+                    a.tabs__list-link(href="#blog", title="Блог" data-tab="product") Блог
+                .tabs__list-item
+                    a.tabs__list-link(href="#video-reviews", title="Видео обзоры" data-tab="product") Видео обзоры
+        .tabs__content(id="blog")
+            .blog__grid
+                each item in Array(9)
+                    a.blog__grid-item(href="/blog-detail.html") 
+                        .blog__grid-item-img
+                            img(src="/src/assets/upload/blog/blog.png", alt="Изображения блога")
+                        .blog__grid-item-info
+                            .blog__grid-item-info-head
+                                span 20.09.2024
+                                span Время чтения: 
+                                    span 15 мин
+                            p.blog__grid-item-title Отбеливание зубов с помощью стоматологического диодного лазера
+            include /components/pager
+        .tabs__content(id="video-reviews")
+            .blog__grid
+                each item in Array(9)
+                    .blog__grid-item
+                        a.blog__grid-item-img.blog__grid-item-video(href="https://rutube.ru/play/embed/c44313f2b3b79190431346823ac45289/" data-fancybox data-type="iframe" data-width="80%" data-height="60%") 
+                            img(src="https://rutube.ru/api/video/c44313f2b3b79190431346823ac45289/thumbnail/?redirect=1", alt="Изображения видеообзора")
+                            .play
+                        .blog__grid-item-info
+                            a.blog__grid-item-title(href="/video-review.html") Отбеливание зубов с помощью стоматологического диодного лазера
+            include /components/pager
+

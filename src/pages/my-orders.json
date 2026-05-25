@@ -1,0 +1,4 @@
+{
+    "title": "Мои заказы",
+    "template": "pages/my-orders.pug"
+}

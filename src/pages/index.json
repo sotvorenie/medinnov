@@ -1,0 +1,5 @@
+{
+  "title": "Главная",
+  "indexPage": true,
+  "template": "pages/index.pug"
+}

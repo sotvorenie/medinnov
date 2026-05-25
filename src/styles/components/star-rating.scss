@@ -1,0 +1,64 @@
+.star-rating {
+    font-size: 1rem;
+    overflow: hidden;
+    position: relative;
+
+    &__stars {
+        align-items: center;
+        color: var(--light-grey-color);
+        display: flex;
+        gap: .25em;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 1;
+
+        &_fill {
+            color: var(--yellow-color);
+            left: 0;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .icon {
+            @include sizeSquare(1em);
+
+            display: block;
+            min-width: 1em;
+            flex-shrink: 0;
+        }
+
+        &._1 {
+            .icon {
+                color: var(--yellow-color);
+            }
+        }
+
+        &._2 {
+            .icon:not(:nth-child(-n+1)) {
+                color: var(--yellow-color);
+            }
+        }
+        &._3 {
+            .icon:not(:nth-child(-n+2)) {
+                color: var(--yellow-color);
+            }
+        }
+
+        &._4 {
+            .icon:not(:nth-child(-n+3)) {
+                color: var(--yellow-color);
+            }
+        }
+
+        &._5 {
+            .icon:not(:nth-child(-n+4)) {
+                color: var(--yellow-color);
+            }
+        }
+    }
+
+}

@@ -1,0 +1,49 @@
+extends /layouts/_template
+
+block variables
+    - var hideTitle = true
+
+block main
+    .portfolio-detail
+        .row.mb-4
+            .col-12.col-lg-4
+                .portfolio-detail__img-wrap                    
+                    img.portfolio-detail__img(src="/src/assets/upload/design/1.png", alt="")
+                    .portfolio-detail__location Москва
+
+            .col-12.col-lg-8
+                h1.portfolio-detail__title.h1 Стоматологическая клиника «Здоровые зубы»
+                .portfolio-detail__desc.text-grey Группа компаний «Дентекс» полностью оснастила стоматологическую клинику «Здоровые Зубы» современным оборудованием, позволяющим обеспечить качественное медицинское обслуживание.
+
+        .text-grey
+            p Все оборудование соответствует нормам для лицензирования клиники, имеет необходимые регистрационные удостоверения и сертификаты:
+            ul 
+                li Две стоматологические установки Partner Evo Swident (Италия)
+                li Компрессор с осушителем DK50 Ekom (Словакия)
+                li Помпа VS 900 S Durr Dental (Германия)
+                li Два автоклава класса В Lina RIK W&H (Италия)
+                li Панорамный рентген Green 16 SC Vatech с функцией томографии и цефалостатом (Южная Корея)
+                li Визиограф EzSensor HD Vatech (Южная Корея)
+                li Настенный рентгеновский аппарат EzRay Air W Vatech (Южная Корея)
+                li Три интраоральных камеры EzCam Vatech (Южная Корея)
+                li Моечную термо-дезинфицирующую машину Hydrim C61WD-G4 SciScan (Канада) и т.д.
+
+    section.section.section_white
+        h2.section__title Фото проекта
+
+        .position-relative
+            .design-slider.js-design-slider
+                .design-slider__wrapper
+                    - for (let i = 0; i < 7; i++)
+                        //- a.design-slider__item(href="/upload/design/slider_" + i % 3 + ".png" title data-fancybox="portfolio-gallery") 
+                        a.design-slider__item(href="/src/assets/upload/design/slider_" + i % 3 + ".png" title data-fancybox="portfolio-gallery") 
+                            img(src="/src/assets/upload/design/slider_" + (i % 3 + 1) + ".png", alt="")
+
+                .slider-action._prev.design-slider-action.js-design-slider-prev
+                    +svgIcon('arrow-left')
+                .slider-action._next.design-slider-action.js-design-slider-next
+                    +svgIcon('arrow-right')
+
+
+    section.section.mb-0.pb-0
+        include /components/manager-woman.pug

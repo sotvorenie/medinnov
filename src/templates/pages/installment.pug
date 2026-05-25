@@ -1,0 +1,43 @@
+extends /layouts/_template
+
+block variables
+    - var h1 = "Стоматологическое оборудование в рассрочку";
+
+block main
+    .installment
+        p.installment__subtitle Кредитная заявка согласовывается одновременно в нескольких банках системы. 
+            br 
+            | Вам будут предложены наиболее выгодные условия кредитования, возможность отказа в таком случае минимальна.
+        button.installment__consult-btn.btn Получить консультацию
+        .installment__features
+            .installment__features-item
+                img.installment__features-icon(src="/src/assets/installment/1.svg", alt="Иконка")
+                h3.installment__features-item-title Удобство
+                p.installment__features-item-text Вы получаете уникальную возможность приобретать товары в кредит, без справок, имея только паспорт, без похода в банк.
+            .installment__features-item
+                img.installment__features-icon(src="/src/assets/installment/2.svg", alt="Иконка")
+                h3.installment__features-item-title Гибкость
+                p.installment__features-item-text Вы не ограничиваете себя финансовыми возможностями на данный момент времени.
+            .installment__features-item
+                img.installment__features-icon(src="/src/assets/installment/3.svg", alt="Иконка")
+                h3.installment__features-item-title Гибкость
+                p.installment__features-item-text Процедура согласования происходит по телефону, а для подписания договора кредитный менеджер приезжает к Вам домой или в офис.
+        .installment__additional-info
+            h2.installment__additional-info-title Оформляйте оборудование сейчас, а платите потом
+            .installment__additional-info-content
+                h3.installment__additional-info-content-title Беспроцентная рассрочка на стоматологическое оборудование от Дентекс по системе 0-0-12
+                .installment__additional-info-labels 
+                    div
+                        p 
+                            span 0 рублей 
+                            | – первоначальный взнос
+                    div
+                        p
+                            span 0 
+                            | – процентов переплаты
+                    div
+                        p 
+                            span 12 месяцев 
+                            | – срок погашения
+                .installment__additional-info-text Идеальный вариант, когда оборудование нужно срочно, а полной суммы пока нет. Оптимизируйте расходы вместе с нами. Уже сегодня вы можете стать обладателем качественного стоматологического оборудования для вашего кабинета. Без переплаты вы получаете оборудование, которое уже сегодня начнет приносить вам доход и работать на вас.
+        include /components/manager-woman.pug

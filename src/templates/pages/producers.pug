@@ -1,0 +1,59 @@
+extends /layouts/_template
+
+block main
+    p Когда компания выходит на международный уровень, у неё появляются клиенты и партнеры за пределами родной страны. Подобная тенденция показывает, насколько хорошо фирма справляется со своими обязательствами и лояльность международных компаний. Более 50 фирм-производителей медицинского и стоматологического оборудования выбрали компанию «Дентекс» в качестве своего бизнес-партнера.
+
+    section.section.py-0
+        .d-lg-flex.align-items-center.mb-4
+            h2.h1.mb-4.my-lg-0 Только лучшие производители
+
+            .d-flex.align-items-center.ms-lg-auto.justify-content-between.justify-content-sm-end
+                .catalog-sort
+                    .catalog-sort__label Сортировка:
+                    .catalog-sort__select
+                        .catalog-sort-select
+                            .catalog-sort-select__head
+                                span(data-sort-type) Все направления деятельности
+                                .catalog-sort-select__icon
+                                    +svgIcon("arrow-down")
+                                    
+                            .catalog-sort-select__dropdown
+                                .catalog-sort-select__dropdown-list
+                                    .catalog-sort-select__dropdown-item._current
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | Все направления деятельности
+                                    .catalog-sort-select__dropdown-item
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | 1 направления деятельности
+                                    .catalog-sort-select__dropdown-item
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | 2 направления деятельности
+                                    .catalog-sort-select__dropdown-item
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | 3 направления деятельности
+                    .catalog-sort__select
+                        .catalog-sort-select
+                            .catalog-sort-select__head
+                                span(data-sort-type) Все страны
+                                .catalog-sort-select__icon
+                                    +svgIcon("arrow-down")
+                                    
+                            .catalog-sort-select__dropdown
+                                .catalog-sort-select__dropdown-list
+                                    .catalog-sort-select__dropdown-item._current
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | Все страны
+                                    .catalog-sort-select__dropdown-item
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | 1 
+                                    .catalog-sort-select__dropdown-item
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | 2 
+                                    .catalog-sort-select__dropdown-item
+                                        a.catalog-sort-select__dropdown-link(href title)
+                                            | 3 
+
+        .producers-list
+            - for (let i = 0; i < 20; i++)
+                a.producers-list__item(href="/manufacturer.html" title="Производитель " + i)
+                    img.producers-list__iten-img(src="/src/assets/upload/producers/" + i % 3 + ".png", alt="")

@@ -1,0 +1,43 @@
+extends /layouts/_template
+
+block variables
+    - var h1 = "Сервисное обслуживание";
+
+block main
+    .service
+        p.service__subtitle Компания «Дентекс» гарантирует профессиональное решение любой технической проблемы на поставляемое медицинское оборудование.По вопросам сервисного обслуживания обращайтесь по тел.: 8 800 302 80 58
+        button.service__head-btn.btn Заявка на обслуживание
+        .service__producers 
+            h2.service__producers-title Мы работаем с оборудованием следующих производителей:
+            .service__producers-slider-container 
+                .service-producers-slider.js-service-producers-slider
+                    .service-producers-slider__wrapper
+                        each item, index in Array(6)
+                            a.service-producers-slider__item(href="#")
+                                img.service-producers-slider__item-img(src=`/src/assets/upload/service/producers/${index + 1}.png`, alt="")
+                .slider-action._prev.service-producers-slider-action.js-service-producers-slider-prev
+                    +svgIcon('arrow-left')
+                .slider-action._next.service-producers-slider-action.js-service-producers-slider-next
+                    +svgIcon('arrow-right')
+        .service__center-block 
+            p.service__center-block-text Компания «Дентекс» взаимодействует с авторизированным сервисным центром «СЦМТ», который имеет лицензию на техническое обслуживание медицинских изделий и источников ионизирующего излучения (рентгеновского оборудования). Мы гарантируем профессиональное решение любой технической проблемы на поставляемое стоматологическое оборудование. Все инженеры «СЦМТ» прошли обучение у производителей, имеют сертификаты и большой опыт практической работы. В распоряжении сервисного центра имеется необходимая материально-техническая база для монтажа и ремонта поставляемого оборудования, а также склад запасных частей.
+            .service__center-block-grid 
+                each item, index in serviceGridItems 
+                    .service__center-block-item 
+                        img(src=`/src/assets/upload/service/icons/${index + 1}.svg`, alt="")
+                        span #{item}
+        .service__licenses
+            h2.service__licenses-title Лицензии компании
+            .service__licenses-slider-container 
+                .service-licenses-slider.js-service-licenses-slider
+                    .service-licenses-slider__wrapper
+                        each item, index in Array(4)
+                            .service-licenses-slider__item(data-fancybox data-src=`/src/assets/upload/service/licenses/${index + 1}.png`)
+                                img.service-licenses-slider__item-img(src=`/src/assets/upload/service/licenses/${index + 1}.png`, alt="")
+                        .service-licenses-slider__item(data-fancybox data-src=`/src/assets/upload/service/licenses/1.png`)
+                            img.service-licenses-slider__item-img(src=`/src/assets/upload/service/licenses/1.png`, alt="")
+                    .slider-action._prev.service-licenses-slider-action.js-service-licenses-slider-prev
+                        +svgIcon('arrow-left')
+                    .slider-action._next.service-licenses-slider-action.js-service-licenses-slider-next
+                        +svgIcon('arrow-right')
+        include /components/manager-woman.pug

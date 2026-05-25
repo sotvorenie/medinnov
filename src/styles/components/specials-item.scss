@@ -1,0 +1,128 @@
+.specials-item {
+    background: var(--white-color);
+    border-radius: 15px;
+    box-sizing: border-box;
+    min-height: 250px;
+    padding: 11px 16px 11px 11px;
+
+    &__head {
+        margin: 0 0 18px;
+    }
+    &__title {
+        font-family: var(--font-title);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    &__middle {
+        display: flex;
+        gap: 12px;
+        justify-content: start;
+    }
+    &__img-wrap {
+        display: block;
+        flex: 0.78;
+    }
+    &__img {
+        display: block;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+    }
+    &__cont {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    &__discount {
+        align-items: start;
+        align-self: flex-start;
+        background: var(--black-color);
+        border-radius: 3px;
+        color: var(--white-color);
+        display: flex;
+        font-family: var(--font-title);
+        font-size: var(--font-size);
+        font-weight: 600;
+        justify-content: start;
+        line-height: 1.3;
+        margin: 0 0 8px;
+        padding: 0 0 0 6px;
+        width: fit-content;
+
+        &-value {
+            background: var(--red-color);
+            border-radius: 3px;
+            margin-inline-start: 4px;
+            margin-inline-end: -3px;
+            padding: 0 6px;
+        }
+    }
+    &__price {
+        align-items: baseline;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 1.125rem;
+        font-weight: 800;
+        gap: 10px;
+        justify-content: start;
+        margin-bottom: 12px;
+
+        &-old {
+            color: var(--grey-color);
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-decoration: line-through;
+        }
+    }
+    &__name {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+
+        display: -webkit-box;
+        height: 3 * 1.3em;
+        line-clamp: 3;
+        line-height: 1.3;
+        font-size: 0.875rem;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 12px;
+        
+
+        a {
+            color: var(--primary-color);
+
+            &:hover {
+                color: var(--blue-color);
+            }
+        }
+    }
+    &__actions {
+        margin-top: auto;
+    }
+    &__btn {
+        display: none;
+        max-width: 260px;
+        width: 100%;
+
+        &[data-add-to-basket] {
+            display: flex;
+        }
+        &._active {
+            display: none;
+
+            + .specials-item__btn {
+                display: flex;
+            }
+        }
+
+        &-icon {
+            @include sizeSquare(21px);
+        }
+        &-text {
+            margin: 0 auto;
+        }
+    }
+}

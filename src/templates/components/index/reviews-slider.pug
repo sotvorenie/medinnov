@@ -1,0 +1,30 @@
+.reviews-slider-wrapper
+    .reviews-slider.js-reviews-slider
+        .reviews-slider__wrapper
+            - for (let i = 0; i < 4; i++)
+                .reviews-slider__item
+                    .reviews-slider-item
+                        .reviews-slider-item__head
+                            .reviews-slider-item__avatar-wrapper
+                                picture.reviews-slider-item__avatar
+                                    source(srcset="/src/assets/upload/avatar-mobile.png", media="(max-width: 575.98px)")
+                                    source(srcset="/src/assets/upload/avatar-review.png", media="(min-width: 576px)")
+                                    img(src="/src/assets/upload/avatar-review.png", alt="")
+                            .reviews-slider-item__head-cont
+                                .reviews-slider-item__date 03.08.2024
+                                .reviews-slider-item__name Комиссаров Евгений
+
+                        .reviews-slider-item__cont
+                            img.reviews-slider-item__quote(src="/src/assets/quote.svg", alt="quote")
+                            .reviews-slider-item__text 
+                                p Открывая первый филиал клиники, я решил взять оборудование в лизинг, чтобы снизить риски. Дентекс оказался отличным партнером: оборудование качественное, а условия лизинга – прозрачные и удобные. Это помогло мне начать бизнес без больших вложений.
+                                p Команда Дентекс поддерживала на каждом этапе, от выбора  до оформления. 
+                                p Рекомендую эту компанию всем, кто ищет надежного поставщика с гибкими условиями.
+
+
+    .slider-action._prev.reviews-slider-action.js-reviews-slider-prev
+        +svgIcon('arrow-left')
+    .slider-action._next.reviews-slider-action.js-reviews-slider-next
+        <svg class="icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 18L16 13L11 8V18Z" fill="#295365"/>
+        </svg>

@@ -1,0 +1,47 @@
+.portfolio-detail {
+    &__img {
+        @include sizeSquare(100%);
+
+        display: block;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        transform: scale(1);
+        transition: transform var(--transition-speed);
+        z-index: 1;
+    }
+    &__img-wrap {
+        border-radius: 15px;
+        display: block;
+        margin-bottom: 6px;
+        overflow: hidden;
+        padding-top: 69.4444444%;
+        position: relative;
+    }
+    &__location {
+        background: var(--primary-color);
+        border-radius: 9px;
+        color: var(--white-color);
+        font-size: 16px;
+        font-weight: 700;
+        left: 16px;
+        line-height: 1.2;
+        max-width: calc(100% - 50px);
+        padding: 5px 10px;
+        position: absolute;
+        top: 16px;
+        z-index: 3;
+
+        @media ($sm) {
+            font-size: 14px;
+            max-width: calc(100% - 40px);
+            padding: 5px 8px;
+        }
+    }
+    &__title {
+        margin-bottom: 1rem;
+        margin-top: 1.25rem;
+    }
+}

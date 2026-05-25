@@ -1,0 +1,218 @@
+.blog-detail {
+    display: flex;
+    flex-direction: column;
+
+    &__info {
+        color: var(--grey-color);
+        font-family: var(--font-title);
+        font-size: 1rem;
+        font-weight: 400;
+        display: flex;
+        gap: 23px;
+        margin-bottom: 34px;
+
+        @media ($md) {
+            font-size: .75rem;
+        }
+    }
+
+    &__info-data {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        svg {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    &__content-nav {
+        margin-bottom: 40px;
+        ol {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin: 0;
+
+            @media ($md) {
+                font-size: .875rem;
+            }
+        }
+
+        li {
+            padding-left: 0;
+
+            a {
+                font-weight: 400;
+            }
+
+            &:hover {
+                a {
+                    color: var(--primary-color);
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__main-media {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 31px;
+
+        video {
+            max-width: 100%;
+        }
+
+        img, video {
+            aspect-ratio: 560 / 244;
+            border-radius: 15px;
+            object-fit: cover;
+            display: flex;
+            height: 100%;
+            width: 100%;
+
+            @media ($lg) {
+                aspect-ratio: 704 / 412;
+            }
+
+            @media ($md) {
+                aspect-ratio: 350 / 216;
+            }
+        }
+
+        @media ($lg) {
+            flex-direction: column;
+        }
+    }
+
+    &__main-media-img {
+        flex: 1;
+    }
+
+    &__main-media-video {
+        position: relative;
+        flex: 1;
+    }
+
+    &__clinical-case {
+        margin-bottom: 30px;
+    }
+
+    &__clinical-case-title {
+        margin-bottom: 12px;
+    }
+
+    &__clinical-case-text {
+        color: var(--grey-color);
+        font-family: var(--font-title);
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin: 0;
+
+        @media ($md) {
+            font-size: .875rem;
+        }
+    }
+
+    &__treatment-plan {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 36px;
+
+        @media ($lg) {
+            flex-direction: column;
+        }
+    }
+
+    &__treatment-plan-title {
+        font-family: var(--font-default);
+        font-weight: 800;
+        font-size: 1.25rem;
+    }
+
+    &__treatment-plan-text {
+        p {
+            color: var(--grey-color);
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            @media ($md) {
+                font-size: .875rem;
+            }
+        }
+
+        ul {
+            color: var(--grey-color);
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin: 0;
+
+            @media ($md) {
+                font-size: .875rem;
+            }
+        }
+
+        li {
+            padding-left: 0;
+        }
+    }
+
+    &__procedure {
+        ol {
+            color: var(--grey-color);
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 30px;
+
+            @media ($md) {
+                font-size: .875rem;
+            }
+        }
+
+        li {
+            padding-left: 0;
+        }
+
+        margin-bottom: 40px;
+    }
+
+    &__procedure-title {
+        font-size: 1rem;
+    }
+
+    &__form {
+        width: 660px;
+        max-width: 100%;
+        padding: 24px 35px;
+        border-radius: 15px;
+        background: var(--white-color);
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .textfield, .textarea {
+            margin-bottom: 18px;
+        }
+
+        @media ($md) {
+            padding: 23px;
+        }
+    }
+}

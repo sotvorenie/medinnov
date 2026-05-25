@@ -1,0 +1,4 @@
+{
+    "title": "Оформление заказа",
+    "template": "pages/order.pug"
+}
