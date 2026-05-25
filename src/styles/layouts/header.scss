@@ -6,7 +6,10 @@
 
     &__top {
         padding-block: 15px;
-        border-bottom: 1px solid var(--gray-color);
+
+        @media ($xl-up) {
+            border-bottom: 1px solid var(--gray-color);
+        }
 
         &-inner {
             align-items: center;
@@ -345,6 +348,10 @@
 
         &::placeholder {
             color: var(--gray-color);
+
+            @media ($md) {
+                color: var(--blue-color-dark);
+            }
         }
         &:placeholder-shown {
             + .header-search__actions .header-search__reset-wrap {
