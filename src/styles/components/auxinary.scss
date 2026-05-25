@@ -39,10 +39,6 @@
     transform: translateY(-50%);
     z-index: 3;
 
-    @media ($lg) {
-        display: none;
-    }
-
     &:hover {
         color: var(--primary-color);
     }
@@ -60,18 +56,20 @@
 
     &._prev {
         left: 0;
-        transform: translate(-50%, -50%);
-        
-        @media ($xl) {
-            transform: translate(-10px, -50%);
-        }
+        transform: translate(-10px, -50%);
     }
     &._next {
         right: 0;
-        transform: translate(50%, -50%);
-
-        @media ($xl) {
-            transform: translate(10px, -50%);
+        transform: translate(10px, -50%);
+    }
+    &._prev.__long {
+        @media ($md-up) {
+            transform: translate(-36px, -50%);
+        }
+    }
+    &._next.__long {
+        @media ($md-up) {
+            transform: translate(36px, -50%);
         }
     }
 
