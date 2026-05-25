@@ -460,12 +460,10 @@
 
         &-contacts {
             color: var(--grey-color);
-            font-family: var(--font-title);
             font-size: 1.875rem;
             font-weight: 600;
 
             @media ($sm) {
-                font-family: var(--font-default);
                 font-size: 1.25rem;
                 font-weight: 500;
             }
