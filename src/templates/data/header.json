@@ -12,12 +12,12 @@
             "items": [
                 {
                     "href": "#",
-                    "name": "О компании",
-                    "active": true
+                    "name": "О компании"
                 },
                 {
                     "href": "#",
-                    "name": "Портфолио"
+                    "name": "Портфолио",
+                    "active": true
                 },
                 {
                     "href": "#",

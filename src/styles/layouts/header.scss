@@ -2,32 +2,11 @@
     box-shadow: 0 4px 11px rgba(#211F24, 0.04);
     position: relative;
     z-index: 100;
+    background: var(--white-color);
 
     &__top {
-        padding-block: 12px 10px;
-        background: var(--body-bg);
-
-        @media ($xl) {
-            display: none;
-        }
-
-        &-inner {
-            align-items: center;
-            display: flex;
-            gap: 1rem;
-            justify-content: space-between;
-        }
-    }
-    &__bottom {
-        background: var(--white-color);
-        padding-block: 16px 15px;
-
-        @media ($xl) {
-            padding-block: 24px;
-        }
-        @media ($sm) {
-            padding-block: 16px 8px;
-        }
+        padding-block: 15px;
+        border-bottom: 1px solid var(--gray-color);
 
         &-inner {
             align-items: center;
@@ -40,8 +19,19 @@
             }
         }
     }
-    &__logo {
-        margin-inline-end: 2rem;
+    &__bottom {
+        padding-block: 12px 10px;
+
+        @media ($xl) {
+            display: none;
+        }
+
+        &-inner {
+            align-items: center;
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+        }
     }
     &__search {
         align-items: center;
@@ -73,17 +63,17 @@
         }
     }
     &__contacts {
-        margin-inline-end: 10px;
+        margin-inline-end: 100px;
     }
     &__phone {
-        color: var(--grey-color);
+        color: var(--blue-color-dark);
         white-space: nowrap;
     }
     &__actions {
         align-items: center;
         display: flex;
         gap: 10px;
-        margin-inline-start: 1rem;
+        margin-left: 15px;
 
         @media ($lg) {
             display: none;
@@ -95,28 +85,6 @@
 
         @media ($lg) {
             display: flex;
-        }
-    }
-    &__user-btn {
-        align-items: center;
-        display: flex;
-        gap: 12px;
-        height: 37px;
-
-        .icon-wrapper {
-            align-items: end;
-            background: var(--blue-color);
-            border-radius: 50%;
-            color: #1C9FA5;
-            display: flex;
-            justify-content: center;
-            height: 22px;
-            width: 22px;
-
-            .icon {
-                height: 20px;
-                width: 18px;
-            }
         }
     }
     &__action-wrap {
@@ -143,7 +111,7 @@
     }
     &__action {
         align-items: center;
-        color: var(--blue-color);
+        color: var(--primary-color);
         display: flex;
         height: 26px;
         justify-content: center;
@@ -220,6 +188,7 @@
         align-items: center;
         display: flex;
         gap: 1.3rem;
+        padding-block: 3px;
     }
     &__item {
         display: block;
@@ -273,11 +242,12 @@
                 margin-inline-start: 10px;
                 vertical-align: middle;
                 width: 0;
+                color: var(--blue-color-dark);
             }
         }
     }
     &__link {
-        color: inherit;
+        color: var(--blue-color-dark);
     }
     &__submenu-wrap {
         opacity: 0;
@@ -328,7 +298,7 @@
 
 .header-location {
     align-items: center;
-    color: var(--grey-color);
+    color: var(--blue-color-dark);
     display: flex;
     gap: 2px;
     justify-content: start;
@@ -355,9 +325,8 @@
         flex: 1;
     }
     &__input {
-        background: var(--white-color);
-        border: 1px solid var(--light-grey-color);
-        border-radius: 7px;
+        border: 1px solid var(--gray-color);
+        border-radius: 10px;
         color: var(--text-color);
         display: block;
         flex: 1;
@@ -375,7 +344,7 @@
         }
 
         &::placeholder {
-            color: var(--light-grey-color);
+            color: var(--gray-color);
         }
         &:placeholder-shown {
             + .header-search__actions .header-search__reset-wrap {
@@ -476,7 +445,7 @@
         align-items: center;
         background: transparent;
         border: none;
-        color: var(--text-color);
+        color: var(--blue-color-dark);
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -505,20 +474,28 @@
 }
 
 .header-menu-mobile {
-    color: var(--grey-color);
+    color: var(--blue-color-dark);
+
+    ul, li {
+        padding-inline-start: 0;
+    }
+
+    a {
+        font-family: var(--font-default);
+    }
 
     &__list {
         @include reset-list;
     }
     &__item {
         align-items: start;
-        border-bottom: 1px solid var(--grey-line);
         display: flex;
         flex-direction: column;
         gap: 16px;
         justify-content: start;
         margin-bottom: 16px;
         padding-bottom: 16px;
+        border-bottom: 1px solid var(--gray-color);
 
         &._active {
             > .header-menu-mobile__link {
