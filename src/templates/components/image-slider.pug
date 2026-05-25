@@ -3,7 +3,9 @@
         - for (let i = 0; i < 3; i++)
             .image-slider__item
                 a.image-slider__link(href="#" title="Slide " + i target="_blank" rel="noopener noreferrer")
-                    img.image-slider__img(src="/src/assets/upload/slide-" + i + ".png", alt="slide " + i)
+                    picture
+                        source(media="(max-width: 768px)" srcset="/src/assets/upload/slide-mobile.png")
+                        img.image-slider__img(src="/src/assets/upload/slide.png", alt="slide " + i)
 
     .slider-action.slider-action_sm.__long._prev.image-slider-action.js-image-slider-prev
         <svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">

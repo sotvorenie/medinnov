@@ -64,6 +64,10 @@
         object-fit: cover;
         object-position: center;
         width: 100%;
+
+        @media ($md) {
+            min-height: 150px;
+        }
     }
     &__pagination {
         margin-top: 16px !important;
