@@ -1,26 +1,33 @@
 .about-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    column-gap: 22px;
+    row-gap: 33px;
 
     @media ($lg) {
-        grid-template-columns: 1fr;
-    }
-    @media ($sm) {
-        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
 
     &__item {
-        background: var(--white-color) url("/src/assets/upload/about/experts-card-bg.png") no-repeat bottom right;
-        background-size: contain;
+        background: rgba(255,255,255,.35);
         border-radius: 15px;
-        color: var(--text-color);
         display: block;
-        min-height: 151px;
+        min-height: 175px;
         overflow: hidden;
         padding: 15px;
         position: relative;
+        color: var(--white-color);
+
+        &::after {
+            content: '';
+            right: 0;
+            position: absolute;
+            background: url("/src/assets/upload/about/experts-card-bg.png") no-repeat bottom right;
+            background-size: contain;
+            width: 100%;
+            height: calc(85%);
+            bottom: 0px;
+        }
 
         @media ($lg) {
             min-height: 90px;
@@ -35,6 +42,7 @@
             font-weight: bold;
             position: relative;
             z-index: 2;
+            max-width: 70%;
 
             @media ($lg) {
                 font-size: 1.125rem;

@@ -319,16 +319,25 @@ mark,
 			width: 100vw;
 			z-index: -2;
 		}
-		&:after {
-			background: rgba($blue-color, 0.82);
-			content: '';
-			height: 100%;
-			left: 50%;
-			position: absolute;
-			top: 0;
-			transform: translateX(-50%);
-			width: 100vw;
-			z-index: -1;
+
+		.row {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 100px;
+
+			@media ($lg) {
+				gap: 20px;
+				grid-template-columns: 1fr;
+			}
+
+			& > div {
+				padding: 0;
+			}
+		}
+		.btn {
+			background: var(--white-color);
+			color: var(--blue-color-dark);
+			border-color: var(--white-color);
 		}
 	}
 	&_blog {

@@ -1,21 +1,8 @@
 section.section.my-0.section_about 
     h2.section__title.h1 Группа компаний Дентекс
 
-    .row 
-        .col-12.col-sm-8.col-md-7.col-lg-7
-            .d-flex.mb-2
-                .bordered-text Лидеры
-            p Группа компаний «Дентекс» – один из крупнейших поставщиков медицинского, стоматологического оборудования, инструментов и расходных материалов в России от общепризнанных мировых производителей
-
-            .d-flex.mb-2
-                .bordered-text Что сейчас?
-            p В настоящее время «Дентекс» работает с более чем 50-ю крупнейшими фирмами-производителями медицинского оборудования из 20 стран мира. Основное отличие нашей компании – возможность выбора линейки оборудования и услуг
-            
-            .d-flex
-                a.btn.btn_full(href="#" title="Подробнее о компании") Подробнее о компании
-
-
-        .col-12.col-sm-4.col-md-3.offset-md-2.col-lg-5.offset-lg-0.mt-4.mt-sm-0
+    .row
+        div
             .about-grid
                 .about-grid__item
                     .about-grid__item-name 30+ лет #[br] на рынке
@@ -29,3 +16,24 @@ section.section.my-0.section_about
                 .about-grid__item
                     .about-grid__item-name Сервисный центр
                     img.about-grid__item-img(src="/src/assets/upload/about/4.png", alt="")
+
+        div
+            div.about__right-item
+                div
+                    .bordered-text Лидеры
+                    p Группа компаний «Дентекс» – один из крупнейших поставщиков медицинского, стоматологического оборудования, инструментов и расходных материалов в России от общепризнанных мировых производителей
+
+                div.img-wrapper
+                    img(src="/src/assets/upload/about/right-1.jpg")
+
+
+            div.about__right-item
+                div.img-wrapper
+                    img(src="/src/assets/upload/about/right-2.png")
+
+                div
+                    .bordered-text Что сейчас?
+                    p В настоящее время «Дентекс» работает с более чем 50-ю крупнейшими фирмами-производителями медицинского оборудования из 20 стран мира. Основное отличие нашей компании – возможность выбора линейки оборудования и услуг
+
+            .d-flex
+                a.btn.w-100(href="#" title="Подробнее о компании") Подробнее о компании
