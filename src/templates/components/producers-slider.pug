@@ -7,11 +7,11 @@
                         img.producers-slider__item-img(src="/src/assets/upload/producers/" + (i % 3) + ".png", alt="")
 
     .slider-action._prev.producers-slider-action.js-producers-slider-prev
-        +svgIcon('arrow-left')
+        svg(width="7" height="14" viewBox="0 0 7 14" fill="none")
+            path(d="M7 0L0 7L7 14L4.9 7L7 0Z" fill="#4C7DA7")
     .slider-action._next.producers-slider-action.js-producers-slider-next
-        <svg class="icon" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11 18L16 13L11 8V18Z" fill="currentColor"/>
-        </svg>
+        svg(width="7" height="14" viewBox="0 0 7 14" fill="none")
+            path(d="M0 14L7 7L0 0L2.1 7L0 14Z" fill="#4C7DA7")
 
     .d-flex.justify-content-center
         .pagination.producers-slider__pagination.js-producers-slider-pagination

@@ -36,13 +36,17 @@ block main
 
         button(type="button").products-more.mx-auto.d-block Показать еще
 
-    section.section.py-0
-        include /components/index/top-section
+    section.section.my-0.producers-section
+        .producers-block.d-flex.flex-column.flex-lg-row
+            h2.section__title
+                | Производители
+                br
+                | и поставщики
+            ul
+                li Более 50 мировых производителей #[br] медицинского оборудования
 
-    section.section.section_white.mb-0
-        - var indexNumber = 2
-        include /components/index/products
-
+        .section__content
+            include /components/producers-slider
 
     include /components/index/about
 
@@ -53,14 +57,4 @@ block main
             include /components/index/reviews-slider
 
     include /components/index/blog-section
-    
-    
-    section.section.py-0
-        .d-flex.align-items-lg-center.flex-column.flex-lg-row.mb-3.mb-lg-5
-            h2.h1.section__title.my-0 Производители и поставщики
-            ul.my-0.mt-2.ms-4
-                li.ps-1 Более 50 мировых производителей #[br] медицинского оборудования
-
-        .section__content
-            include /components/producers-slider
             

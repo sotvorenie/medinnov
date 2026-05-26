@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clickable: true,
             clickableClass: '_clickable',
             currentClass: '_current',
-            el: '.pagination',
+            el: '.producers-slider__pagination',
         },
         pauseOnMouseEnter: true,
         preloadImages: true,
