@@ -29,7 +29,7 @@
         max-height: 18px;
         width: 18px;
         height: 18px;
-        border: 1px solid var(--grey-line);
+        border: 1px solid #DADEE5;
         border-radius: 4px;
         background-color: transparent;
         display: flex;
@@ -46,7 +46,8 @@
     }
 
     &__text {
-        color: var(--grey-color);
+        color: var(--blue-color-dark);
+        font-weight: 500;
 
         .checkbox__input:disabled ~ & {
             color: #aaa;
@@ -54,8 +55,8 @@
     }
 
     .checkbox__input:checked + .checkbox__box {
-        background: $primary-color;
-        border-color: $primary-color;
+        background: var(--blue-color);
+        border-color: var(--blue-color);
 
         svg {
             opacity: 1;
@@ -64,7 +65,7 @@
     }
 
     &:hover .checkbox__box {
-        border-color: $primary-color;
+        border-color: var(--blue-color);
     }
 
     &__input:disabled + .checkbox__box {

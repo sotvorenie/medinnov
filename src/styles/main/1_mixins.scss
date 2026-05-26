@@ -41,3 +41,16 @@ $xxl: "max-width: 1599.98px";
 $xxl-up: "min-width: 1600px";
 $xxxl: "max-width: 1899.98px";
 $xxxl-up: "min-width: 1900px";
+
+.hidden-tablet {
+
+	@media ($lg) {
+		display: none !important;
+	}
+}
+.visible-tablet {
+
+	@media ($lg-up) {
+		display: none !important;
+	}
+}

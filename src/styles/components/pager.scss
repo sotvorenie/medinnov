@@ -10,10 +10,15 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        margin: 0 0 14px;
+        margin: 0 0 34px;
+
+        @media ($md) {
+            margin: 0 0 16px;
+        }
 
         .btn {
             min-width: 161px;
+            background: transparent;
         }
     }
     &__list {
@@ -22,7 +27,7 @@
         flex-direction: row;
         font-size: var(--font-size);
         font-weight: 700;
-        gap: 0;
+        gap: 5px;
         justify-content: center;
         line-height: 1.2;
 
@@ -36,12 +41,12 @@
         }
         &-link {
             align-items: center;
-            background: transparent;
             border-radius: 7px;
             display: flex;
             justify-content: center;
             min-height: 36px;
             min-width: 36px;
+            background: #DADEE5;
         }
     }
 }

@@ -1,4 +1,11 @@
 .filter {
+
+    @media ($lg-up) {
+        background: var(--white-color);
+        padding: 11px;
+        border-radius: 20px;
+    }
+
     &__trigger {
         @include sizeSquare(36px);
 
@@ -94,9 +101,7 @@
     }
     &__actions {
         align-items: center;
-        background: var(--body-bg);
         border-radius: 0 0 7px 7px;
-        box-shadow: 0 -7px 11px rgba(#211F24, 0.04);
         display: flex;
         gap: 5px;
         justify-content: stretch;

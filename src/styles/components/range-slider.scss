@@ -13,12 +13,11 @@
     }
     &__input {
         background: var(--white-color);
-        border: 1px solid var(--grey-line);
+        border: 1px solid #C6C6C6;
         border-radius: 9px;
-        color: var(--grey-color);
+        color: var(--blue-color-dark);
         display: block;
         flex: 1;
-        font-family: var(--font-title);
         font-size: var(--font-size);
         font-style: normal;
         font-weight: var(--font-weight);
@@ -31,7 +30,7 @@
             position: relative;
         }
         &-prepend {
-            color: var(--grey-color);
+            color: #C6C6C6;
             font-size: .75rem;
             left: 10px;
             pointer-events: none;

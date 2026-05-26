@@ -18,6 +18,10 @@
             }
         }
 
+        &:last-child {
+            color: var(--blue-color-dark);
+        }
+
         a {
             color: var(--text-color);
             text-decoration: none;
