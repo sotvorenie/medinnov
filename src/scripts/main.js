@@ -30,6 +30,7 @@ import './components/upload-images'
 import './components/favorites'
 import './components/basket'
 import './components/profile'
+import './components/special-offer-slider.js'
 
 /* adaptive */
 window.adaptive = adaptive;

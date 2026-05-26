@@ -1,0 +1,132 @@
+.special-offer-slider-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.special-offer-slider {
+  display: block;
+  position: relative;
+
+  &_horizontal {
+    touch-action: pan-y;
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  &__item {
+    @include sizeSquare(100%);
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto !important;
+
+    @media ($lg) {
+      width: 283px;
+    }
+    @media ($md) {
+      width: 210px;
+    }
+    @media ($sm) {
+      width: 167px;
+    }
+  }
+}
+
+.special-offer-slider-wrapper {
+
+  .product-item {
+    padding: 11px 19px;
+    border-radius: 30px;
+    background: var(--white-color);
+
+    @media ($md) {
+      padding: 16px 19px 11px;
+    }
+
+    &__special-title {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 20px;
+      margin: 0;
+      margin-bottom: 17px;
+
+      @media ($md) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+    }
+
+    &__head {
+      margin-bottom: 0;
+    }
+
+    &__img-wrapper {
+      width: 140px;
+      aspect-ratio: 140/189;
+      border-radius: 0;
+      background: var(--white-color);
+
+      img {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__chip {
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &__price {
+      flex-direction: column;
+      gap: 0;
+      font-size: 28px;
+      margin-bottom: 10px;
+
+      @media ($md) {
+        font-size: 26px;
+      }
+
+      &-old {
+        font-size: 14px;
+        color: var(--blue-color-dark);
+      }
+    }
+
+    &__desc {
+      color: #1C1C1EBD;
+      font-size: 11px;
+      -webkit-line-clamp: 6;
+      height: auto;
+
+      a {
+        color: var(--blue-color);
+        font-weight: 600;
+      }
+    }
+
+    &__bottom {
+      margin-top: 0;
+    }
+  }
+}
+
+.special-offer {
+
+  &__pagination {
+    margin-top: 12px;
+  }
+}

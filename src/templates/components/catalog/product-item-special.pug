@@ -1,0 +1,31 @@
+.product-item
+    p.product-item__special-title Специальное предложение
+
+    .product-item__content
+        .product-item__head
+            a.product-item__img-wrapper(href="/product.html")
+                img.product-item__img(src="/src/assets/upload/product-item.png" alt="KLT-6210 N1 Lower")
+
+                .product-item__chip.product-item__chip_discount Скидка 15%
+
+        .product-item__cont
+            .product-item__middle
+                .product-item__price
+                    | 80 500 ₽
+                    .product-item__price-old 95 500 ₽
+
+                .product-item__desc
+                        a(href="#") Отсасыватель Армед 7E-D
+                        span - Мощный переносной хирургический отсасыватель Армед 7E-D с вакуумным безмасляным компрессором поршневого типа.
+
+            .product-item__bottom
+                .product-item__actions
+                    button.btn.product-item__btn(data-toggle-action data-add-to-basket)
+                        .product-item__btn-icon.btn__icon
+                            +svgIcon('cart')
+                        .product-item__btn-text.btn__text В корзину
+
+                    a.btn.btn_bordered.product-item__btn(href="/basket.html")
+                        .product-item__btn-icon.btn__icon
+                            +svgIcon('cart')
+                        .product-item__btn-text.btn__text Перейти в корзину
