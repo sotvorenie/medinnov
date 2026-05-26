@@ -29,3 +29,41 @@
         flex-shrink: 0;
     }
 }
+.products-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 14px;
+    row-gap: 32px;
+
+    @media ($xl) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media ($lg) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+        row-gap: 15px;
+    }
+}
+
+.products-more {
+    margin-top: 40px;
+    border: 1px solid var(--blue-color-dark);
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    color: var(--blue-color-dark);
+    padding: 5px 33px;
+    background: transparent;
+    transition: all .2s;
+
+    &:hover {
+        background: var(--blue-color-dark);
+        color: var(--white-color);
+    }
+
+    @media ($lg) {
+        display: none !important;
+    }
+}

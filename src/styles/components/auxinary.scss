@@ -94,6 +94,8 @@
     align-items: center;
     display: inline-flex;
     justify-content: start;
+    color: var(--blue-color-dark);
+    font-weight: 600;
 
     .icon {
         @include sizeSquare(24px);

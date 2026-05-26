@@ -1,5 +1,17 @@
 // tabs
 .tabs {
+	.d-block {
+		background: #EAEAF5;
+		padding: 10px;
+		border-radius: 20px;
+		margin-bottom: 38px;
+
+		@media ($md) {
+			padding: 5px;
+			margin-bottom: 15px;
+		}
+	}
+
 	&__list {
 		align-items: center;
 		color: var(--blue-color);
@@ -9,21 +21,13 @@
 		font-weight: 600;
         gap: 5px;
 		justify-content: start;
-		margin: 0 0 40px;
 
         @media ($lg) {
 			gap: 2px;
-            margin: 0 0 16px;
             overflow-x: auto;
-			padding-bottom: 16px;
         }
         @media ($md) {
-            margin: 0 0 10px;
-			padding-bottom: 14px;
-        }
-        @media ($sm) {
-            margin: 0 0 6px;
-			padding-bottom: 14px;
+			max-width: 62%;
         }
 
 		&-item {
@@ -33,9 +37,8 @@
 		&-link {
 			align-items: center;
 			background: transparent;
-            border: 1px solid transparent;
             border-radius: 50px;
-			color: inherit;
+			color: var(--blue-color-dark);
 			display: flex;
 			font: inherit;
 			height: 38px;
@@ -52,17 +55,19 @@
 			}
 			@media ($sm) {
 				font-size: 0.75rem;
-				height: 33px;
-				padding: .25rem .5rem;
+				height: auto;
+				padding: 11px;
+
+				svg {
+					max-width: 11px;
+				}
 			}
 
 			&:hover {
 				color: var(--primary-color);
 			}
 			&._current {
-				background: transparent;
-                border-color: currentColor;
-				color: inherit;
+				background: var(--white-color);
 			}
 		}
 	}

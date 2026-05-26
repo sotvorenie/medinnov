@@ -30,9 +30,11 @@ block main
             .pagination.special-offer__pagination.js-special-offer-pagination
 
 
-    section.section.section_white
+    section.section.section_white.my-0
         - var indexNumber = 1
         include /components/index/products
+
+        button(type="button").products-more.mx-auto.d-block Показать еще
 
     section.section.py-0
         include /components/index/top-section
