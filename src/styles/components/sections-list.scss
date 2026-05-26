@@ -39,6 +39,21 @@
     position: relative;
     transition: all .3s;
 
+    &::after {
+        content: '';
+        position: absolute;
+        background: url('/src/assets/upload/section-list-ellipse.png') no-repeat;
+        width: 237px;
+        aspect-ratio: 237/176;
+        bottom: -26px;
+        right: -26px;
+        z-index: 1;
+
+        @media ($xl) {
+            width: 200px;
+        }
+    }
+
     @media ($sm) {
         padding: 20px;
     }
@@ -70,11 +85,12 @@
         max-width: 225px;
         position: relative;
         right: -26px;
-        top: -10px;
-        z-index: 0;
-        
+        bottom: -26px;
+        z-index: 2;
+
         @media ($xl) {
-            max-width: 35%;
+            max-width: 45%;
+            margin-top: -55px;
         }
         @media ($sm) {
             right: -20px;

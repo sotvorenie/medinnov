@@ -1,12 +1,10 @@
 .row 
-    - for (let j = 0; j < 2; j++)
-        .col-12.col-lg-6
+    - for (let j = 0; j < 3; j++)
+        .col-12.col-lg-4
             .sections-list
                 - for (let i = 0; i < 3; i++)
                     .sections-list__item
-                        .sections-list-item 
-                            img.sections-list-item__img(src="/src/assets/upload/section.png" alt="Стоматологическое оборудование")
-
+                        .sections-list-item
                             .sections-list-item__content
                                 .sections-list-item__title
                                     a(href="/category.html" title="Стоматологическое оборудование") Стоматологическое оборудование !{i} 
@@ -18,3 +16,5 @@
                                 .sections-list-item__more(data-show-more)
                                     span(data-text-show) Еще... 
                                     span(data-text-hide) Скрыть
+
+                            img.sections-list-item__img(src="/src/assets/upload/categories-img.png" alt="Стоматологическое оборудование")
