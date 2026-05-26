@@ -1,5 +1,9 @@
 .blog-slider-wrapper {
     position: relative;
+
+    @media ($sm) {
+       width: calc(100vw - 20px);
+    }
 }
 .blog-slider {
     display: block;
