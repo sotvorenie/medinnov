@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         centeredSlides: true,
         effect: 'slide',
         freeMode: false,
+        slidesPerView: 1.2,
         longSwipes: false,
-        loopedSlides: 1,
+        loopedSlides: 6,
         navigation: {
             nextEl: '.js-' + sliderName + '-next',
             prevEl: '.js-' + sliderName + '-prev',
@@ -29,8 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         preloadImages: true,
         roundLengths: true,
         speed: 800,
-        slidesPerView: 'auto',
-        spaceBetween: 0,
+        spaceBetween: 20,
         thumbs: false,
         containerModifierClass: sliderName + '_',
         wrapperClass: sliderName + '__wrapper',
@@ -40,15 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
         slideVisibleClass: sliderName + '__item_visible',
         slideDuplicateClass: sliderName + '__item_duplicate',
         breakpoints: {
-        },
-        // on: {
-        //     afterInit: function(swiper) {
-        //         const $slider = swiper.el;
-        //         const $sliderActions = $slider.querySelector('.' + sliderName + '__actions');
-                
-        //         $slider.parentNode.appendChild($sliderActions);
-        //     }
-        // }
+            320: {
+                slidesPerView: 1.2,
+                spaceBetween: 10
+            },
+            768: {
+                slidesPerView: 2.2,
+                spaceBetween: 15
+            },
+            1024: {
+                slidesPerView: 3.5,
+                spaceBetween: 20
+            }
+        }
     };
 
     window.slider('.js-' + sliderName, sliderSetings);
