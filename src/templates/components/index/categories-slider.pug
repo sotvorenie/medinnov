@@ -1,59 +1,53 @@
-.categories-slider-wrapper
-    .categories-slider.js-categories-slider
-        .categories-slider__wrapper
-            .categories-slider__item
-                a.category-slider-item(href="#" title="КТ и рентгены")
-                    .category-slider-item__cont 
-                        .category-slider-item__actions
-                            .btn.btn_sm.btn_bordered.category-slider-item__more
-                                | подробнее
-                                <svg class="icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 18L16 13L11 8V18Z" fill="currentColor"/>
-                                </svg>
-                                
-                        .category-slider-item__name КТ и рентгены
+.position-relative
+    .categories-slider-wrapper
+        .categories-slider.js-categories-slider
+            .categories-slider__wrapper
+                .categories-slider__item
+                    a.category-slider-item(href="#" title="КТ и рентгены")
+                        .category-slider-item__cont
+                            .category-slider-item__img-container
+                                img.category-slider-item__img(src="/src/assets/upload/categories-img.png", alt="КТ и рентгены")
 
-                        img.category-slider-item__img(src="/src/assets/upload/section.png", alt="КТ и рентгены")
+                            .category-slider-item__name Реанимация и анестезиология
 
-            
-            .categories-slider__item
-                a.category-slider-item(href="#" title="Оборудование")
-                    .category-slider-item__cont 
-                        .category-slider-item__actions
-                            .btn.btn_sm.btn_bordered.category-slider-item__more
-                                | подробнее
-                                <svg class="icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 18L16 13L11 8V18Z" fill="currentColor"/>
-                                </svg>
-                                
-                        .category-slider-item__name Оборудование
 
-                        img.category-slider-item__img(src="/src/assets/upload/section.png", alt="Оборудование")
+                .categories-slider__item
+                    a.category-slider-item(href="#" title="Оборудование")
+                        .category-slider-item__cont
+                            .category-slider-item__img-container
+                                img.category-slider-item__img(src="/src/assets/upload/categories-img.png", alt="Оборудование")
 
-            .categories-slider__item 
-                a.category-slider-item.category-slider-item_primary(href="#" title="Аппараты")
-                    .category-slider-item__cont 
-                        .category-slider-item__actions
-                            .btn.btn_sm.btn_bordered.category-slider-item__more
-                                | подробнее
-                                <svg class="icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 18L16 13L11 8V18Z" fill="currentColor"/>
-                                </svg>
-                                
-                        .category-slider-item__name Аппараты
+                            .category-slider-item__name Хирургия
 
-                        img.category-slider-item__img(src="/src/assets/upload/section.png", alt="Аппараты")
+                .categories-slider__item
+                    a.category-slider-item(href="#" title="Аппараты")
+                        .category-slider-item__cont
+                            .category-slider-item__img-container
+                                img.category-slider-item__img(src="/src/assets/upload/categories-img.png", alt="Аппараты")
 
-            .categories-slider__item 
-                a.category-slider-item(href="#" title="Инструменты") 
-                    .category-slider-item__cont 
-                        .category-slider-item__actions
-                            .btn.btn_sm.btn_bordered.category-slider-item__more
-                                | подробнее
-                                <svg class="icon" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 18L16 13L11 8V18Z" fill="currentColor"/>
-                                </svg>
-                                
-                        .category-slider-item__name Инструменты
+                            .category-slider-item__name Оториноларингология
 
-                        img.category-slider-item__img(src="/src/assets/upload/section.png", alt="Инструменты")
+                .categories-slider__item
+                    a.category-slider-item(href="#" title="Инструменты")
+                        .category-slider-item__cont
+                            .category-slider-item__img-container
+                                img.category-slider-item__img(src="/src/assets/upload/categories-img.png", alt="Инструменты")
+
+                            .category-slider-item__name Нейрохирургия
+
+
+                .categories-slider__item
+                    a.category-slider-item(href="#" title="Инструменты")
+                        .category-slider-item__cont
+                            .category-slider-item__img-container
+                                img.category-slider-item__img(src="/src/assets/upload/section.png", alt="Инструменты")
+
+                            .category-slider-item__name Нейрохирургия
+
+    .slider-action.slider-action_sm._prev.categories-slider__action.js-categories-slider-prev
+        svg(width="7" height="14" viewBox="0 0 7 14" fill="none")
+            path(d="M7 0L0 7L7 14L4.9 7L7 0Z" fill="#4C7DA7")
+
+    .slider-action.slider-action_sm._next.categories-slider__action.js-categories-slider-next
+        svg(width="7" height="14" viewBox="0 0 7 14" fill="none")
+            path(d="M0 14L7 7L0 0L2.1 7L0 14Z" fill="#4C7DA7")

@@ -1,11 +1,6 @@
 .categories-slider-wrapper {
     overflow: hidden;
     position: relative;
-    
-    @media ($lg-up) {
-        margin: 0 -32px -24px;
-        padding: 0 32px 24px;
-    }
 }
 
 .categories-slider {
@@ -25,9 +20,11 @@
     &__item {
         @include sizeSquare(100%);
 
-        display: block;
+        display: flex;
+        flex-direction: column;
         flex-shrink: 0;
         width: 100%;
+        height: auto !important;
 
         @media ($lg) {
             width: 283px;
@@ -43,34 +40,23 @@
 
 .category-slider-item {
     background: var(--white-color);
-    border-radius: 15px;
-    color: var(--blue-color);
-    display: block;
+    border-radius: 20px;
     overflow: hidden;
-    padding-top: 102%;
+    height: 100%;
     position: relative;
     transition: all var(--transition-speed);
+    padding: 20px;
+
+    @media ($md) {
+        padding: 18px;
+    }
 
     &:hover {
         box-shadow: 0 6px 24px -4px rgba(#0C0C0D, 0.1);
-        color: var(--white-color);
 
-        &:before {
+        .category-slider-item__img-container:before {
             transform: scale(3);
         }
-    }
-
-    &:before {
-        @include sizeSquare(90%);
-        background: var(--primary-color-2);
-        bottom: -102px;
-        border-radius: 50%;
-        content: '';
-        right: -25px;
-        position: absolute;
-        transition: all var(--transition-speed);
-        transform: scale(1);
-        z-index: 1;
     }
 
     &_primary {
@@ -82,43 +68,49 @@
         }
     }
 
-    &__cont {
-        @include sizeSquare(100%);
+    &__img-container {
+        background: #F8F8F8;
+        width: 100%;
+        aspect-ratio: 220/193;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 9px;
 
-        box-sizing: border-box;
-        left: 0;
-        padding: 25px;
-        position: absolute;
-        top: 0;
-        z-index: 2;
-
-        @media ($lg) {
-            padding: 20px;
-        }
         @media ($md) {
-            padding: 15px;
+            aspect-ratio: 321/183;
         }
-        @media ($sm) {
-            padding: 8px;
+
+        &:before {
+            @include sizeSquare(95%);
+            background: linear-gradient(180deg, #B5D8FF 0%, #93B9FF 100%);
+            bottom: -50%;
+            left: 50%;
+            border-radius: 50%;
+            content: '';
+            position: absolute;
+            transition: all var(--transition-speed);
+            transform: scale(1) translateX(-50%);
+        }
+
+        img {
+            bottom: 0;
+            display: block;
+            max-height: calc(100% - 20px);
+            max-width: 83%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media ($md) {
+                max-height: 100%;
+            }
         }
     }
-    &__actions {
-        align-items: center;
-        display: flex;
-        gap: 12px;
-        justify-content: start;
-        margin: 0 0 18px;
 
-        @media ($lg) {
-            margin: 0 0 12px;
-        }
-        @media ($md) {
-            margin: 0 0 10px;
-        }
-        @media ($sm) {
-            margin: 0 0 8px;
-        }
-    }
     &__more {
         background: transparent;
         border-color: currentColor;
@@ -134,30 +126,8 @@
         }
     }
     &__name {
-        font-family: var(--font-title);
-        font-size: 1.875rem;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 700;
         position: relative;
-        z-index: 2;
-
-        @media ($lg) {
-            font-size: 1.5rem;
-        }
-        @media ($md) {
-            font-size: 1.25rem;
-        }
-        @media ($sm) {
-            font-size: 1.125rem;
-        }
-    }
-    &__img {
-        bottom: 0;
-        display: block;
-        max-height: 60%;
-        max-width: 80%;
-        object-fit: contain;
-        object-position: right bottom;
-        position: absolute;
-        right: 0;
     }
 }

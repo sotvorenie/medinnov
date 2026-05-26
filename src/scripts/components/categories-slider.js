@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
         centeredSlides: false,
         effect: 'slide',
         freeMode: true,
-        // longSwipes: false,
         loopedSlides: 0,
         navigation: {
             nextEl: '.js-' + sliderName + '-next',
@@ -20,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         preloadImages: true,
         roundLengths: true,
         speed: 800,
-        slidesPerView: 'auto',
-        spaceBetween: 8,
+        slidesPerView: 1,
+        spaceBetween: 16,
         thumbs: false,
         containerModifierClass: sliderName + '_',
         wrapperClass: sliderName + '__wrapper',
@@ -32,34 +31,26 @@ document.addEventListener("DOMContentLoaded", () => {
         slideDuplicateClass: sliderName + '__item_duplicate',
         breakpoints: {
             [window.adaptive.XS]: {
-                slidesPerView: 'auto',
-                spaceBetween: 8,
+                slidesPerView: 1,
+                spaceBetween: 16,
             },
             [window.adaptive.SM]: {
-                slidesPerView: 'auto',
-                spaceBetween: 8,
+                slidesPerView: 1,
+                spaceBetween: 16,
             },
             [window.adaptive.MD]: {
-                slidesPerView: 'auto',
-                spaceBetween: 8,
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
             [window.adaptive.LG]: {
-                slidesPerView: 4,
-                spaceBetween: 8,
+                slidesPerView: 3,
+                spaceBetween: 30,
             },
             [window.adaptive.XL]: {
                 slidesPerView: 4,
-                spaceBetween: 10,
+                spaceBetween: 40,
             },
-        },
-        // on: {
-        //     afterInit: function(swiper) {
-        //         const $slider = swiper.el;
-        //         const $sliderActions = $slider.querySelector('.' + sliderName + '__actions');
-                
-        //         $slider.parentNode.appendChild($sliderActions);
-        //     }
-        // }
+        }
     };
 
     window.slider('.js-' + sliderName, sliderSetings);
