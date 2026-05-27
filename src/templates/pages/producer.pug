@@ -4,40 +4,45 @@ block variables
     - var hideTitle = true;
 
 block main
-    .row
+    .row.manufacturer-top
         .col-12.col-lg-6.mb-4.mb-lg-0
             h1.main-title.h1= title
-            p.text-grey Foshan Roson Medical Instruments с 2005 года занимается научно-исследовательской и производственной деятельностью на рынке стоматологического оборудования, которая подтверждена международными сертификатами SGS ISO, CE, ISO 13485 и GUANGDONG TOP BRAND PRODUCT.
-            p.text-grey
-                | Компания расположена на территории всемирно известной производственной площадок округа Фошань, китайской провинции Гуандун, являющейся крупнейшей производственной площадкой стоматологического оборудования в мире.
-                br
-                | Оборудование компании поставляется и пользуется популярностью более чем в 130 странах. 
-                br
-                | Девиз компании: «Отличное качество по лучшей цене!».
-                br
-                | Цель компании: Производить качественную продукцию и предоставлять хорошее сервисное обслуживание.
-                br
-                | Сотрудники компании направляют все свои усилия на доказательство того, что "сделано в Китае" - это признак отличного качества.
+            p.producer-text Сотрудники компании SkyGen готовы оказать поддержку в выборе реагентов и оборудования для задач в областях молекулярной биологии, генной инженерии, клеточной биологии и генетики, учитывая специфические протоколы ваших исследований и экспериментов.
 
         .col-12.col-lg-6
-            .manufacturer-label 
+            .manufacturer-label
                 .manufacturer-label__text Группа компаний «Дентекс» является эксклюзивным дистрибьютором компании Foshan Roson Medical Instruments Co.
                 img.manufacturer-label__img(src="/src/assets/upload/producers/0.png", alt="")
 
-    section.section.section_white
+    section.manufacturer-text-block
+        p.producer-text SkyGen предлагает разнообразные реагенты для изоляции нуклеиновых кислот, проведения ПЦР, клонирования, редактирования генома с использованием CRISPR/Cas и секвенирования, включая технологии NGS. С 2012 года услуги компании оценили 3000 лабораторий на территории России и в странах ЕАЭС.
+            p.producer-text В 2019 году SkyGen запустила производство пластиковых флаконов для нужд биотехнологических и фармацевтических компаний, которые стали особенно востребованы в условиях пандемии коронавируса.
+            p.producer-text В 2022 году произошло значительное расширение ассортимента продукции для ветеринарной диагностики домашних животных и клинико-диагностических лабораторий.
+            p.producer-text Компания учесть все запросы клиента и выбирает надежных азиатских партнеров. Фармацевтическим производителям предлагает помощь в поиске необходимого сырья для выпуска и контроля качества продукции.
+            p.producer-text В 2023 году SkyGen запустила платформу Skyklad — онлайн-сервис для обмена объявлениями о готовых реагентах и оборудовании, расположенных на складах в России. Основная цель Skyklad — наладить оперативное взаимодействие между поставщиками, производителями, клиническими и научными лабораториями по всей стране, от Калининграда до Владивостока.
+            p.producer-text Каждый день сотрудники SkyGen ищут новые решения для ваших научных проектов!
+            p.producer-text.black SkyGen — вдохновляем на достижения в науке!
+
+    section.section.section_white.mb-0
         section.section.mt-0.py-0
             h2.section__title.h1 Акции бренда, проводимые компанией Дентекс
 
-            include /components/catalog/products-slider
+            ul.manufacturer-list
+                li.manufacturer-item
+                    a(href="#")
+                        img(src="/src/assets/upload/manufacturer-action.png")
+                li.manufacturer-item
+                    a(href="#")
+                        img(src="/src/assets/upload/manufacturer-action.png")
+                li.manufacturer-item
+                    a(href="#")
+                        img(src="/src/assets/upload/manufacturer-action.png")
 
-        section.section.mb-0.py-0
+        section.section.mb-0.py-0.manufacturer-products
             h2.section__title.h1 Продукция бренда, предлагаемая компанией Дентекс
             .catalog-section
                 .d-block.d-lg-none
                     include /components/catalog/section-head
-
-                .catalog-section__filter 
-                    include /components/catalog/filter
 
                 .catalog-section__content 
                     .catalog-section__head.d-none.d-lg-block
