@@ -8,23 +8,22 @@
         include /components/catalog/product-top
 
 
-    section.section.section_bg.product-detail__content
+    section.section.product-detail__content.section_white
         .tabs 
-            .tabs__list
+            .tabs__list.mb-5
                 .tabs__list-item
                     a.tabs__list-link(href="#description", title="Описание" data-tab="product") Описание
                 .tabs__list-item
                     a.tabs__list-link(href="#technical", title="Технические характеристики" data-tab="product") Технические характеристики
                 .tabs__list-item
-                    a.tabs__list-link(href="#reviews", title="Отзывы" data-tab="product") Отзывы
+                    a.tabs__list-link(href="#reviews", title="Отзывы" data-tab="product") Отзыв
 
             .tabs__content(id="description")
                 .description 
                     .description__content(data-description-content)
                         .row.mb-3
                             .col-12.col-md-6
-                                h2.h2 Блок врача
-                                p.text-grey Для удобства врача предусмотрен столик для инструментов и пульт управления креслом. Манометр и негатоскоп позволяют контролировать состояние пациента и процесс лечения на каждом этапе. Ножная педаль управления инструментами делает работу более комфортной и безопасной.
+                                p.text-grey Модель оснащена встроенным аккумулятором для автономной работы, может подключаться к автоприкуривателю. Катетеры F8 и F12 и кронштейн для крепления на стену в комплекте.
                                 ul.mb-3
                                     li на 5 инструментов с нижним подводом инструментов;
                                     li пистолет вода\воздух\спрей;
@@ -37,9 +36,8 @@
 
                             .col-12.col-md-6
                                 img.d-block.w-100(src="/src/assets/upload/detail/description.png", alt="")
-                        .row 
+                        .row
                             .col-12.col-md-6
-                                h2.h2 Блок ассистента
                                 p.text-grey Для удобства врача предусмотрен столик для инструментов и пульт управления креслом. Манометр и негатоскоп позволяют контролировать состояние пациента и процесс лечения на каждом этапе. Ножная педаль управления инструментами делает работу более комфортной и безопасной.
                                 ul
                                     li на 5 инструментов с нижним подводом инструментов;

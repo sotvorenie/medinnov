@@ -24,7 +24,7 @@
         }
 
         .icon {
-            @include sizeSquare(1em);
+            @include sizeSquare(18px);
 
             display: block;
             min-width: 1em;

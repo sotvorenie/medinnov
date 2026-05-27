@@ -22,11 +22,24 @@
 
         .star-rating {
             font-size: 32px;
+            color: #C6C6C6;
+
+            svg {
+                @include sizeSquare(31px);
+            }
+        }
+
+        .text-grey {
+            color: #C6C6C6;
         }
     }
 
     &__more {
         min-width: 160px;
+    }
+
+    .catalog-sort__label {
+        color: #6D6D6D;
     }
 }
 
@@ -34,28 +47,14 @@
     align-items: stretch;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 30px;
+
+    @media ($sm) {
+        gap: 20px;
+    }
 }
 .review-item {
-    align-items: start;
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
 
-    &__avatar-wrap {
-        @include sizeSquare(39px);
-
-        border-radius: 50%;
-        display: block;
-        overflow: hidden;
-        position: relative;
-    }
-    &__avatar {
-        display: block;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-    }
     &__content {
         flex: 1;
         max-width: 480px;
@@ -81,8 +80,9 @@
             font-weight: bold;
         }
         &-text {
-            color: var(--grey-color);
+            color: #6D6D6D;
             margin: 8px 0 0;
+            line-height: 130%;
         }
     }
     &__bottom {

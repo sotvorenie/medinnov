@@ -9,7 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
         freeMode: false,
         longSwipes: false,
         loopedSlides: 0,
-        navigation: false,
+        navigation: {
+            nextEl: '.js-image-slider-next',
+            prevEl: '.js-image-slider-prev',
+            disabledClass: sliderName + '__action_disabled',
+            lockClass: sliderName + '__action_lock'
+        },
+
         pagination: false,
         pauseOnMouseEnter: true,
         preloadImages: true,
@@ -26,21 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
         slideVisibleClass: sliderName + '__item_visible',
         slideDuplicateClass: sliderName + '__item_duplicate',
         breakpoints: {
-            [window.adaptive.SM]: {
-                slidesPerView: 1,
-            },
-            [window.adaptive.MD]: {
-                slidesPerView: 1,
-            },
-            [window.adaptive.LG]: {
-                slidesPerView: 1,
-            },
-            [window.adaptive.XL]: {
-                slidesPerView: 1,
-            },
-            [window.adaptive.XXL]: {
-                slidesPerView: 1,
-            },
+            [window.adaptive.SM]: { slidesPerView: 1 },
+            [window.adaptive.MD]: { slidesPerView: 1 },
+            [window.adaptive.LG]: { slidesPerView: 1 },
+            [window.adaptive.XL]: { slidesPerView: 1 },
+            [window.adaptive.XXL]: { slidesPerView: 1 },
         }
     };
 
@@ -52,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loop: false,
         autoplay: false,
         centeredSlides: false,
-        direction: "horizontal",
+        direction: "vertical",
         effect: 'slide',
         freeMode: false,
         longSwipes: false,
@@ -70,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         roundLengths: true,
         speed: 800,
         slidesPerView: 'auto',
-        spaceBetween: 16,
+        spaceBetween: 10,
         thumbs: false,
         watchSlidesProgress: true,
         containerModifierClass: sliderThumbsName + '_',
@@ -83,36 +79,39 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const productThumbs = window.slider('.js-' + sliderThumbsName, sliderThumbsSetings);
-
     if (document.querySelector('.js-' + sliderThumbsName) !== null) {
         productThumbs.on('afterInit', function (slider) {
-            const parentWr = slider.wrapperEl
-            const linksThumbs = parentWr.querySelectorAll("[data-thumb-slider]")
+            const parentWr = slider.wrapperEl;
+            const linksThumbs = parentWr.querySelectorAll("[data-thumb-slider]");
 
             _.each(linksThumbs, (item, index) => {
                 item.addEventListener('click', () => {
-                    productSlider.slideTo(index)
-                })
-            })
+                    productSlider.slideTo(index);
+                });
+            });
         });
 
         productThumbs.init();
     }
-
-    if (document.querySelector('.js-' + sliderName) !== null) {
-        productSlider.on('slideChange' , function(slider) {
-            let indexSlide = slider.activeIndex
-            
-            if (slider.slides.length < productThumbs.slides.length) {
-                indexSlide += productThumbs.slides.length - slider.slides.length
+    if (document.querySelector('.js-' + sliderName) !== null && document.querySelector('.js-' + sliderThumbsName) !== null) {
+        productSlider.on('slideChange', function(slider) {
+            const indexSlide = slider.activeIndex;
+            if (productThumbs.activeIndex !== indexSlide) {
+                productThumbs.slideTo(indexSlide);
             }
-            productThumbs.slideTo(indexSlide)
             _.each(productThumbs.slides, (item, index) => {
-                item.classList.remove("_current")
+                item.classList.remove("_current");
                 if (index === indexSlide) {
-                    item.classList.add("_current")
+                    item.classList.add("_current");
                 }
-            })
+            });
+        });
+
+        productThumbs.on('slideChange', function(slider) {
+            const indexSlide = slider.activeIndex;
+            if (productSlider.activeIndex !== indexSlide) {
+                productSlider.slideTo(indexSlide);
+            }
         });
     }
 });
