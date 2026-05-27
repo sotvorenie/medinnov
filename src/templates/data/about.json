@@ -20,5 +20,12 @@
             "title": "Цены и скидки:",
             "text": "прямые поставки от производителей, <br> дополнительные скидки <br> на комплексный заказ;"
         }
+    ],
+    "countries": [
+        "/src/assets/upload/about/countries/1.png",
+        "/src/assets/upload/about/countries/2.png",
+        "/src/assets/upload/about/countries/3.png",
+        "/src/assets/upload/about/countries/4.png",
+        "/src/assets/upload/about/countries/5.png"
     ]
 }

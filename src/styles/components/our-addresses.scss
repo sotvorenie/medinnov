@@ -1,4 +1,8 @@
 .our-addresses {
+    @media ($md-up) {
+        margin-bottom: 60px;
+    }
+
     &__title {
         margin: 0;
         margin-bottom: 26px;
@@ -38,7 +42,7 @@
         width: 100%;
 
         a {
-            color: var(--primary-color);
+            text-decoration: underline;
             white-space: nowrap;
         }
 
@@ -105,5 +109,9 @@
             margin-top: 0;
             flex: 1 1 calc(50% - 10px);
         }
+    }
+
+    .btn {
+        border-radius: 7px;
     }
 }

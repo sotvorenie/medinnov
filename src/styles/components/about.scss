@@ -11,10 +11,22 @@
 
     &__head-text-container {
         flex: 1;
+
+        h2 {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 30px;
+            margin-bottom: 24px;
+
+            @media ($md) {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
     }
 
     &__head-text {
-        color: var(--grey-color);
+        color: var(--blue-color-dark);
         font-size: 1rem;
         max-width: 446px;
         margin: 0;
@@ -24,7 +36,7 @@
         flex: 1;
         aspect-ratio: 16 / 7.6;
         border-radius: 15px;
-        background: var(--secondary-color);
+        background: var(--white-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -84,7 +96,7 @@
             content: '';
             width: 346px;
             height: 346px;
-            background: #7ad0d4;
+            background: #93B9FF;
             border-radius: 50%;
             position: absolute;
             bottom: -15%;
@@ -163,7 +175,7 @@
 
     &__company-info-text-main {
         color: var(--white-color);
-        background: var(--primary-color);
+        background: var(--blue-color);
         padding: 30px;
         border-radius: 15px;
         margin: 0;
@@ -199,7 +211,6 @@
     }
 
     &__video-block-text {
-        color: var(--grey-color);
         margin: 0;
         margin-bottom: 26px;
 
@@ -263,9 +274,8 @@
 
     &__experts-work-card {
         padding: 30px 32px;
-        background: var(--white-color) url('/src/assets/upload/about/experts-card-bg.png')
-            no-repeat bottom right;
         border-radius: 15px;
+        background: var(--white-color);
         position: relative;
         overflow: hidden;
 
@@ -291,54 +301,72 @@
             right: 0;
         }
 
+        &:not(:nth-child(2)) .about__experts-work-card-text {
+            max-width: 60%;
+        }
+        &:last-child .about__experts-work-card-text {
+            @media ($md-up) {
+                max-width: none;
+            }
+        }
+
         &:nth-child(1) {
             &::before {
-                content: url('/src/assets/upload/about/experts/1.png');
+                content: url('/src/assets/upload/about/experts/pc-1.png');
+                bottom: -10px;
 
                 @media ($md) {
-                    right: -9px;
-                    bottom: -20px;
-                    scale: .9;
+                    content: url('/src/assets/upload/about/experts/1.png');
+                    bottom: -5px;
                 }
             }
         }
 
         &:nth-child(2) {
             &::before {
-                content: url('/src/assets/upload/about/experts/2.png');
+                content: url('/src/assets/upload/about/experts/pc-5.png');
 
                 @media ($md) {
-                    content: url('/src/assets/upload/about/experts/2-mini.png');
+                    content: url('/src/assets/upload/about/experts/3.png');
                 }
             }
         }
 
         &:nth-child(3) {
             &::before {
-                content: url('/src/assets/upload/about/experts/3.png');
+                content: url('/src/assets/upload/about/experts/pc-3.png');
+
+                @media ($sm-up) {
+                    bottom: -10px;
+                }
 
                 @media ($md) {
-                    right: -60px;
-                    bottom: -20px;
-                    scale: .8;
+                    content: url('/src/assets/upload/about/experts/2.png');
+                    bottom: -5px;
                 }
             }
         }
 
         &:nth-child(4) {
             &::before {
-                content: url('/src/assets/upload/about/experts/4.png');
+                content: url('/src/assets/upload/about/experts/pc-2.png');
+                bottom: -10px;
+
+                @media ($md) {
+                    content: url('/src/assets/upload/about/experts/4.png');
+                    bottom: -5px;
+                }
             }
         }
 
         &:nth-child(5) {
             &::before {
-                content: url('/src/assets/upload/about/experts/5.png');
+                content: url('/src/assets/upload/about/experts/pc-4.png');
+                bottom: -10px;
 
                 @media ($md) {
-                    right: -24px;
-                    bottom: -20px;
-                    scale: .8;
+                    content: url('/src/assets/upload/about/experts/5.png');
+                    bottom: -5px;
                 }
             }
         }
@@ -360,6 +388,10 @@
         p {
             color: var(--grey-color);
             font-weight: 400;
+
+            @media ($md) {
+                font-size: 14px;
+            }
         }
     }
 
@@ -408,6 +440,45 @@
             color: #FFFFFFCC;
             font-weight: 400;
             margin-bottom: 0;
+        }
+    }
+
+    &__countries {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        max-width: 80%;
+        margin-top: 10px;
+
+        @media ($md-up) {
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        @media ($md) {
+            margin-top: 25px;
+            margin-left: 20px;
+        }
+
+        li {
+            padding: 0;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0;
+
+            @media ($md) {
+                width: 49px;
+                height: 49px;
+                margin-left: -20px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }
