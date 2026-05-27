@@ -1,0 +1,71 @@
+extends /layouts/_template
+
+block main
+    .actions
+        .actions__block
+            .actions__head.d-flex.align-items-center.justify-content-between
+                h2.actions__title.mb-0 Акции на стоматологические установки
+
+                div.actions__sort.d-flex
+                    .catalog-sort
+                        .catalog-sort__label Вид
+                        .catalog-sort__select
+                            .catalog-sort-select
+                                .catalog-sort-select__head
+                                    .catalog-sort-select__icon
+                                        +svgIcon("arrow-down")
+
+                                .catalog-sort-select__dropdown
+                                    .catalog-sort-select__dropdown-list
+                                        .catalog-sort-select__dropdown-item._current
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | вид 1
+                                        .catalog-sort-select__dropdown-item
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | вид 2
+                                        .catalog-sort-select__dropdown-item
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | вид 3
+                                        .catalog-sort-select__dropdown-item
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | вид 4
+
+                    .catalog-sort
+                        .catalog-sort__label Все категории
+                        .catalog-sort__select
+                            .catalog-sort-select
+                                .catalog-sort-select__head
+                                    .catalog-sort-select__icon
+                                        +svgIcon("arrow-down")
+
+                                .catalog-sort-select__dropdown
+                                    .catalog-sort-select__dropdown-list
+                                        .catalog-sort-select__dropdown-item._current
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | категория 1
+                                        .catalog-sort-select__dropdown-item
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | категория 2
+                                        .catalog-sort-select__dropdown-item
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | категория 3
+                                        .catalog-sort-select__dropdown-item
+                                            a.catalog-sort-select__dropdown-link(href title)
+                                                | категория 4
+
+            .section__content
+                include /components/catalog/products-slider
+
+        .actions__block
+                .actions__head.d-flex.align-items-center.justify-content-between
+                    h2.actions__title.mb-0 Акции на стоматологические инструменты
+
+                .section__content
+                    include /components/catalog/products-slider
+
+        .actions__block
+            .actions__head.d-flex.align-items-center.justify-content-between
+                h2.actions__title.mb-0 Акции на стоматологические инструменты
+
+            .section__content
+                include /components/catalog/products-slider

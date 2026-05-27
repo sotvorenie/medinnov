@@ -1,0 +1,53 @@
+.actions {
+
+  &__block {
+    margin-bottom: 60px;
+
+    @media ($md) {
+      margin-bottom: 36px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__head {
+
+    &:not(:has(.actions__sort)) {
+      margin-bottom: 23px;
+    }
+    &:has(.actions__sort) {
+      margin-bottom: 68px;
+    }
+
+    @media ($md) {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  &__sort {
+    gap: 10px;
+
+    @media ($md) {
+      margin-left: auto;
+    }
+  }
+
+  .catalog-sort__label {
+    color: var(--black-color);
+  }
+}
+
+.breadcrumbs .catalog-sort__label {
+  color: var(--black-color);
+}
+.breadcrumbs:has(.actions__sort) .breadcrumbs__item:nth-child(2)::after {
+  display: none;
+}

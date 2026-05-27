@@ -14,6 +14,7 @@ import './main/_forms'
 
 // components
 import './components/catalog';
+import './components/actions.js';
 import './components/range-slider'
 import './components/products-slider'
 import './components/producers-slider'
