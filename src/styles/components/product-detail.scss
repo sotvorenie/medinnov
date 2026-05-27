@@ -440,6 +440,7 @@
             padding-top: 100%;
             position: relative;
             width: 100%;
+            height: 100%;
 
             .product-main-slider {
                 @include sizeSquare(100%);
@@ -454,13 +455,6 @@
         width: 70px;
         margin-right: 15px;
         max-height: 424px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        scrollbar-width: thin;
-
-        &::-webkit-scrollbar {
-            width: 4px;
-        }
 
         @media ($sm) {
             display: none;
@@ -471,6 +465,7 @@
 
         &-enternal {
             box-sizing: border-box;
+            height: 100%;
         }
     }
 }
@@ -551,6 +546,7 @@
 
 .product-thumbs-slider {
     overflow: hidden;
+    height: 100%;
 
     &_horizontal {
         touch-action: pan-y;
