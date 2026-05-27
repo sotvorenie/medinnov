@@ -7,7 +7,7 @@ block main
                 h3 Получатель
                 .order__type-switcher
                     button.btn.btn_bordered(href="#order-individual" data-tab="order-recipient") Физическое лицо
-                    button.btn.btn_bordered(href="#legal-entity" data-tab="order-recipient") Юридическое лицо
+                    button.btn(href="#legal-entity" data-tab="order-recipient") Юридическое лицо
 
                 .order__person-fields.tabs__content(id="order-individual") 
                     .row 
@@ -37,7 +37,7 @@ block main
                 .tabs
                     .order__type-switcher
                         button.btn.btn_bordered(href="#self" data-tab="product") Самовызов
-                        button.btn.btn_bordered(href="#delivery" data-tab="product") Доставка
+                        button.btn(href="#delivery" data-tab="product") Доставка
 
 
                     #self.tabs__content
@@ -47,33 +47,19 @@ block main
                                 +svgIcon('search')
                                 span Выбрать магазин
 
-                        p.order__delivery-bottom-text Выберите адрес получения
-
                     #delivery.tabs__content
                         .header-search(data-fancybox data-src="#js-modal-delivery")
-                            input.header-search__input(type="text" placeholder="Поиск")
-                            .header-search__actions
-                                .header-search__reset-wrap
-                                    button.header-search__btn.header-search__reset(type="reset")
-                                        <svg class="icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 6L15 15M15 6L6 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                .header-search__submit-wrap
-                                    button.header-search__btn(type="submit")
-                                        <svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0346 12.8572C5.3718 12.8572 3.21317 10.6986 3.21317 8.03582C3.21317 5.37302 5.3718 3.21439 8.0346 3.21439C10.6974 3.21439 12.856 5.37302 12.856 8.03582C12.856 10.6986 10.6974 12.8572 8.0346 12.8572ZM2.57031 8.03582C2.57031 5.01798 5.01676 2.57153 8.0346 2.57153C11.0524 2.57153 13.4989 5.01798 13.4989 8.03582C13.4989 9.42908 12.9774 10.7005 12.1191 11.6657L15.3333 14.88C15.4588 15.0055 15.4588 15.209 15.3333 15.3345C15.2078 15.4601 15.0043 15.4601 14.8787 15.3345L11.6645 12.1203C10.6993 12.9787 9.42786 13.5001 8.0346 13.5001C5.01676 13.5001 2.57031 11.0537 2.57031 8.03582Z" fill="currentColor"/>
-                                        </svg>
+                            +textfield('Адрес доставки', '', true, 'w-100')
 
-                        p.order__delivery-bottom-text Выберите адрес получения
-                
             .order__main-block
                 table.order__goods-list
                     thead
-                        td(colspan="2")
-                            h3 Товары в заказе
-                        td Цена
-                        td Количество
-                        td Сумма
+                        tr
+                            td(colspan="2")
+                                h3 Товары в заказе
+                            td Цена
+                            td Количество
+                            td Сумма
                     tbody
                     each item in orderGoods
                         tr.order__goods-item
@@ -82,42 +68,37 @@ block main
                             td.order__goods-item-title
                                 div.order-basket-title= item.title
                                 .order__goods-item-setting
-                                    span.order__goods-item-setting-name Цвет:
-                                    span.order__goods-item-setting-value 
-                                        div.radio-color
-                                            div.radio-color__box
-                                                span.radio-color__box-color(style=`background-color: ${item.color}`)
+                                    span.order__goods-item-setting-name Цвет
+                                    span.order__goods-item-setting-value Красный
                                 .order__goods-item-setting
-                                    span.order__goods-item-setting-name Тип подачи инструментов:
-                                    span.order__goods-item-setting-value Нижняя
-                                .order__goods-item-setting
-                                    span.order__goods-item-setting-name Вариант обивки:
-                                    span.order__goods-item-setting-value Бесшовная
+                                    span.order__goods-item-setting-name Размер
+                                    span.order__goods-item-setting-value S
 
+                            td.order__goods-item-color
+                                span.color-box(style=`--color: ${item.color}`)
                             td.order__goods-item-price #{item.price}
                             td.order__goods-item-quantity #{item.quantity + ' шт'}
                             td.order__goods-item-total #{item.total}
                     
             .order__main-block
                 h3 Способ оплаты
-                .order__type-switcher
-                    button.btn.btn_bordered(href="#online" data-tab="order-pay-method") Онлайн
-                    button.btn.btn_bordered(href="#upon-receipt" data-tab="order-pay-method") При получении
-                .order__payment-type-list.tabs__content(id="online")
+                .order__payment-type-list.tabs__content
                     label.order__payment-type-item
                         input.order__payment-type-item-radio(type="radio", name="payment-type", checked)
                         .order__payment-type-item-block
-                            img(src="/src/assets/upload/sbp.png", alt="СБП оплата")
+                            img(src="/src/assets/upload/split.png", alt="Сплит")
                     label.order__payment-type-item
                         input.order__payment-type-item-radio(type="radio", name="payment-type")
                         .order__payment-type-item-block
-                            img(src="/src/assets/upload/sber-pay.png", alt="Сбер оплата")
+                            img(src="/src/assets/upload/by-check.png", alt="По счету")
                     label.order__payment-type-item
                         input.order__payment-type-item-radio(type="radio", name="payment-type")
                         .order__payment-type-item-block
-                            img(src="/src/assets/upload/credit-card.png", alt="Оплата картой")
-                .order__payment-type-info-text.tabs__content(id="upon-receipt")
-                    p В магазине можно оплатить наличными, картой, оформить рассрочку
+                            img(src="/src/assets/upload/by-card.png", alt="Картой")
+                    label.order__payment-type-item
+                        input.order__payment-type-item-radio(type="radio", name="payment-type")
+                        .order__payment-type-item-block
+                            img(src="/src/assets/upload/dolyami.png", alt="Долями")
         .order-info
             h3.order-info__title Ваш заказ
             .order-info__data
@@ -132,4 +113,8 @@ block main
                 span Итого
                 span 280 000 ₽
             button.order-info__btn1.btn Перейти к оплате
-            +checkbox('Я согласен на обработку персональных данных', '', true)
+            label.checkbox
+                input.checkbox__input(type="checkbox" checked=true)
+                div.checkbox__box
+                    +svgIcon('checkmark')
+                span.checkbox__text #[span Я согласен] на обработку персональных данных

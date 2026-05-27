@@ -41,7 +41,7 @@
 
     &__btn1 {
         width: 100%;
-        margin-bottom: 5px;
+        margin-bottom: 16px;
     }
 
     &__btn2 {
@@ -54,5 +54,13 @@
         font-size: .75rem;
         text-align: center;
         margin: 0;
+    }
+
+    .checkbox__text {
+        color: var(--black-color);
+
+        span {
+            color: #6D6D6D;
+        }
     }
 }
