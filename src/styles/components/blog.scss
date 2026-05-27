@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
 
+    @media ($md-up) {
+        margin-bottom: 60px;
+    }
+
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -73,7 +77,7 @@
         justify-content: space-between;
 
         span > span {
-            color: var(--blue-color);
+            color: var(--blue-color-dark);
         }
     }
 
@@ -93,6 +97,35 @@
 
         video {
             max-width: 100%;
+        }
+    }
+
+    .tabs {
+        margin-bottom: 30px;
+        background: var(--white-color);
+        padding: 10px;
+        border-radius: 20px;
+
+        @media ($md) {
+            margin-bottom: 16px;
+        }
+
+        .tabs__list-link {
+            color: var(--blue-color);
+            min-width: 120px;
+            border-radius: 56px;
+
+            @media ($md) {
+                min-width: 85px;
+            }
+
+            &._current {
+                border: 1px solid var(--blue-color);
+            }
+        }
+
+        &__list {
+            max-width: none;
         }
     }
 }
