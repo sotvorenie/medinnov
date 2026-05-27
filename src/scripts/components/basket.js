@@ -64,4 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         window.Fancybox.close()
     }
+
+    const basket = document.querySelector('.basket');
+
+    if (basket) {
+        const itemsCount = document.querySelectorAll('.basket__item').length;
+        const mainTitle = document.querySelector('.main-title');
+        if (mainTitle) {
+            let basketCount = mainTitle.querySelector('.basket__count');
+            if (!basketCount) {
+                basketCount = document.createElement('span');
+                basketCount.classList.add('basket__count');
+                mainTitle.appendChild(basketCount);
+            }
+            basketCount.textContent = `${itemsCount} товара`;
+        }
+    }
 })

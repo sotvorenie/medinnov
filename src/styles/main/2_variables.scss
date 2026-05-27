@@ -8,6 +8,7 @@ $yellow-color: #FBB700;
 $blue-color: #4C7DA7;
 $blue-color-dark: #47587B;
 $gray-color: #DADEE5;
+$grey-color: #6D6D6D;
 $green-color: #50B86D;
 
 :root {
@@ -15,6 +16,7 @@ $green-color: #50B86D;
     --blue-color: #{$blue-color};
     --blue-color-dark: #{$blue-color-dark};
     --gray-color: #{$gray-color};
+    --grey-color: #{$grey-color};
     --body-bg: #F9F9FF;
     --font-default: "Manrope", serif;
     --font-title: "Onest", sans-serif;
