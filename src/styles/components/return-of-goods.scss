@@ -11,7 +11,7 @@
     }
 
     &__text {
-        color: rgba(28, 28, 30, 0.73);
+        color: var(--blue-color-dark);
         font-size: 0.875rem;
         margin: 0;
 
@@ -43,6 +43,10 @@
         @media ($lg) {
             padding: 30px 0;
             margin-top: 30px;
+        }
+
+        h2 {
+            max-width: 480px;
         }
     }
 
@@ -91,5 +95,19 @@
             margin-top: 1rem;
             margin-bottom: 0;
         }
+    }
+
+    &__request-btn {
+        min-width: 252px;
+        
+        @media ($md) {
+            background: var(--blue-color);
+            border-radius: 7px;
+            border-color: var(--blue-color);
+        }
+    }
+
+    .section_white::before {
+        width: 200vw;
     }
 }
