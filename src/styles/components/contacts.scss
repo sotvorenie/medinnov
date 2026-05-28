@@ -67,7 +67,9 @@
     }
 
     &__feedback-form-btn {
-        height: 100%;
+        height: 40px;
+        width: fit-content;
+        min-width: 167px;
 
         @media ($md) {
             height: 40px;
