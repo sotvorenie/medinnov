@@ -72,9 +72,21 @@
     max-width: 449px;
     width: 100%;
 
+    @media ($sm) {
+        max-width: 348px;
+    }
+
     &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding-bottom: 16px;
+        padding-top: 37px;
         border-bottom: 1px solid #e9e9e9;
+
+        @media ($md) {
+            padding-top: 10px;
+        }
     }
 
     &__date {
@@ -158,11 +170,98 @@
 
     &__form-text {
         align-self: center;
+        text-align: center;
+        color: var(--black-color);
+        font-family: var(--font-title);
+        margin-bottom: 26px;
+
+        @media ($md) {
+            margin-bottom: 18px;
+        }
     }
 
     .review-dialog__form-agreement {
         margin-top: 0;
         text-align: left;
+    }
+
+    &__products {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 8px;
+        font-weight: 700;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            gap: 5px;
+
+            li {
+                margin: 0;
+                padding: 0;
+
+                @media ($md) {
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+
+                .img-container {
+                    width: 46px;
+                    height: 46px;
+                    overflow: hidden;
+                    border-radius: 7px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    .star-rating__stars {
+        gap: 3px;
+
+        &._picked {
+            margin-bottom: 13px;
+
+            svg {
+                width: 26px;
+                height: 23px;
+            }
+        }
+
+        svg {
+            width: 39px;
+            height: 35px;
+        }
+    }
+
+    &__checkbox {
+        align-items: center !important;
+
+        span {
+            color: var(--black-color);
+
+            @media ($md) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .btn {
+        width: fit-content;
+        min-width: 126px;
+
+        @media ($md) {
+            margin-inline: auto;
+        }
     }
 }
 
