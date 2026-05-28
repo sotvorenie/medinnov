@@ -1,18 +1,21 @@
 extends /layouts/_template
 
 block variables
-    - var hideBreadcrumbs = true;
     - var h1 = "Нас часто спрашивают";
+    - var currentNav = "/help.html";
 
 block main
     .help
-        .help__question-list
-            each item in helpQuestions
-                .help__question-item
-                    .help__question-item-head.h5(data-accordeon-toggle)
-                        | #{item.title}
-                        .help__question-item-head-icon
-                            +svgIcon('arrow-down')
-                    .help__question-item-content(data-accordeon-content)
-                        p #{item.content}
-        include /components/question-man.pug
+        .profile-main-container
+            include /components/profile-nav
+            .d-flex.flex-column.w-100
+                .help__question-list
+                    each item in helpQuestions
+                        .help__question-item
+                            .help__question-item-head.h5(data-accordeon-toggle)
+                                | #{item.title}
+                                .help__question-item-head-icon
+                                    +svgIcon('arrow-down')
+                            .help__question-item-content(data-accordeon-content)
+                                p #{item.content}
+                include /components/question-man.pug
