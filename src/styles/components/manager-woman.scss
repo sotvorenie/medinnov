@@ -3,7 +3,7 @@
     border-radius: 15px;
     background: url('/src/assets/upload/about/question-bg-text.svg') no-repeat
             bottom right,
-        url('/src/assets/upload/about/question-bg.png') no-repeat center/cover;
+        url('/src/assets/upload/about/question-bg.png') no-repeat center/cover, var(--primary-color);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -16,6 +16,8 @@
         bottom: 0;
         right: 11%;
         z-index: 1;
+        width: 321px;
+        height: 307px;
     }
 
     @media ($lg) {
@@ -27,13 +29,13 @@
             right: 9%;
             background: url('/src/assets/upload/manager-woman.png')
                 no-repeat bottom/contain;
-            width: 225px;
-            height: 248px;
         }
     }
 
     @media ($md) {
         &::after {
+            background: url('/src/assets/upload/manager-woman-mb.png')
+            no-repeat bottom/contain;
             right: 0%;
             width: 190px;
             height: 209px;
@@ -45,6 +47,7 @@
         font-size: 2.5rem;
         line-height: 1;
         margin: 0;
+        font-weight: 700;
 
         @media ($lg) {
             font-size: 1.75rem;
@@ -57,10 +60,16 @@
     }
 
     button {
-        width: 288px;
+        width: 252px;
+        background: var(--white-color);
+        border-color: var(--white-color);
+        color: var(--blue-color);
 
         @media ($md) {
             width: min-content;
+            white-space: nowrap;
+            font-size: 8px;
+            height: 20px;
         }
     }
 }
