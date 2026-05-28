@@ -1,0 +1,10 @@
+.privacy {
+
+  & * {
+    color: var(--blue-color-dark) !important;
+  }
+
+  @media ($md-up) {
+    margin-bottom: 60px;
+  }
+}
