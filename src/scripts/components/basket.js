@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if(item.querySelector('input[type="checkbox"]').checked) item.remove()
         })
         window.Fancybox.close()
-        updateBasketCount() // <-- Обновляем счетчик после массового удаления
+        updateBasketCount()
     }
 
     const basketItemConfirmRemoveBtn = document.querySelector('.js-basket-item-delete')
