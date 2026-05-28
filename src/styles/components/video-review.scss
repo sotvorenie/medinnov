@@ -54,14 +54,22 @@
     }
 
     &__content {
-        color: var(--grey-color);
+        color: var(--blue-color-dark);
         font-family: var(--font-title);
         font-size: 1.25rem;
         font-weight: 400;
+        margin-top: 46px;
+        margin-bottom: 84px;
 
         @media ($lg) {
             font-family: var(--font-default);
             font-size: .875rem;
+            margin-top: 16px;
+            margin-bottom: 36px;
+        }
+
+        p {
+            margin-top: 0;
         }
     }
 }
