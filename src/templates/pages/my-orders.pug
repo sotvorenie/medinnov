@@ -6,7 +6,7 @@ block variables
     - var h1 = "Заказы";
 
 block main
-    .my-orders
+    .my-orders.section.py-0.mt-0
         .profile-main-container
             include /components/profile-nav
             .my-orders__main 
@@ -26,9 +26,49 @@ block main
                                     else if (i % 3 === 2)
                                         .my-orders__item-status.my-orders__item-status_on-the-way В пути
                                     
-                                    .my-orders__item-total-price Сумма: 358 000 ₽
+                                    .my-orders__item-total-price.hidden-mobile Сумма: 358 000 ₽
                                 .my-orders__item-arrow-down-icon
                                     +svgIcon('arrow-down')
+                            .my-orders__close-info
+                                .left
+                                    .left-item
+                                        div Доставка #[br]по адресу:
+                                        div
+                                        div г. Санкт-Петербург, ул. Новая 121к2, 159000
+                                    .left-item
+                                        div Примерная дата доставки:
+                                        div
+                                        div 9 октября 16:50
+                                    .left-item
+                                        div Получатель
+                                        div Петров Иван Андреевич
+                                        div + 7 (916) 888 88-88
+                                .right
+                                    if (i % 3 === 0)
+                                        ul
+                                            li
+                                                .img-container
+                                                    img(src="/src/assets/upload/section.png")
+                                            li
+                                                .img-container
+                                                    img(src="/src/assets/upload/section.png")
+                                    else if (i % 3 === 1)
+                                        ul
+                                            li
+                                                .img-container
+                                                    img(src="/src/assets/upload/section.png")
+                                            li
+                                                .img-container
+                                                    img(src="/src/assets/upload/section.png")
+                                            li
+                                                .img-container
+                                                    img(src="/src/assets/upload/section.png")
+                                        span.right-more Еще
+                                    else
+                                        ul
+                                            li
+                                                .img-container
+                                                    img(src="/src/assets/upload/section.png")
                             .my-orders__item-main-info 
                                 .my-orders__item-main-info-block
                                     p Доставка по адресу:
@@ -43,10 +83,15 @@ block main
                                 .my-orders__item-main-info-block
                                     p Доставка
                                     p Транспортная компания
-                            .my-orders__item-footer-btns
-                                a.btn.btn_transparent(href="#js-modal-review", data-fancybox) Оценить заказ
-                                button.btn Повторить
+                            if (i % 3 === 1)
+                                .my-orders__item-footer-btns
+                                    a.btn.btn_transparent(href="#js-modal-review", data-fancybox) Оценить заказ
+                                    button.btn Повторить
                             .my-orders__item-content(data-accordeon-content)
+                                .my-orders__mobile-price.justify-content-between.visible-mobile
+                                    div Сумма
+                                    div Сумма: 358 000 ₽
+
                                 .my-orders__goods-list
                                     - for (let i = 0; i < 3; i++)
                                         .my-orders__goods-item
@@ -58,21 +103,8 @@ block main
                                                     span.my-orders__goods-item-actual-price.h3 169 500 ₽
                                                     span.my-orders__goods-item-old-price 210 500 ₽
 
-                                                .my-orders__goods-item-settings
-                                                    .my-orders__goods-item-setting
-                                                        span.my-orders__goods-item-setting-name Цвет:
-                                                        span.my-orders__goods-item-setting-value 
-                                                            div.radio-color
-                                                                div.radio-color__box
-                                                                    span.radio-color__box-color(style='background-color: #f00')
-                                                    .my-orders__goods-item-setting
-                                                        span.my-orders__goods-item-setting-name Тип подачи инструментов:
-                                                        span.my-orders__goods-item-setting-value Нижняя
-                                                    .my-orders__goods-item-setting
-                                                        span.my-orders__goods-item-setting-name Вариант обивки:
-                                                        span.my-orders__goods-item-setting-value Бесшовная
+                                                .my-orders__goods-item-settings.d-flex.justify-content-end
+                                                    span 1 шт
 
                                                 .my-orders__goods-item-footer
                                                     a.btn.btn_transparent(href="#js-modal-review", data-fancybox) Оценить товар
-                                                    span 1 шт
-                    

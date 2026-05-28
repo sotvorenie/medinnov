@@ -54,3 +54,15 @@ $xxxl-up: "min-width: 1900px";
 		display: none !important;
 	}
 }
+.hidden-mobile {
+
+	@media ($md) {
+		display: none !important;
+	}
+}
+.visible-mobile {
+
+	@media ($md-up) {
+		display: none !important;
+	}
+}
