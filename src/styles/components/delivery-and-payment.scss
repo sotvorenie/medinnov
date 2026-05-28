@@ -1,11 +1,12 @@
 .delivery-and-payment {
     &__head {
         padding: 30px;
-        background: var(--white-color) url('/src/assets/upload/delivery-and-payment/head-bg.png') no-repeat right bottom/ auto 100%;
+        background: var(--white-color);
         border-radius: 15px;
         position: relative;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
 
         &::after {
             position: absolute;
@@ -15,31 +16,42 @@
 
         &._delivery {
             &::after {
-                content: url('/src/assets/upload/delivery-and-payment/truck.png');
+                width: 458px;
+                height: 100%;
+                content: url('/src/assets/upload/delivery-and-payment/pc.png');
+
+                @media ($md) {
+                    content: url('/src/assets/upload/delivery-and-payment/mb.png');
+                    width: 304px;
+                }
             }
         }
 
         &._payment {
             &::after {
-                content: url('/src/assets/upload/delivery-and-payment/payment.png');
+                content: url('/src/assets/upload/delivery-and-payment/pay-pc.png');
+
+                @media ($md) {
+                    content: url('/src/assets/upload/delivery-and-payment/pay-mb.png');
+                    width: 304px;
+                }
             }
         }
 
         @media ($lg) {
-            background-size: 100%;
             padding: 20px 12px;
 
             &::after {
                 position: static;
                 align-self: flex-end;
                 margin-right: -12px;
-                margin-bottom: -20px;
+                margin-bottom: -24px;
             }
         }
     }
 
     &__head-text {
-        color: var(--blue-color);
+        color: var(--blue-color-dark);
         font-size: 0.875rem;
         margin: 0;
         max-width: 600px;
@@ -56,16 +68,6 @@
         gap: 10px;
         margin-top: 16px;
         margin-bottom: 54px;
-
-        .icon {
-            @include sizeSquare(33px);
-            color: transparent;
-            flex-shrink: 0;
-
-            @media ($md) {
-                @include sizeSquare(24px);
-            }
-        }
     }
 
     &__info-block-text {
@@ -125,7 +127,7 @@
     }
 
     &__delivery-item-content {
-        color: var(--grey-color);
+        color: var(--blue-color-dark);
         font-size: 0.875rem;
         margin: 0;
     }
@@ -141,6 +143,10 @@
         @media ($lg) {
             flex-wrap: nowrap;
             height: auto;
+        }
+
+        @media ($md-up) {
+            margin-bottom: 60px;
         }
     }
 
@@ -175,6 +181,12 @@
 
             .btn {
                 width: 70%;
+
+                @media ($md) {
+                    width: fit-content;
+                    min-width: 174px;
+                    margin-right: auto;
+                }
             }
         }
 
