@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if(item.querySelector('input[type="checkbox"]').checked) item.remove()
         })
         window.Fancybox.close()
+        updateBasketCount() // <-- Обновляем счетчик после массового удаления
     }
 
     const basketItemConfirmRemoveBtn = document.querySelector('.js-basket-item-delete')
@@ -63,13 +64,32 @@ document.addEventListener("DOMContentLoaded", () => {
             removingElement.remove()
         }
         window.Fancybox.close()
+        updateBasketCount()
     }
 
-    const basket = document.querySelector('.basket');
+    function getGoodsWord(count) {
+        const mod10 = count % 10;
+        const mod100 = count % 100;
 
-    if (basket) {
+        if (mod100 >= 11 && mod100 <= 19) {
+            return 'товаров';
+        }
+        if (mod10 === 1) {
+            return 'товар';
+        }
+        if (mod10 >= 2 && mod10 <= 4) {
+            return 'товара';
+        }
+        return 'товаров';
+    }
+
+    function updateBasketCount() {
+        const basket = document.querySelector('.basket');
+        if (!basket) return;
+
         const itemsCount = document.querySelectorAll('.basket__item').length;
         const mainTitle = document.querySelector('.main-title');
+
         if (mainTitle) {
             let basketCount = mainTitle.querySelector('.basket__count');
             if (!basketCount) {
@@ -77,7 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 basketCount.classList.add('basket__count');
                 mainTitle.appendChild(basketCount);
             }
-            basketCount.textContent = `${itemsCount} товара`;
+
+            basketCount.textContent = `${itemsCount} ${getGoodsWord(itemsCount)}`;
         }
     }
+    updateBasketCount();
 })
