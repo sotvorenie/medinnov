@@ -3,7 +3,7 @@
     flex-direction: column;
 
     &__info {
-        color: var(--grey-color);
+        color: var(--blue-color-dark);
         font-family: var(--font-title);
         font-size: 1rem;
         font-weight: 400;
@@ -22,15 +22,14 @@
         gap: 11px;
 
         svg {
-            width: 34px;
-            height: 34px;
+            max-width: 25px;
         }
     }
 
     &__content-nav {
         margin-bottom: 40px;
         ol {
-            color: var(--primary-color);
+            color: var(--blue-color);
             font-size: 16px;
             margin: 0;
 
@@ -42,13 +41,21 @@
         li {
             padding-left: 0;
 
+            &::marker {
+                color: var(--blue-color);
+                font-weight: 400;
+            }
+
             a {
                 font-weight: 400;
             }
 
             &:hover {
+                &::marker {
+                    font-weight: 600;
+                }
+
                 a {
-                    color: var(--primary-color);
                     font-weight: 600;
                     text-decoration: underline;
                 }
@@ -56,140 +63,83 @@
         }
     }
 
-    &__main-media {
-        display: flex;
-        gap: 40px;
-        margin-bottom: 31px;
-
-        video {
-            max-width: 100%;
-        }
-
-        img, video {
-            aspect-ratio: 560 / 244;
-            border-radius: 15px;
-            object-fit: cover;
-            display: flex;
-            height: 100%;
-            width: 100%;
-
-            @media ($lg) {
-                aspect-ratio: 704 / 412;
-            }
-
-            @media ($md) {
-                aspect-ratio: 350 / 216;
-            }
-        }
-
-        @media ($lg) {
-            flex-direction: column;
-        }
-    }
-
-    &__main-media-img {
-        flex: 1;
-    }
-
-    &__main-media-video {
-        position: relative;
-        flex: 1;
-    }
-
-    &__clinical-case {
-        margin-bottom: 30px;
-    }
-
-    &__clinical-case-title {
-        margin-bottom: 12px;
-    }
-
-    &__clinical-case-text {
-        color: var(--grey-color);
-        font-family: var(--font-title);
-        font-size: 1.25rem;
-        font-weight: 400;
-        margin: 0;
+    &__block:not(:last-child) {
+        margin-bottom: 34px;
 
         @media ($md) {
-            font-size: .875rem;
+            margin-bottom: 25px;
         }
     }
 
-    &__treatment-plan {
+    &__img-wrapper {
+        max-width: 379px;
+        margin: 20px;
         display: flex;
-        align-items: flex-start;
-        gap: 40px;
-        margin-bottom: 36px;
+        flex-direction: column;
+        gap: 50px;
 
         @media ($lg) {
-            flex-direction: column;
+            max-width: 300px;
+        }
+        @media ($md-up) {
+            float: right;
+        }
+        @media ($md) {
+            max-width: none;
+            width: 100%;
+            gap: 20px;
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 9px;
         }
     }
 
-    &__treatment-plan-title {
-        font-family: var(--font-default);
-        font-weight: 800;
-        font-size: 1.25rem;
+    &__text, &__list, &__text-list {
+        font-size: 20px;
+        color: var(--blue-color-dark);
+
+        @media ($md) {
+            font-size: 14px;
+        }
     }
 
-    &__treatment-plan-text {
-        p {
-            color: var(--grey-color);
-            font-family: var(--font-title);
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin: 0;
+    &__title {
+        font-size: 30px;
+        margin-bottom: 24px;
 
-            &:not(:last-child) {
-                margin-bottom: 24px;
-            }
-
-            @media ($md) {
-                font-size: .875rem;
-            }
+        @media ($md) {
+            font-size: 20px;
         }
+    }
 
-        ul {
-            color: var(--grey-color);
-            font-family: var(--font-title);
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin: 0;
+    &__subtitle {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: var(--blue-color-dark);
+        font-weight: 700;
 
-            @media ($md) {
-                font-size: .875rem;
-            }
+        @media ($md) {
+            font-size: 16px;
         }
+    }
+
+    &__text {
+        margin-top: 0;
+    }
+
+    &__list {
+        margin: 0;
 
         li {
-            padding-left: 0;
-        }
-    }
+            padding-left: 5px;
 
-    &__procedure {
-        ol {
-            color: var(--grey-color);
-            font-family: var(--font-title);
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin: 0;
-            margin-bottom: 30px;
-
-            @media ($md) {
-                font-size: .875rem;
+            &::marker {
+                color: var(--blue-color-dark);
             }
         }
-
-        li {
-            padding-left: 0;
-        }
-
-        margin-bottom: 40px;
-    }
-
-    &__procedure-title {
-        font-size: 1rem;
     }
 
     &__form {
@@ -201,18 +151,116 @@
         align-self: center;
         display: flex;
         flex-direction: column;
+        margin-top: 26px;
+
+        @media ($md) {
+            margin-top: 13px;
+        }
 
         h4 {
             font-size: 1.25rem;
             text-align: center;
+            margin-bottom: 43px;
+            font-weight: 700;
         }
 
         .textfield, .textarea {
             margin-bottom: 18px;
         }
+        .textfield__name, .textarea__name {
+            color: var(--blue-color-dark);
+        }
+
+        .btn {
+            width: fit-content;
+            min-width: 167px;
+            margin-inline: auto;
+
+            @media ($md) {
+                margin-left: 0;
+            }
+        }
+
+        .form-agreement {
+            color: var(--blue-color-dark);
+            text-align: center;
+        }
 
         @media ($md) {
             padding: 23px;
+        }
+    }
+
+    &__to-up {
+        width: fit-content;
+        margin-left: auto;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: var(--font-title);
+        color: var(--blue-color);
+        padding: 5px 20px;
+        min-width: 161px;
+        border: 1px solid var(--blue-color);
+        border-radius: 20px;
+        background: transparent;
+        margin-bottom: 20px;
+        transition: all .2s;
+
+        @media ($md) {
+            margin-top: 16px;
+        }
+
+        &:hover {
+            background: var(--blue-color);
+            color: var(--white-color);
+        }
+    }
+}
+
+.blog-detail-slider {
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    &_horizontal {
+        touch-action: pan-y;
+    }
+
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    &__item {
+        align-items: center;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        width: 360px;
+        position: relative;
+
+        &:nth-child(even) {
+            &::after {
+                background: url("/src/assets/upload/blog-detail/top-1.png");
+            }
+        }
+        &:nth-child(odd) {
+            &::after {
+                background: url("/src/assets/upload/blog-detail/top-2.png");
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 88px;
+            height: 29px;
+            border-radius: 6px;
+            overflow: hidden;
         }
     }
 }

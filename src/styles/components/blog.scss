@@ -45,7 +45,8 @@
             border-radius: 9px;
             display: block;
             overflow: hidden;
-            padding-top: 66%;
+            width: 100%;
+            aspect-ratio: 360/238;
             position: relative;
 
             img {
@@ -82,9 +83,11 @@
     }
 
     &__grid-item-title {
-        font-size: 1rem;
+        font-size: 19px;
         font-weight: 700;
         margin: 0;
+        color: var(--black-color) !important;
+        font-family: var(--font-title);
 
         @media ($lg) {
             font-size: .875rem;

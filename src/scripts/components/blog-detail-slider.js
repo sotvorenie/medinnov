@@ -1,27 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sliderName = 'products-slider';
+    const sliderName = 'blog-detail-slider';
+
     const sliderSetings = {
         init: true,
-        loop: false,
-        autoplay: false,
+        loop: true,
         centeredSlides: false,
         effect: 'slide',
-        freeMode: true,
-        // longSwipes: false,
-        loopedSlides: 0,
+        loopedSlides: 3,
         navigation: {
             nextEl: '.js-' + sliderName + '-next',
             prevEl: '.js-' + sliderName + '-prev',
-            disabledClass: sliderName + '__action_disabled',
-            lockClass: sliderName + '__action_lock'
+            disabledClass: '_disabled',
+            lockClass: '_lock'
         },
         pagination: false,
         pauseOnMouseEnter: true,
         preloadImages: true,
         roundLengths: true,
         speed: 800,
-        slidesPerView: 2,
-        spaceBetween: 20,
+        slidesPerView: 1,
+        spaceBetween: 8,
         thumbs: false,
         containerModifierClass: sliderName + '_',
         wrapperClass: sliderName + '__wrapper',
@@ -32,30 +30,37 @@ document.addEventListener("DOMContentLoaded", () => {
         slideDuplicateClass: sliderName + '__item_duplicate',
         breakpoints: {
             [window.adaptive.XS]: {
-                slidesPerView: 2,
+                spaceBetween: 8,
+                slidesPerView: 1,
             },
             [window.adaptive.SM]: {
+                spaceBetween: 12,
                 slidesPerView: 2,
             },
             [window.adaptive.MD]: {
-                slidesPerView: 3,
+                slidesPerView: 2,
+                spaceBetween: 16
             },
             [window.adaptive.LG]: {
-                slidesPerView: 4,
+                slidesPerView: 3,
+                spaceBetween: 24
             },
             [window.adaptive.XL]: {
-                slidesPerView: 4,
+                slidesPerView: 3,
+                spaceBetween: 40
             },
         },
-        // on: {
-        //     afterInit: function(swiper) {
-        //         const $slider = swiper.el;
-        //         const $sliderActions = $slider.querySelector('.' + sliderName + '__actions');
-                
-        //         $slider.parentNode.appendChild($sliderActions);
-        //     }
-        // }
     };
 
     window.slider('.js-' + sliderName, sliderSetings);
+
+    const btnToUp = document.querySelector('.blog-detail__to-up')
+    if (btnToUp) {
+        btnToUp.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        })
+    }
 });
