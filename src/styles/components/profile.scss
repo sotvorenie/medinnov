@@ -1,4 +1,13 @@
 .profile {
+    margin-bottom: 213px;
+
+    @media ($lg) {
+        margin-bottom: 100px;
+    }
+    @media ($md) {
+        margin-bottom: 20px;
+    }
+
     &__form {
         padding: 32px;
         border-radius: 15px;
@@ -36,7 +45,7 @@
     }
 
     &__form-edit {
-        color: var(--primary-color);
+        color: var(--blue-color);
         font-size: .75rem;
         font-weight: 500;
         background: none;
@@ -95,5 +104,9 @@
         font-weight: 500;
         border: none;
         background: none;
+    }
+
+    .textfield__name {
+        color: var(--blue-color-dark);
     }
 }

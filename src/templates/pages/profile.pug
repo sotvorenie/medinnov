@@ -27,15 +27,15 @@ block main
 
                 .profile__form-textfields(data-profile-edit)
                     .form-row
-                        label(class='textfield textfield_required')
+                        label(class='textfield')
                             span.textfield__name Имя 
                             input.textfield__input(placeholder='Иван' value='Василий' disabled)
                     .form-row
-                        label(class='textfield textfield_required')
+                        label(class='textfield')
                             span.textfield__name Фамилия
                             input.textfield__input(placeholder='Иванов' disabled)
                     .form-row
-                        label(class='textfield textfield_required')
+                        label(class='textfield')
                             span.textfield__name Отчество
                             input.textfield__input(placeholder='Иванович' value="Алибабаевич" disabled)
                     .form-row
@@ -43,6 +43,8 @@ block main
                             span.textfield__name Email
                             input.textfield__input(type='email' placeholder='example@mail.ru' value="O7oEY@example.com" data-validate-type="email" disabled)
 
+                    .form-row
+                        +textphone('Телефон', '+7  (999) 999-99-99')
+
                 .profile__form-footer 
                     button.profile__form-change-password-btn.btn.btn_bordered(data-fancybox, data-src="#js-modal-change-password" type="button") Сменить пароль
-                    button.profile__form-delete-profile-btn(data-fancybox, data-src="#js-modal-delete" type="button") Удалить профиль
