@@ -1,4 +1,9 @@
 .favorites {
+
+    @media ($md-up) {
+        margin-top: 40px !important;
+    }
+
     &__main {
         flex: 1;
         padding: 32px;
@@ -99,7 +104,7 @@
         padding: 16px;
         border-radius: 15px;
         display: flex;
-        background: var(--body-bg);
+        background: #F8F8F8;
 
         @media ($md) {
             padding: 6px;
@@ -275,5 +280,24 @@
         @media ($md) {
             width: 100%;
         }
+    }
+
+    .push {
+        border-color: var(--blue-color);
+        background: var(--blue-color);
+
+        &:hover {
+            background: transparent;
+        }
+    }
+
+    .catalog-sort__label {
+        color: var(--grey-color);
+    }
+    .catalog-sort__select {
+        color: var(--black-color);
+    }
+    .checkbox__text {
+        color: var(--grey-color);
     }
 }

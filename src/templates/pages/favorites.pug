@@ -6,7 +6,7 @@ block variables
     - var h1 = "Избранные товары";
 
 block main
-    .favorites
+    .favorites.section.py-0.mt-0
         .profile-main-container
             include /components/profile-nav
             .favorites__main
@@ -38,7 +38,7 @@ block main
                                 .favorites__item-footer
                                     .favorites__item-heart-icon(data-toggle-action data-delete-trigger)
                                         +svgIcon('heart')
-                                    div.flex-1
+                                    div
                                         button.btn.favorites__item-btn(data-toggle-action data-add-to-basket)
                                             .favorites__item-btn-icon.btn__icon
                                                 +svgIcon('cart')
@@ -62,8 +62,8 @@ block main
                                 span.favorites__item-availability-text Нет в наличии
                                 .favorites__item-heart-icon(data-toggle-action data-delete-trigger)
                                     +svgIcon('heart')
-                                div.flex-1
-                                    .favorites__item-btn.btn.btn_secondary(data-fancybox, data-src="#js-modal-notify")
+                                div
+                                    .favorites__item-btn.btn.push(data-fancybox, data-src="#js-modal-notify")
                                         .favorites__item-btn-icon.btn__icon
                                             +svgIcon('bell')
                                         .favorites__item-btn-text.btn__text Уведомить
