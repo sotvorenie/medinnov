@@ -63,6 +63,21 @@
         }
     }
 
+    &__block {
+
+        &:not(:last-child) {
+            margin-bottom: 34px;
+
+            @media ($md) {
+                margin-bottom: 25px;
+            }
+        }
+
+        a {
+            color: #46A9FC;
+        }
+    }
+
     &__block:not(:last-child) {
         margin-bottom: 34px;
 
