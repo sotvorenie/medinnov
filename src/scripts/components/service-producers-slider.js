@@ -7,14 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
         centeredSlides: false,
         effect: 'slide',
         freeMode: true,
-        // longSwipes: false,
+        // longSwipes: true,
         loopedSlides: 0,
-        navigation: {
-            nextEl: '.js-' + sliderName + '-next',
-            prevEl: '.js-' + sliderName + '-prev',
-            disabledClass: '_disabled',
-            lockClass: sliderName + '__action_lock'
-        },
+        navigation: false,
         pagination: false,
         pauseOnMouseEnter: true,
         preloadImages: true,

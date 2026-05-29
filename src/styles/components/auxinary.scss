@@ -39,6 +39,10 @@
     transform: translateY(-50%);
     z-index: 3;
 
+    @media ($md) {
+        @include sizeSquare(46px);
+    }
+
     &:hover {
         color: var(--primary-color);
     }
