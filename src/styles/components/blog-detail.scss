@@ -145,6 +145,13 @@
         margin-top: 0;
     }
 
+    &__text-list {
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
     &__list {
         margin: 0;
 
@@ -265,6 +272,10 @@
             &::after {
                 background: url("/src/assets/upload/blog-detail/top-2.png");
             }
+        }
+
+        .blog__grid-item-img::before {
+            display: none;
         }
 
         &::after {

@@ -66,15 +66,15 @@
 
 .producers-slider-wrapper {
     position: relative;
-
-    @media ($md) {
-        width: calc(100vw - 20px);
-    }
 }
 .producers-slider {
     display: block;
     overflow: hidden;
     position: relative;
+
+    @media ($md) {
+        overflow: visible;
+    }
 
     &_horizontal {
         touch-action: pan-y;

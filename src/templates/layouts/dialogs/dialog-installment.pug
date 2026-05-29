@@ -2,10 +2,10 @@
     h3.installment-dialog__title Оформить в рассрочку
     p Наш менеджер свяжется с вами для уточнения деталей
     .installment-dialog__form
-        +textfield('Имя', 'Иван', true)
-        +textphone('Телефон', '+7 000 000 00', true)
-        +textfield('E-mail', 'qwerty@gmail.ru', true)
-        +textarea('Регистрационное удостоверение ', '', 4, '', true)
+        +textfield('Имя', 'Иван')
+        +textphone('Телефон', '+7 000 000 00')
+        +textfield('E-mail', 'qwerty@gmail.ru')
+        +textarea('Регистрационное удостоверение ', '', 4, '')
         +textarea('Комментарий ')
         button.btn(data-fancybox data-src="#js-modal-success") Оставить заявку
         +formAgreement('installment-dialog__form-agreement')

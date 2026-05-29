@@ -6,8 +6,8 @@
     overflow: hidden;
     position: relative;
 
-    @media ($md) {
-        width: calc(100vw - 20px);
+    @media ($sm) {
+        overflow: visible;
     }
 
     &_horizontal {

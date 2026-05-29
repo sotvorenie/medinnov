@@ -401,11 +401,18 @@
 
     &__right-item {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
 
         @media ($lg) {
             grid-template-columns: 1fr;
+        }
+
+        &:first-child {
+            grid-template-columns: 285fr 260fr;
+        }
+        &:nth-child(2) {
+            grid-template-columns: 240fr 275fr;
+            gap: 50px;
         }
 
         &:not(:last-child) {
@@ -440,6 +447,7 @@
             color: #FFFFFFCC;
             font-weight: 400;
             margin-bottom: 0;
+            margin-top: 10px;
         }
     }
 

@@ -30,7 +30,7 @@
         }
     }
 
-    .products-list[data-products-list="grid"] {
+    .products-list:not([data-products-list="list"]) {
         column-gap: 10px;
         row-gap: 76px;
 

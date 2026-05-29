@@ -338,6 +338,10 @@ mark,
 			background: var(--white-color);
 			color: var(--blue-color-dark);
 			border-color: var(--white-color);
+
+			@media ($md) {
+				width: 252px !important;
+			}
 		}
 	}
 	&_blog {

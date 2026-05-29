@@ -44,18 +44,30 @@
         position: absolute;
         background: url('/src/assets/upload/section-list-ellipse.png') no-repeat;
         width: 237px;
+        bottom: 0;
         aspect-ratio: 237/176;
-        bottom: -26px;
         right: -26px;
         z-index: 1;
 
         @media ($xl) {
             width: 200px;
+            bottom: -26px;
         }
     }
 
     @media ($sm) {
         padding: 20px;
+
+        &:has(._active) {
+            .sections-list-item__img {
+                width: calc(100% - 50px);
+                max-width: none;
+                margin-top: 0;
+            }
+            &::after {
+                width: calc(100% - 80px);
+            }
+        }
     }
 
     &:hover {
@@ -72,7 +84,7 @@
         }
     }
     &__title {
-        color: var(--primary-color);
+        color: var(--blue-color);
         display: block;
         font-family: var(--font-title);
         font-size: 1rem;
@@ -87,6 +99,7 @@
         right: -26px;
         bottom: -26px;
         z-index: 2;
+        margin-top: -35px;
 
         @media ($xl) {
             max-width: 45%;
@@ -120,15 +133,22 @@
         }
         &-link {
             display: block;
+            color: var(--blue-color-dark);
             &:hover {
                 color: var(--text-color);  
             }
         }
     }
     &__more {
-        color: var(--primary-color);
+        color: var(--blue-color-dark);
         cursor: pointer;
         font-weight: bold;
         margin-top: .8rem;
+    }
+}
+
+.catalog {
+    @media ($md-up) {
+        margin-bottom: 40px;
     }
 }

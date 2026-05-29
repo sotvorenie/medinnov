@@ -20,48 +20,32 @@
 
             .tabs__content(id="description")
                 .description 
-                    .description__content(data-description-content)
+                    .description__content
                         .row.mb-3
                             .col-12.col-md-6
-                                p.text-grey Модель оснащена встроенным аккумулятором для автономной работы, может подключаться к автоприкуривателю. Катетеры F8 и F12 и кронштейн для крепления на стену в комплекте.
+                                p Модель оснащена встроенным аккумулятором для автономной работы, может подключаться к автоприкуривателю. Катетеры F8 и F12 и кронштейн для крепления на стену в комплекте.
                                 ul.mb-3
-                                    li на 5 инструментов с нижним подводом инструментов;
-                                    li пистолет вода\воздух\спрей;
-                                    li 3 тубинга Midwest4;
-                                    li свободное место для установки дополнительного инструмента;
-                                    li столик врача для инструментов;
-                                    li пульт управления креслом и инструментами врача;
-                                    li манометр, негатоскоп (для просмотра Rg снимков);
-                                    li управление инструментами - ножная педаль.
+                                    li Вес нетто: 6.78 кг
+                                    li Габариты в транспортной упаковке: 55*32*38 см
+                                    li Габариты упаковки: 35*27*29 см
+                                    li Объем: 0.027405 м³
+                                    li Количество в транспортной упаковке: 2 шт.
+                                    li Упаковка: картонная коробка
+                                    li Вес брутто: 7.4 кг
 
                             .col-12.col-md-6
                                 img.d-block.w-100(src="/src/assets/upload/detail/description.png", alt="")
-                        .row
-                            .col-12.col-md-6
-                                p.text-grey Для удобства врача предусмотрен столик для инструментов и пульт управления креслом. Манометр и негатоскоп позволяют контролировать состояние пациента и процесс лечения на каждом этапе. Ножная педаль управления инструментами делает работу более комфортной и безопасной.
-                                ul
-                                    li на 5 инструментов с нижним подводом инструментов;
-                                    li пистолет вода\воздух\спрей;
-                                    li 3 тубинга Midwest4;
-                                    li свободное место для установки дополнительного инструмента;
-                                    li столик врача для инструментов;
-                                    li пульт управления креслом и инструментами врача;
-                                    li манометр, негатоскоп (для просмотра Rg снимков);
-                                    li управление инструментами - ножная педаль.
-
-                            .col-12.col-md-6
-                                img.d-block.w-100(src="/src/assets/upload/detail/description.png", alt="")
-
-                    button.btn.btn_bordered.btn_sm.description__more(data-description-toggle)
-                        span(data-text-show) Читать полностью
-                        span(data-text-hide) Cкрыть описание
 
             .tabs__content(id="technical")
-                .technical-list
+                .technical-list(data-description-content)
                     - for (let i = 0; i < 18; i++)
                         .technical-list__item
                             .technical-list__title Технический параметр !{i}
                             .technical-list__value Технический параметр значение !{i}
+
+                button.btn.btn_bordered.btn_sm.description__more(data-description-toggle)
+                    span(data-text-show) Читать полностью
+                    span(data-text-hide) Cкрыть характеристики
 
             .tabs__content(id="reviews")
                 include /components/catalog/reviews-list

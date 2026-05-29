@@ -369,6 +369,8 @@
 
         @media ($md) {
             margin-top: 16px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .btn {

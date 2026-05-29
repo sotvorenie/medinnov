@@ -1,14 +1,14 @@
 .blog-slider-wrapper {
     position: relative;
-
-    @media ($sm) {
-       width: calc(100vw - 20px);
-    }
 }
 .blog-slider {
     display: block;
     overflow: hidden;
     position: relative;
+
+    @media ($sm) {
+        overflow: visible;
+    }
 
     &_horizontal {
         touch-action: pan-y;
@@ -97,5 +97,11 @@
         display: flex;
         justify-content: start;
         margin-top: 22px;
+    }
+
+    .btn:hover {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border-color: var(--primary-color);
     }
 }
