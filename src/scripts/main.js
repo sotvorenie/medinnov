@@ -71,32 +71,74 @@ window.tabs = function (selector) {
         selectTabContent(currentTab, true);
     }
 };
-window.selectTabContent = function(item, show = false) {
-    const tabContent = document.querySelector(item.getAttribute("href"));
-    const tabHead = document.querySelector('[href="' + item.getAttribute("href") + '"]');
-    const tabContentAddition = document.querySelectorAll('[data-tab-content-id="' + item.getAttribute("href") + '"]');
+// window.selectTabContent = function(item, show = false) {
+//     const tabContent = document.querySelector(item.getAttribute("href"));
+//     const tabHead = document.querySelector('[href="' + item.getAttribute("href") + '"]');
+//     const tabContentAddition = document.querySelectorAll('[data-tab-content-id="' + item.getAttribute("href") + '"]');
+//
+//     if (!item.classList.contains('_current')) {
+//         item.classList.add('_current');
+//     }
+//
+//     if (tabContent !== null) {
+//         if (show) {
+//             tabContent.classList.add('_current');
+//         } else {
+//             tabHead.classList.remove('_current');
+//             tabContent.classList.remove('_current');
+//         }
+//     }
+//
+//     _.each(tabContentAddition, (subitem) => {
+//         if (show) {
+//             subitem.classList.add('_current');
+//         } else {
+//             subitem.classList.remove('_current');
+//         }
+//     });
+// }
+/* TABS */
+window.tabs = function (selector) {
+    if (document.querySelector(selector) !== null) {
+        const tabsList = document.querySelectorAll(selector);
+        let currentTab = _.find(tabsList, (item) => item.classList.contains('_current')) || _.head(tabsList);
 
-    if (!item.classList.contains('_current')) {
-        item.classList.add('_current');
-    }
+        _.each(tabsList, (item) => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
 
-    if (tabContent !== null) {
-        if (show) {
-            tabContent.classList.add('_current');
-        } else {
-            tabHead.classList.remove('_current');
-            tabContent.classList.remove('_current');
+                const targetHref = item.getAttribute("href");
+                const tabsContainer = item.closest('.tabs');
+                tabsContainer.querySelectorAll(selector).forEach(sibling => {
+                    sibling.classList.remove('_current');
+                });
+                tabsContainer.querySelectorAll('.tabs__content').forEach(content => {
+                    content.classList.remove('_current');
+                });
+                tabsContainer.querySelectorAll(`[href="${targetHref}"]`).forEach(activeLink => {
+                    activeLink.classList.add('_current');
+                });
+                const targetContent = tabsContainer.querySelector(targetHref);
+                if (targetContent) {
+                    targetContent.classList.add('_current');
+                }
+                const tabContentAddition = document.querySelectorAll('[data-tab-content-id="' + targetHref + '"]');
+                _.each(tabContentAddition, (subitem) => {
+                    subitem.classList.add('_current');
+                });
+            });
+        });
+        if (currentTab) {
+            const startHref = currentTab.getAttribute("href");
+            const container = currentTab.closest('.tabs');
+            if (container) {
+                container.querySelectorAll(`[href="${startHref}"]`).forEach(el => el.classList.add('_current'));
+                const startContent = container.querySelector(startHref);
+                if (startContent) startContent.classList.add('_current');
+            }
         }
     }
-
-    _.each(tabContentAddition, (subitem) => {
-        if (show) {
-            subitem.classList.add('_current');
-        } else {
-            subitem.classList.remove('_current');
-        }
-    });
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     // tables upd
