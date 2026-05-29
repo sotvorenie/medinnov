@@ -48,5 +48,11 @@ block main
                     .leasing__features-item 
                         img.leasing__features-item-icon(src=`/src/assets/leasing/${index + 1}.svg`, alt="Иконка преимущества")
                         h4.leasing__features-item-title #{item.title}
-                        p.leasing__features-item-text #{item.text}
+                        if index === 1
+                            ul
+                                li Снижение налогооблагаемой базы по налогу на прибыль и возврат НДС.
+                                li Для компаний на общей системе налогообложения (ОСНО): лизинговые платежи уменьшают налог на прибыль, а также позволяют зачесть НДС по сумме лизинговых платежей.
+                                li Для других форм налогообложения: в зависимости от применимой формы налогообложения лизинговые платежи могут уменьшать налоговую базу по прибыли (если выбрана форма налогообложения, учитывающая расходы).
+                        else
+                            p.leasing__features-item-text #{item.text}
         include /components/question-man.pug
