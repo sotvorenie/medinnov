@@ -6,7 +6,7 @@
     margin: 60px auto;
 
     @media ($lg) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 1rem;
         margin: 48px auto;
         text-align: center;
@@ -30,7 +30,7 @@
         margin-top: 1rem;
 
         .btn {
-            width: 342px;
+            width: 252px;
 
             @media ($lg) {
                 margin-inline: auto;
