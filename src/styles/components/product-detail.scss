@@ -677,8 +677,36 @@
     background-position: right 10px center;
     background-size: 25px;
 
-    &:has(option[value=""]:checked) {
+    .header-menu__link {
         color: #E6E6E6;
+    }
+
+    &::after {
+        display: none !important;
+    }
+
+    .header-menu__submenu {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 4px;
+        padding: 8px 33px 8px 8px;
+        background: var(--white-color);
+
+        &::before {
+            left: auto;
+            right: 8px;
+        }
+    }
+    .order__goods-item-color {
+        display: block !important;
+        margin: 0;
+        position: relative;
+        z-index: 10;
+        border: none !important;
+
+        &::before {
+            display: none;
+        }
     }
 }
 .product-select option {

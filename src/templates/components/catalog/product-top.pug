@@ -51,10 +51,14 @@
 
                 div.product-color
                     h2 Цвет
-                    select.product-select
-                        option(value="" disabled selected hidden) Выберите вариант
-                        each item, index in [1, 2, 3]
-                            option(value=index + 1)= item
+
+                    div.product-select.header-menu__item._dropdown
+                        div.header-menu__link Выберите вариант
+                            .header-menu__submenu-wrap
+                                ul.header-menu__submenu
+                                    each subItem in [1, 2, 3, 4, 5, 6, 7, 8]
+                                        a(href="#").order__goods-item-color
+                                            span.color-box(style=`--color: red`)
 
             .product-top__content-sidebar
                 .product-top__actions

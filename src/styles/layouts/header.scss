@@ -266,7 +266,7 @@
     &__submenu {
         @include reset-list;
 
-        background: var(--body-bg);
+        background: var(--white-color);
         border-radius: 15px;
         box-shadow: -5px 10px 15px rgba(#211F24, 0.15);
         position: relative;
