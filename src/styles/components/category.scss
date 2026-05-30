@@ -79,6 +79,22 @@
     &__label {
         color: var(--blue-color-dark);
     }
+
+    .header-menu__item::after {
+        color: var(--black-color);
+        margin-top: 2px;
+    }
+    .header-menu__link {
+        color: var(--black-color);
+    }
+    .header-menu__submenu-wrap {
+        left: auto;
+        right: 0;
+    }
+    .header-menu__submenu::before {
+        left: auto;
+        right: 7px;
+    }
 }
 
 .catalog-view {
@@ -140,15 +156,17 @@
             align-self: start;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 20px;
             padding: 5px 6px;
             width: 100%;
         }
         &-item {
             display: block;
+            color: var(--blue-color-dark);
 
             &._current {
-                color: var(--primary-color);
+                color: var(--black-color);
+                font-weight: 700;
             }
         }
         &-link {
