@@ -1,7 +1,7 @@
 .header {
     box-shadow: 0 4px 11px rgba(#211F24, 0.04);
     position: relative;
-    z-index: 100;
+    z-index: 1051;
     background: var(--white-color);
 
     &__top {
@@ -307,6 +307,10 @@
             }
         }
     }
+}
+.header-menu__submenu a:hover {
+    color: var(--text-color);
+    font-weight: bold;
 }
 .header-menu__item._dropdown._open .header-menu__submenu-wrap {
     opacity: 1 !important;
