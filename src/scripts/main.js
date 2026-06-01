@@ -61,7 +61,7 @@ window.tabs = function (selector) {
                 event.preventDefault();
 
                 _.each(tabsList, (sibling) => {
-                    selectTabContent(sibling);
+                    selectTabContent(sibling, false);
                 });
 
                 item.classList.add('_current');
@@ -73,24 +73,29 @@ window.tabs = function (selector) {
     }
 };
 window.selectTabContent = function(item, show = false) {
-    const tabContent = document.querySelector(item.getAttribute("href"));
-    const tabHead = document.querySelector('[href="' + item.getAttribute("href") + '"]');
-    const tabContentAddition = document.querySelectorAll('[data-tab-content-id="' + item.getAttribute("href") + '"]');
+    const href = item.getAttribute("href");
+    const tabContent = document.querySelector(href);
 
-    if (!item.classList.contains('_current')) {
-        item.classList.add('_current');
-    }
+    const allMatchingTabs = document.querySelectorAll(`[href="${href}"]`);
+    const tabContentAddition = document.querySelectorAll(`[data-tab-content-id="${href}"]`);
+
+    allMatchingTabs.forEach(tab => {
+        if (show) {
+            tab.classList.add('_current');
+        } else {
+            tab.classList.remove('_current');
+        }
+    });
 
     if (tabContent !== null) {
         if (show) {
             tabContent.classList.add('_current');
         } else {
-            tabHead.classList.remove('_current');
             tabContent.classList.remove('_current');
         }
     }
 
-    _.each(tabContentAddition, (subitem) => {
+    tabContentAddition.forEach(subitem => {
         if (show) {
             subitem.classList.add('_current');
         } else {
