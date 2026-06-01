@@ -57,6 +57,10 @@
       padding: 16px 19px 11px;
     }
 
+    &:hover {
+      box-shadow: 0 0 13px rgba(12, 12, 13, 0.06);
+    }
+
     &__special-title {
       font-family: var(--font-title);
       font-weight: 700;
