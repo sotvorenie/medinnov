@@ -4,17 +4,21 @@
     .dialog__cont
         form(data-validate-form)
             .mb-3
-                +textfield('Имя', 'Иван', true)
+                +textfield('Имя', 'Иван')
             .mb-3
-                +textphone('Телефон', '+7 000 000 00', true)
+                +textphone('Телефон', '+7 000 000 00')
             .mb-3
                 +textarea('Комментарий ', '')
             .mt-3
                 .upload-btn-wrapper
                     .upload-btn__img-wrap
                     label.upload-btn
-                        img.icon(src="/src/assets/upload.svg" alt)
+                        picture
+                            source(srcset="/src/assets/upload-mb.svg" media="(max-width: 767px)")
+                            img.icon(src="/src/assets/upload.svg" alt="Загрузить файл")
                         input.upload-btn__inputfile(type='file' multiple data-max_length='5' accept='image/*')
+                span.upload-info Загрузите до 5 фото
+            .mt-3
+                +checkbox('Соглашаюсь с условиями обработки данных и политикой конфиденциальности', 'review-dialog__checkbox')
             .mt-4
-                button.btn.w-100(data-fancybox data-src="#js-modal-success") Оставить заявку
-            +formAgreement('installment-dialog__form-agreement')
+                button.btn(data-fancybox data-src="#js-modal-success") Оставить заявку

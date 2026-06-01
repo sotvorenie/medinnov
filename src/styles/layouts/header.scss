@@ -300,6 +300,11 @@
         &-link {
             color: inherit;
             white-space: nowrap;
+
+            &:hover {
+                color: var(--text-color);
+                font-weight: bold;
+            }
         }
     }
 }

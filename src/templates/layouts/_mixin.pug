@@ -53,6 +53,12 @@ mixin textfield(name, placeholder, required = false, className = '')
             span.textfield__name= name 
             input.textfield__input(placeholder=placeholder required=required ? true : false data-validate-input=`${required}`)
 
+mixin passwordfield(name, placeholder, required = false, className = '')
+    .form-row
+        label(class=`textfield ${className} ${required ? 'textfield_required' : ''}`)
+            span.textfield__name= name
+            input.textfield__input(type='password' placeholder=placeholder required=required ? true : false data-validate-input=`${required}` data-validate-type="password")
+
 mixin textphone(name, placeholder, required = false, className = '')
     .form-row
         label(class=`textfield ${className} ${required ? 'textfield_required' : ''}`)

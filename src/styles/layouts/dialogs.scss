@@ -27,10 +27,18 @@
         margin-bottom: 22px;
     }
 
-    .btn,
     .textfield,
     .textarea {
         width: 100%;
+    }
+
+    .btn {
+        width: fit-content;
+        min-width: 167px;
+
+        &.btn-auth {
+            min-width: 94px;
+        }
     }
 
     &#js-modal-video {

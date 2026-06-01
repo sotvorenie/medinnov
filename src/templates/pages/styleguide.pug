@@ -119,7 +119,9 @@ block main
                 .upload-btn-wrapper
                     .upload-btn__img-wrap
                     label.upload-btn
-                        img.icon(src="/src/assets/upload.svg" alt)
+                        picture
+                            source(srcset="/src/assets/upload-mb.svg" media="(max-width: 767px)")
+                            img.icon(src="/src/assets/upload.svg" alt="Загрузить файл")
                         input.upload-btn__inputfile(type='file' multiple data-max_length='5' accept='image/*')
 
             .col-12.col-sm-6.col-lg-4.mb-4 

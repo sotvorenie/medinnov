@@ -458,10 +458,14 @@ select {
 	gap: 6px;
 	justify-content: start;
 }
+.upload-info {
+	font-size: 12px;
+	color: #6D6D6D;
+}
 
 .upload-btn {
 	align-items: center;
-	background: var(--body-bg);
+	background: #DADEE5;
 	border-radius: 7px;
 	box-sizing: border-box;
 	cursor: pointer;
@@ -471,6 +475,16 @@ select {
 	overflow: hidden;
 	position: relative;
 	width: 70px;
+
+	@media ($md) {
+		width: 45px;
+		order: -1;
+
+		picture {
+			width: 21px;
+			height: auto;
+		}
+	}
 
 	&:hover {
 		background: var(--secondary-color);
@@ -504,30 +518,59 @@ select {
 		display: block;
 		position: relative;
 
+		&:hover {
+			.upload-btn__img-close {
+				opacity: 1;
+			}
+		}
+
 		.img-bg {
 			background: var(--light-grey-color) no-repeat center / cover;
 			border-radius: 7px;
 			display: block;
 			height: 78px;
 			width: 70px;
+
+			@media ($md) {
+				width: 45px;
+			}
 		}
 	}
 	&__img-close {
-		color: var(--blue-color);
+		color: #6D6D6D;
 		cursor: pointer;
 		display: none;
 		position: absolute;
-		right: 3px;
-		top: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 30px;
+		aspect-ratio: 17/20;
+		background: #FFFFFF8F;
+		backdrop-filter: blur(0.8px);
+		border-radius: 1px;
+		transition: opacity .2s;
+		
+		@media ($lg-up) {
+			opacity: 0;
+		}
+
+		@media ($md) {
+			width: 17px;
+		}
 
 		&:hover {
 			color: var(--primary-color);
 		}
 
 		&::before {
-			content: 'x';
-			font-size: 1rem;
-			font-weight: bold;
+			content: '';
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			width: calc(100% - 2px);
+			height: calc(100% - 2px);
+			background: url("/src/assets/upload-delete.svg") center/contain no-repeat;
 		}
 
 		&._init {
