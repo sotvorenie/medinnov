@@ -226,7 +226,7 @@
             &::after {
                 @include sizeSquare(4px);
 
-                background: var(--primary-color);
+                background: var(--blue-color);
                 border-radius: 50%;
                 content: '';
                 display: inline-block;
