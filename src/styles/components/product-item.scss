@@ -115,6 +115,14 @@
         &_new {
             background: #D5DFFF;
             color: var(--blue-color-dark);
+            
+            @media ($md) {
+
+                &:is(:first-child) {
+                    margin-bottom: 23px;
+                    border-bottom-right-radius: $border-radius;
+                }
+            }
         }
 
         + .product-item__chip {
