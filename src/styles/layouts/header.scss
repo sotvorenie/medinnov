@@ -303,6 +303,11 @@
         }
     }
 }
+.header-menu__item._dropdown._open .header-menu__submenu-wrap {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+}
 
 .header-location {
     align-items: center;
