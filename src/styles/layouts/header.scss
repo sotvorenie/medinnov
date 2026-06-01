@@ -130,7 +130,7 @@
             &::after {
                 @include sizeSquare(9px);
 
-                background: var(--yellow-color);
+                background: var(--red-color);
                 border-radius: 50%;
                 content: '';
                 display: block;
