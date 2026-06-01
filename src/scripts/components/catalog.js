@@ -3,7 +3,7 @@ import {toggle} from 'slide-element';
 // catalog scripts
 document.addEventListener("DOMContentLoaded", () => {
     // catalog toggle more items
-    const HEIGHT_TRESHOLD = 144;
+    const HEIGHT_TRESHOLD = 124;
     document.querySelectorAll('[data-category-more-list]').forEach(list => {
         list.querySelectorAll('[data-more-item="false"]').forEach(item => {
             item.dataset.moreItem = 'true'
