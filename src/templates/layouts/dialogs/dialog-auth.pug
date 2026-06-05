@@ -3,8 +3,8 @@
     .dialog__cont
         form(data-validate-form)
             .mb-3
-                +textfield('Введите номер телефона или логин', '+7 000 000 00')
+                +textfield('Введите номер телефона или логин', '+7 000 000 00', true)
             .mb-3
-                +passwordfield('Пароль', '*******')
+                +passwordfield('Пароль', '*******', true)
             .mt-4
-                button.btn(data-fancybox data-src="#js-modal-success").btn-auth Войти
+                button.btn(type="submit").btn-auth Войти
