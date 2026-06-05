@@ -47,9 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!isFormValid(form)) {
                     return;
                 }
-    
+
                 Fancybox.show(
-                    [{ src: "#js-modal-success", type: "clone" }],
+                    [{ src: "#js-modal-success", type: "inline" }],
+                    {
+                        closeExisting: true
+                    }
                 );
             })
         })
