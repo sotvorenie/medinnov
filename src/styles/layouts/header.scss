@@ -293,7 +293,10 @@
 
             &._active {
                 color: var(--text-color);
-                font-weight: bold;
+
+                a {
+                    text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
+                }
             }
         }
         
@@ -302,15 +305,33 @@
             white-space: nowrap;
 
             &:hover {
-                color: var(--text-color);
-                font-weight: bold;
+
+                &:not(._active) {
+                    color: var(--text-color);
+                    text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
+                }
             }
         }
+
+        //a {
+        //
+        //    &::after {
+        //        content: attr(data-text);
+        //        font-weight: 700;
+        //        height: 0;
+        //        visibility: hidden;
+        //        overflow: hidden;
+        //        user-select: none;
+        //        pointer-events: none;
+        //    }
+        //}
     }
 }
 .header-menu__submenu a:hover {
-    color: var(--text-color);
-    font-weight: bold;
+    &:not(._active) {
+        color: var(--text-color);
+        text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
+    }
 }
 .header-menu__item._dropdown._open .header-menu__submenu-wrap {
     opacity: 1 !important;
