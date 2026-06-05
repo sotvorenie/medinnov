@@ -6,7 +6,7 @@ window.Fancybox = window.fancybox = Fancybox
 
 Fancybox.bind('[data-fancybox]', {
     closeButton: true,
-    closeExisting: false,
+    closeExisting: true,
     dragToClose: false,
     placeFocusBack: false,
     tpl: {

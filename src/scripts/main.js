@@ -324,16 +324,18 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 })
 
-document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.play');
-    if (!btn) return;
-    const videoSrc = btn.dataset.videoSrc;
-    const modalSelector = btn.dataset.src;
-    const modal = document.querySelector(modalSelector);
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.play');
+        if (!btn) return;
+        const videoSrc = btn.dataset.videoSrc;
+        const modalSelector = btn.dataset.src;
+        const modal = document.querySelector(modalSelector);
 
-    if (modal && videoSrc) {
-        const videoTag = modal.querySelector('.video-dialog__video');
-        videoTag.src = videoSrc;
-        videoTag.load();
-    }
-});
+        if (modal && videoSrc) {
+            const videoTag = modal.querySelector('.video-dialog__video');
+            videoTag.src = videoSrc;
+            videoTag.load();
+        }
+    });
+})
