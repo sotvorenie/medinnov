@@ -323,3 +323,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 })
+
+document.addEventListener('click', (e) => {
+    const parent = e.target.closest('.about__video-block-video') || e.target.parentElement;
+    const btn = parent.querySelector('.play');
+    const video = parent.querySelector('video');
+
+    if (!video) return;
+
+    if (video.paused) {
+        video.play();
+        if (btn) btn.style.display = 'none';
+    } else {
+        video.pause();
+        if (btn) btn.style.display = '';
+    }
+});
